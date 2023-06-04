@@ -1,9 +1,9 @@
 ---
-import '@fontsource/inter';
-import '../styles/globals.css';
+import "@fontsource/inter";
+import "../styles/globals.css";
 
 export interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
@@ -11,47 +11,68 @@ const { title } = Astro.props;
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Lorem ipsum dolor sit amet.">
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/png" href="/favicon.png" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body class="mx-auto px-20 max-w-[1400px]">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Lorem ipsum dolor sit amet." />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="mx-auto px-20 max-w-[1400px]">
     <div class="flex items-center justify-between py-6">
       <a class="text-sm hover:text-slate-800" href="/">✱ Kristjan Poska</a>
       <nav>
         <ul role="list" class="m-0 flex items-center gap-4">
-          <li><a class="text-sm hover:text-slate-800" href="/#craft">Craft</a></li>
-          <li><a class="text-sm hover:text-slate-800" href="/about">About</a></li>
-          <li><a class="text-sm rounded-2xl py-1 px-2 border border-solid border-current" href="mailto:kristjanposka@gmail.com?subject=I want to work with you, Kristjan">Contact</a></li>
+          <li>
+            <a class="text-sm hover:text-slate-800" href="/#craft">Craft</a>
+          </li>
+          <li>
+            <a class="text-sm hover:text-slate-800" href="/about">About</a>
+          </li>
+          <li>
+            <a
+              class="text-sm rounded-2xl py-1 px-2 border border-solid border-current"
+              href="mailto:kristjanposka@gmail.com?subject=I want to work with you, Kristjan"
+              >Contact</a>
+          </li>
         </ul>
       </nav>
     </div>
 
-		<slot />
+    <slot />
 
     <section class="mt-64">
       <h1 class="text-5xl mb-2">Let's get to know eachother.</h1>
-      <a class="text-5xl text-slate-800 hover:text-slate-600" href="mailto:kristjanposka@gmail.com?subject=I want to work with you, Kristjan">Get in touch.</a>
+      <a
+        class="text-5xl text-slate-800 hover:text-slate-600"
+        href="mailto:kristjanposka@gmail.com?subject=I want to work with you, Kristjan"
+        >Get in touch.</a
+      >
     </section>
 
     <footer class="mt-64 mb-12 flex justify-between items-center">
       <div class="text-sm">&copy; Kristjan Poska 2023</div>
       <ul class="flex gap-4">
-        <li><a class="text-sm hover:text-slate-800" href="https://instagram.com/kristjanposka">Instagram</a></li>
-        <li><a class="text-sm hover:text-slate-800" href="https://twitter.com/kristjanposka">Twitter</a></li>
+        <li>
+          <a
+            class="text-sm hover:text-slate-800"
+            href="https://instagram.com/kristjanposka">Instagram</a>
+        </li>
+        <li>
+          <a
+            class="text-sm hover:text-slate-800"
+            href="https://twitter.com/kristjanposka">Twitter</a>
+        </li>
       </ul>
     </footer>
-	</body>
+  </body>
 </html>
 
 <style is:global>
-	html {
-		font-family: "Inter", sans-serif;
-    background: linear-gradient(45deg, #FFCB77 0%, #81A684 50%, #AAAEFE 100%);
+  html {
+    font-family: "Inter", sans-serif;
+    background: linear-gradient(45deg, #ffcb77 0%, #81a684 50%, #aaaefe 100%);
     overscroll-behavior: none;
-	}
+  }
 </style>

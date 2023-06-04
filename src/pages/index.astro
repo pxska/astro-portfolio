@@ -1,28 +1,66 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
 ---
 
 <Layout title="Kristjan Poska ~ Design Engineer">
-	<header class="h-[calc(100vh-72px)] flex items-end">
+  <header class="h-[calc(100vh-72px)] flex items-end">
     <div class="flex gap-8 mb-12 sm:flex-col md:flex-row">
-		  <h1 class="text-5xl">My name is Kristjan Poska, I'm a <em>design engineer</em> working and living in Estonia.</h1>
+      <h1 class="text-5xl">
+        My name is Kristjan Poska, I'm a <em>design engineer</em> working and living
+        in Estonia.
+      </h1>
       <div class="flex flex-col justify-between">
-        <h2 class="text-2xl text-slate-800">I take the deepest possible plunge into anything I do, while paying meticulous attention to even the smallest details.</h2>
+        <h2 class="text-2xl text-slate-800">
+          I take the deepest possible plunge into anything I do, while paying
+          meticulous attention to even the smallest details.
+        </h2>
 
         <ul class="flex gap-4">
-          <li><a class="text-sm hover:text-slate-800" href="https://instagram.com/kristjanposka">Instagram</a></li>
-          <li><a class="text-sm hover:text-slate-800" href="https://twitter.com/kristjanposka">Twitter</a></li>
+          <li>
+            <a
+              class="text-sm hover:text-slate-800"
+              href="https://instagram.com/kristjanposka">Instagram</a
+            >
+          </li>
+          <li>
+            <a
+              class="text-sm hover:text-slate-800"
+              href="https://twitter.com/kristjanposka">Twitter</a
+            >
+          </li>
         </ul>
       </div>
     </div>
-	</header>
+  </header>
 
   <section id="craft" class="mt-32 flex flex-col gap-8 scroll-mt-8">
-    <Card title="Mental Pin" description="A user interface & user experience design project to make AI feel humane." href="/craft/mentalpin"  />
-    <Card title="Splitwise" description="An emotional design project to reduce the anxiety around tracking group expenses." href="/craft/splitwise"  />
-    <Card title="Playser" description="A tangible design project to help musicians in the future." href="/craft/playser"  />
-    <Card title="INVL" description="A service design project to help INVL find their blue ocean." href="/craft/invl"  />
-    <Card title="Phõõn" description="An interaction design project to boost Tallinner's mental health." imageSrc="/images/phoon.png" alt="An old rotary attached to a tree in the forest." href="/craft/phoon" />
+    <Card
+      title="Mental Pin"
+      description="A user interface & user experience design project to make AI feel humane."
+      href="/craft/mentalpin"
+    />
+    <Card
+      title="Splitwise"
+      description="An emotional design project to reduce the anxiety around tracking group expenses."
+      href="/craft/splitwise"
+    />
+    <Card
+      title="Playser"
+      description="A tangible design project to help musicians in the future."
+      href="/craft/playser"
+    />
+    <Card
+      title="INVL"
+      description="A service design project to help INVL find their blue ocean."
+      href="/craft/invl"
+    />
+    <Card
+      title="Phõõn"
+      description="An interaction design project to boost Tallinner's mental health."
+      imageSrc="/images/phoon.png"
+      alt="An old rotary attached to a tree in the forest."
+      href="/craft/phoon"
+    />
   </section>
 </Layout>

@@ -4,5 +4,14 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind()]
+  integrations: [tailwind()],
+  plugins: [require.resolve('prettier-plugin-astro')],
+  overrides: [
+    {
+      files: '*.astro',
+      options: {
+        parser: 'astro',
+      },
+    },
+  ],
 });
