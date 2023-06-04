@@ -10,7 +10,7 @@ const { title, description, imageSrc, alt, href } = Astro.props;
     <p class="text-2xl">{description}</p>
   </div>
   <img
-    class="object-cover bg-center aspect-video rounded-2xl sm:max-w-full lg:max-w-md group-hover:opacity-80 transition-opacity"
+    class="object-cover bg-center aspect-video rounded-2xl grayscale transition sm:max-w-full lg:max-w-md group-hover:grayscale-0"
     src={imageSrc}
     alt={alt}
   />

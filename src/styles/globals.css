@@ -27,6 +27,8 @@ html {
   scroll-behavior: smooth;
   color: #131313;
   overflow-y: scroll;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 body {
