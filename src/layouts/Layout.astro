@@ -15,66 +15,43 @@ const { title } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="description" content="Lorem ipsum dolor sit amet.">
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/png" href="/favicon.png" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body>
-    <div class="navigation-wrapper">
-      <a href="/">✱ Kristjan Poska</a>
+	<body class="mx-auto px-20 max-w-[1400px]">
+    <div class="flex items-center justify-between py-6">
+      <a class="text-sm hover:text-slate-800" href="/">✱ Kristjan Poska</a>
       <nav>
-        <ul role="list">
-          <li><a href="#craft">Craft</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a class="contact-button" href="mailto:kristjanposka@gmail.com">Contact</a></li>
+        <ul role="list" class="m-0 flex items-center gap-4">
+          <li><a class="text-sm hover:text-slate-800" href="/#craft">Craft</a></li>
+          <li><a class="text-sm hover:text-slate-800" href="/about">About</a></li>
+          <li><a class="text-sm rounded-2xl py-1 px-2 border border-solid border-current" href="mailto:kristjanposka@gmail.com?subject=I want to work with you, Kristjan">Contact</a></li>
         </ul>
       </nav>
     </div>
+
 		<slot />
+
+    <section class="mt-64">
+      <h1 class="text-5xl mb-2">Let's get to know eachother.</h1>
+      <a class="text-5xl text-slate-800 hover:text-slate-600" href="mailto:kristjanposka@gmail.com?subject=I want to work with you, Kristjan">Get in touch.</a>
+    </section>
+
+    <footer class="mt-64 mb-12 flex justify-between items-center">
+      <div class="text-sm">&copy; Kristjan Poska 2023</div>
+      <ul class="flex gap-4">
+        <li><a class="text-sm hover:text-slate-800" href="https://instagram.com/kristjanposka">Instagram</a></li>
+        <li><a class="text-sm hover:text-slate-800" href="https://twitter.com/kristjanposka">Twitter</a></li>
+      </ul>
+    </footer>
 	</body>
 </html>
 
 <style is:global>
 	html {
 		font-family: "Inter", sans-serif;
-    background: linear-gradient(45deg, #FFCB77 0%, #81A684 50%, #6F73D2 100%);
+    background: linear-gradient(45deg, #FFCB77 0%, #81A684 50%, #AAAEFE 100%);
     overscroll-behavior: none;
 	}
-
-  body {
-    margin-inline: auto;
-    padding-inline: 72px;
-    max-width: 1400px;
-  }
-
-  .navigation-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-block: 24px;
-  }
-
-  .navigation-wrapper ul {
-    margin: 0;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-  }
-
-  .navigation-wrapper a,
-  .navigation-wrapper li {
-    color: #131313;
-    font-size: 14px;
-  }
-
-  .navigation-wrapper a:hover,
-  .navigation-wrapper li:hover {
-    color: #5d5d5d;
-  }
-
-  .navigation-wrapper .contact-button {
-    border-radius: 16px;
-    padding: 4px 8px;
-    border: 1px solid #131313;
-  }
 </style>
