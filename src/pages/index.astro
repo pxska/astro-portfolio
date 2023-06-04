@@ -1,12 +1,74 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
 ---
 
-<Layout title="Kristjan Poska's Portfolio">
-	<main>
-		<h1>Welcome to Astro</h1>
-	</main>
+<Layout title="Kristjan Poska ~ Design Engineer">
+	<section class="hero-section">
+    <div class="hero-bottom">
+		  <h1>My name is Kristjan Poska, I'm a <em>design engineer</em> working and living in Estonia.</h1>
+      <div class="description">
+        <h2>I take the deepest possible plunge into anything I do, while paying meticulous attention to even the smallest details.</h2>
+
+        <div>
+          <a href="https://instagram.com/kristjanposka">Instagram</a>
+          <a href="https://twitter.com/kristjanposka">Twitter</a>
+        </div>
+      </div>
+    </div>
+	</section>
+  <section id="craft" class="craft-section">
+    <Card title="Title" description="Lorem ipsum dolor sit amet." />
+  </section>
 </Layout>
 
 <style>
+  .hero-section {
+    height: calc(100vh - 72px);
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .hero-bottom {
+    display: flex;
+    gap: 48px;
+    margin-bottom: 24px;
+  }
+
+  @media screen and (max-width: 900px) {
+    .hero-bottom {
+      flex-direction: column;
+    }
+  }
+
+  .hero-bottom h1 {
+    color: #131313;
+  }
+
+  .hero-bottom h2 {
+    color: rgba(0, 0, 0, .6);
+    font-size: 24px;
+    font-weight: 400;
+  }
+
+  .description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    line-height: 32px;
+  }
+
+  .description div {
+    display: flex;
+    gap: 16px;
+    font-size: 24px;
+  }
+
+  .description div a {
+    color: #131313;
+  }
+
+  .craft-section {
+    margin-top: 128px;
+  }
 </style>
