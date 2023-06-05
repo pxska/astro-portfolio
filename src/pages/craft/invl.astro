@@ -1,16 +1,31 @@
 ---
+import Metadata from "../../components/Metadata.astro";
 import Layout from "../../layouts/Layout.astro";
-
 ---
 
-<Layout title="Kristjan Poska ~ Design Engineer">
+<Layout title="INVL">
   <div class="mt-40 max-w-prose flex flex-col gap-8">
-    <h1 class="text-5xl">
-      INVL
-    </h1>
+    <h1 class="text-5xl">INVL</h1>
 
     <p class="text-2xl text-slate-800">
       A service design project to help INVL find their blue ocean.
     </p>
   </div>
+
+  <Metadata
+    role={[
+      "Stakeholder interviewing",
+      "Service design",
+      "User persona & journey mapping",
+    ]}
+    duration="8 weeks"
+    methods={[
+      "User persona creation",
+      "User journey mapping",
+      "Crazy 8-s",
+      "Low-fidelity prototyping",
+      "Stakeholder interviews",
+      "Affinity mapping",
+    ]}
+  />
 </Layout>

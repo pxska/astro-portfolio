@@ -1,7 +1,26 @@
 ---
+import Metadata from "../../components/Metadata.astro";
 import Layout from "../../layouts/Layout.astro";
-
 ---
 
-<Layout title="Kristjan Poska ~ Design Engineer">
+<Layout title="Playser">
+  <div class="mt-40 max-w-prose flex flex-col gap-8">
+    <h1 class="text-5xl">Playser</h1>
+
+    <p class="text-2xl text-slate-800">
+      A tangible design project to help musicians in the future.
+    </p>
+  </div>
+
+  <Metadata
+    role={["Tangible design", "Arduino programming", "Technical bits and bobs"]}
+    duration="5 weeks"
+    methods={[
+      "Crazy 8-s",
+      "Low-fidelity prototyping",
+      "High-fidelity prototyping",
+      "Hardware & software programming",
+      "Exhibition design",
+    ]}
+  />
 </Layout>

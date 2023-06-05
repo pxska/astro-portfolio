@@ -29,6 +29,9 @@ html {
   overflow-y: scroll;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  font-family: "Inter", sans-serif !important;
+  background: #81a684 linear-gradient(45deg, #ffcb77 0%, #81a684 50%, #aaaefe 100%);
+  overscroll-behavior: none;
 }
 
 body {

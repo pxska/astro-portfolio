@@ -1,7 +1,21 @@
 ---
+import Metadata from "../../components/Metadata.astro";
 import Layout from "../../layouts/Layout.astro";
-
 ---
 
-<Layout title="Kristjan Poska ~ Design Engineer">
+<Layout title="Splitwise">
+  <div class="mt-40 max-w-prose flex flex-col gap-8">
+    <h1 class="text-5xl">Splitwise</h1>
+
+    <p class="text-2xl text-slate-800">
+      An emotional design project to reduce the anxiety around tracking group
+      expenses.
+    </p>
+  </div>
+
+  <Metadata
+    role={["UI design", "UX design"]}
+    duration="3 weeks"
+    methods={["Figma prototyping", "UI design", "Presenting"]}
+  />
 </Layout>
