@@ -2,7 +2,9 @@
 const { methods = [], duration, role = [] } = Astro.props;
 ---
 
-<div class="mt-40 grid grid-cols-3 gap-8">
+<hr class="my-24 border-slate-600" />
+
+<div class="metadata-grid">
   <div>
     <h2 class="text-2xl">Role</h2>
     <div class="text-xl text-slate-800 mt-4">{role.join(" · ")}</div>
@@ -16,3 +18,14 @@ const { methods = [], duration, role = [] } = Astro.props;
     <div class="text-xl text-slate-800 mt-4">{methods.join(" · ")}</div>
   </div>
 </div>
+
+<hr class="my-24 border-slate-600" />
+
+<style>
+  .metadata-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    row-gap: 4rem;
+    column-gap: 2rem;
+  }
+</style>
