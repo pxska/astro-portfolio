@@ -6,15 +6,15 @@ const { methods = [], duration, role = [] } = Astro.props;
 
 <div class="metadata-grid">
   <div>
-    <h2 class="text-2xl">Role</h2>
+    <h2 class="text-2xl sm:text-lg">Role</h2>
     <div class="text-xl text-slate-800 mt-4">{role.join(" · ")}</div>
   </div>
   <div>
-    <h2 class="text-2xl">Duration</h2>
+    <h2 class="text-2xl sm:text-lg">Duration</h2>
     <div class="text-xl text-slate-800 mt-4">{duration}</div>
   </div>
   <div>
-    <h2 class="text-2xl">Methods</h2>
+    <h2 class="text-2xl sm:text-lg">Methods</h2>
     <div class="text-xl text-slate-800 mt-4">{methods.join(" · ")}</div>
   </div>
 </div>
@@ -24,7 +24,7 @@ const { methods = [], duration, role = [] } = Astro.props;
 <style>
   .metadata-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(325px, 1fr));
     row-gap: 4rem;
     column-gap: 2rem;
   }

@@ -19,10 +19,10 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class="mx-auto px-20 max-w-[1400px]">
-    <div class="flex items-center justify-between py-6">
-      <a class="text-sm hover:text-slate-800" href="/">✱ Kristjan Poska</a>
-      <nav class="sm:hidden">
+  <body class="mx-auto px-8 max-w-[1400px]">
+    <header>
+      <nav class="flex items-center justify-between py-6">
+        <a class="text-sm hover:text-slate-800" href="/">✱ Kristjan Poska</a>
         <ul role="list" class="m-0 flex items-center gap-4">
           <li>
             <a class="text-sm hover:text-slate-800" href="/#craft">Craft</a>
@@ -39,41 +39,7 @@ const { title } = Astro.props;
           </li>
         </ul>
       </nav>
-
-      <button class="relative z-10 text-[#131313] min-sm:hidden" data-nav-btn>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor">
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M4 6h16M4 12h16M4 18h16"></path>
-        </svg>
-      </button>
-
-      <nav class="mobile-navigation hidden" data-mobile-nav>
-        <ul role="list" class="m-0 flex flex-col items-center gap-16">
-          <li>
-            <a class="text-sm hover:text-slate-800" href="/#craft">Craft</a>
-          </li>
-          <li>
-            <a class="text-sm hover:text-slate-800" href="/about">About</a>
-          </li>
-          <li>
-            <a
-              class="text-sm rounded-2xl py-1 px-2 border border-solid border-current hover:bg-[#ffcb77] transition-colors"
-              href="mailto:kristjanposka@gmail.com?subject=I want to work with you, Kristjan"
-              >Contact</a
-            >
-          </li>
-        </ul>
-      </nav>
-    </div>
+    </header>
 
     <slot />
 
@@ -96,46 +62,3 @@ const { title } = Astro.props;
     </footer>
   </body>
 </html>
-
-<style is:global>
-  .mobile-navigation {
-    background-color: rgba(0, 0, 0, 0.8);
-    color: white;
-    position: absolute;
-    height: 100vh;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-  }
-</style>
-
-<script>
-  const navigation = document.querySelector("[data-mobile-nav]");
-  const navBtn = document.querySelector("[data-nav-btn]");
-
-  navigation.addEventListener(
-    "wheel",
-    (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-
-      return false;
-    },
-    { passive: false }
-  );
-
-  navBtn.addEventListener("click", () => {
-    navBtn.classList.toggle("text-slate-100");
-    navigation.classList.toggle("hidden");
-  });
-
-  document
-    .querySelector("[data-mobile-nav] [href='/#craft']")
-    .addEventListener("click", () => {
-      navigation.classList.add("hidden");
-    });
-</script>
