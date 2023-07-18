@@ -3,41 +3,39 @@ import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 ---
 
-<Layout title="Kristjan Poska ~ Design Engineer">
-  <header class="h-[calc(100vh-72px)] flex items-end">
-    <div class="flex gap-8 my-12 sm:flex-col md:flex-row">
-      <h1 class="text-5xl sm:text-2xl">
-        My name is Kristjan Poska, I'm a <em>design engineer</em> working and living
-        in Estonia.
-      </h1>
-      <div class="flex flex-col justify-between md:gap-8">
-        <h2 class="text-2xl sm:text-lg text-slate-800">
-          I take the deepest possible plunge into anything I do, while paying
-          meticulous attention to even the smallest details.
-        </h2>
+<Layout title="Home | Kristjan Poska ~ Design Engineer">
+  <header class="my-80 sm:my-20 flex flex-col gap-8">
+    <h1 class="text-5xl sm:text-2xl max-w-5xl">
+      My name is Kristjan Poska, I'm a <em>design engineer</em> working and living
+      in Estonia. 🇪🇪
+    </h1>
+    <div class="flex flex-col justify-between gap-8">
+      <h2 class="text-2xl sm:text-lg max-w-prose">
+        I take the deepest possible plunge into anything I do, while paying
+        meticulous attention to even the smallest details.
+      </h2>
 
-        <ul class="flex gap-4">
-          <li>
-            <a
-              class="text-sm hover:text-slate-800"
-              href="https://instagram.com/kristjanposka">Instagram</a
-            >
-          </li>
-          <li>
-            <a
-              class="text-sm hover:text-slate-800"
-              href="https://twitter.com/kristjanposka">Twitter</a
-            >
-          </li>
-        </ul>
-      </div>
+      <ul class="flex gap-4">
+        <li>
+          <a
+            class="text-sm hover:no-underline underline"
+            href="https://instagram.com/kristjanposka">Instagram</a
+          >
+        </li>
+        <li>
+          <a
+            class="text-sm hover:no-underline underline"
+            href="https://twitter.com/kristjanposka">Twitter</a
+          >
+        </li>
+      </ul>
     </div>
   </header>
 
   <section id="craft" class="mt-32 flex flex-col gap-8 scroll-mt-16">
     <Card
       title="Mental Pin"
-      description="A user interface & user experience design project to make AI feel humane."
+      description="A user interface & user experience design project to make AI feel like someone you'd want to express your worries to."
       imageSrc="/images/mentalpin-cover.jpeg"
       alt="A man holding a phone in an airplane and logging his anxious airport episode."
       href="/craft/mentalpin"
@@ -46,7 +44,7 @@ import Card from "../components/Card.astro";
       title="Splitwise"
       description="An emotional design project to reduce the anxiety around tracking group expenses."
       imageSrc="/images/splitwise-cover.jpg"
-      alt="A phone on a tableshowing the updated emotional looks of the Splitwise application."
+      alt="A phone on a table showing the updated emotional looks of the Splitwise application."
       href="/craft/splitwise"
     />
     <Card
@@ -63,19 +61,12 @@ import Card from "../components/Card.astro";
       alt="A drawing of a lady behind a table, receiving a big amount of money."
       href="/craft/invl"
     />
-    <Card
-      title="Phõõn"
-      description="An interaction design project to boost Tallinner's mental health."
-      imageSrc="/images/phoon.jpg"
-      alt="An old rotary attached to a tree in the forest."
-      href="/craft/phoon"
-    />
   </section>
 
-  <section class="mt-64">
+  <section class="my-40 sm:my-20">
     <h1 class="text-5xl mb-2 sm:text-2xl">Let's get to know eachother.</h1>
     <a
-      class="text-5xl text-slate-800 hover:text-slate-600 sm:text-2xl"
+      class="text-5xl hover:no-underline underline sm:text-2xl"
       href="mailto:kristjanposka@gmail.com?subject=I want to work with you, Kristjan"
       >Get in touch.</a
     >

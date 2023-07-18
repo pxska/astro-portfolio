@@ -4,13 +4,16 @@ const { title, description, imageSrc, alt, href } = Astro.props;
 
 <a
   href={href}
-  class="min-h-80 flex justify-between gap-8 lg:flex-col lg:mb-16 group">
-  <div class="flex flex-col gap-4">
-    <h2 class="text-5xl sm:text-2xl">{title}</h2>
+  class="min-h-80 flex justify-between gap-16 lg:gap-8 lg:flex-col-reverse group bg-white p-8 rounded-lg shadow-sm hover:scale-105 hover:shadow-md border-gray-500 transition-all">
+  <div class="flex flex-col gap-8">
+    <h2 class="text-5xl sm:text-2xl">
+      {title}
+    </h2>
     <p class="text-2xl sm:text-lg">{description}</p>
   </div>
+
   <img
-    class="object-cover bg-center aspect-video rounded-2xl grayscale transition max-w-md lg:max-w-full group-hover:grayscale-0"
+    class="object-cover bg-center aspect-square rounded-lg transition max-w-xs lg:max-w-full"
     src={imageSrc}
     alt={alt}
   />

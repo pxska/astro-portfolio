@@ -1,4 +1,3 @@
-
 *,
 *::before,
 *::after {
@@ -18,8 +17,8 @@ dd {
   margin: 0;
 }
 
-ul[role='list'],
-ol[role='list'] {
+ul[role="list"],
+ol[role="list"] {
   list-style: none;
 }
 
@@ -30,7 +29,7 @@ html {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   font-family: "Inter", sans-serif !important;
-  background: #81a684 linear-gradient(45deg, #ffcb77 0%, #81a684 50%, #aaaefe 100%);
+  background: rgba(86, 136, 203, 0.2);
   overscroll-behavior: none;
 }
 
@@ -63,7 +62,7 @@ a {
 
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {
-   scroll-behavior: auto;
+    scroll-behavior: auto;
   }
 
   *,

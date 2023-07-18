@@ -13,48 +13,61 @@ const { title } = Astro.props;
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Lorem ipsum dolor sit amet." />
+    <meta
+      name="description"
+      content="Kristjan Poska is a talented design engineer and interaction design student with a passion for creating beautiful and user-friendly digital experiences."
+    />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class="mx-auto px-8 max-w-[1400px]">
-    <header>
-      <nav class="flex items-center justify-between py-6">
-        <a class="text-sm hover:text-slate-800" href="/">✱ Kristjan Poska</a>
-        <ul role="list" class="m-0 flex items-center gap-4">
-          <li>
-            <a class="text-sm hover:text-slate-800" href="/#craft">Craft</a>
-          </li>
-          <li>
-            <a class="text-sm hover:text-slate-800" href="/about">About</a>
-          </li>
-          <li>
-            <a
-              class="text-sm rounded-2xl py-1 px-2 border border-solid border-current hover:bg-[#ffcb77] transition-colors"
-              href="mailto:kristjanposka@gmail.com?subject=I want to work with you, Kristjan"
-              >Contact</a
-            >
-          </li>
-        </ul>
-      </nav>
-    </header>
 
-    <slot />
+  <body>
+    <div class="mx-auto px-8 max-w-[1200px]">
+      <header>
+        <nav class="flex items-center justify-between py-6">
+          <a class="text-lg sm:text-sm" href="/">✱ Kristjan Poska</a>
+          <ul role="list" class="m-0 flex items-center gap-8 sm:gap-4">
+            <li>
+              <a
+                class="text-lg sm:text-sm hover:bg-[#5688cb] hover:text-white p-2 rounded-lg transition-colors"
+                href="/#craft">Craft</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-lg sm:text-sm hover:bg-[#5688cb] hover:text-white p-2 rounded-lg transition-colors"
+                href="/about">About</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-lg sm:text-sm hover:bg-[#5688cb] hover:text-white p-2 rounded-lg transition-colors"
+                href="mailto:kristjanposka@gmail.com?subject=I want to work with you, Kristjan"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </header>
 
-    <footer class="mt-64 mb-12 flex justify-between items-center">
+      <slot />
+    </div>
+
+    <footer
+      class="max-w-[1200px] mx-auto p-8 pb-16 flex justify-between items-center">
       <div class="text-sm">&copy; Kristjan Poska 2023</div>
       <ul class="flex gap-4">
         <li>
           <a
-            class="text-sm hover:text-slate-800"
+            class="text-sm hover:no-underline underline"
             href="https://instagram.com/kristjanposka">Instagram</a
           >
         </li>
         <li>
           <a
-            class="text-sm hover:text-slate-800"
+            class="text-sm hover:no-underline underline"
             href="https://twitter.com/kristjanposka">Twitter</a
           >
         </li>

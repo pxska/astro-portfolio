@@ -3,14 +3,20 @@ import Metadata from "../../components/Metadata.astro";
 import Layout from "../../layouts/Layout.astro";
 ---
 
-<Layout title="INVL">
+<Layout title="INVL | Kristjan Poska ~ Design Engineer">
   <div class="mt-40 max-w-prose flex flex-col gap-8">
     <h1 class="text-5xl sm:text-2xl">INVL</h1>
 
-    <p class="text-2xl sm:text-lg text-slate-800">
+    <p class="text-2xl sm:text-lg">
       A service design project to help INVL find their blue ocean.
     </p>
   </div>
+
+  <img
+    class="object-cover bg-center aspect-video transition max-w-full mt-16"
+    src="/images/invl-cover.jpeg"
+    alt="A drawing of a lady behind a table, receiving a big amount of money."
+  />
 
   <Metadata
     role={[
@@ -18,7 +24,7 @@ import Layout from "../../layouts/Layout.astro";
       "Service design",
       "User persona & journey mapping",
     ]}
-    duration="8 weeks"
+    duration="8 weeks in 2022"
     methods={[
       "User persona creation",
       "User journey mapping",
@@ -28,4 +34,36 @@ import Layout from "../../layouts/Layout.astro";
       "Affinity mapping",
     ]}
   />
+
+  <div class="flex flex-col gap-16">
+    <section class="flex flex-col gap-8">
+      <h1 class="text-5xl sm:text-2xl">Summary</h1>
+
+      <p class="text-xl"></p>
+    </section>
+
+    <section class="flex flex-col gap-8">
+      <h1 class="text-5xl sm:text-2xl">Research</h1>
+
+      <p class="text-xl"></p>
+    </section>
+
+    <section class="flex flex-col gap-8">
+      <h1 class="text-5xl sm:text-2xl">Exploring & defining</h1>
+
+      <p class="text-xl"></p>
+    </section>
+
+    <section class="flex flex-col gap-8">
+      <h1 class="text-5xl sm:text-2xl">Developing</h1>
+
+      <p class="text-xl"></p>
+    </section>
+
+    <section class="flex flex-col gap-8">
+      <h1 class="text-5xl sm:text-2xl">Delivering & listening</h1>
+
+      <p class="text-xl"></p>
+    </section>
+  </div>
 </Layout>

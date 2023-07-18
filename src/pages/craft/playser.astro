@@ -3,18 +3,24 @@ import Metadata from "../../components/Metadata.astro";
 import Layout from "../../layouts/Layout.astro";
 ---
 
-<Layout title="Playser">
+<Layout title="Playser | Kristjan Poska ~ Design Engineer">
   <div class="mt-40 max-w-prose flex flex-col gap-8">
     <h1 class="text-5xl sm:text-2xl">Playser</h1>
 
-    <p class="text-2xl sm:text-lg text-slate-800">
+    <p class="text-2xl sm:text-lg">
       A tangible design project to help musicians in the future.
     </p>
   </div>
 
+  <img
+    class="object-cover bg-center aspect-video transition max-w-full mt-16"
+    src="/images/playser-cover.jpg"
+    alt="A man putting his hand into the lasers to play notes on the prototype."
+  />
+
   <Metadata
     role={["Tangible design", "Arduino programming", "Technical bits and bobs"]}
-    duration="5 weeks"
+    duration="5 weeks in 2023"
     methods={[
       "Crazy 8-s",
       "Low-fidelity prototyping",
@@ -23,4 +29,36 @@ import Layout from "../../layouts/Layout.astro";
       "Exhibition design",
     ]}
   />
+
+  <div class="flex flex-col gap-16">
+    <section class="flex flex-col gap-8">
+      <h1 class="text-5xl sm:text-2xl">Summary</h1>
+
+      <p class="text-xl"></p>
+    </section>
+
+    <section class="flex flex-col gap-8">
+      <h1 class="text-5xl sm:text-2xl">Research</h1>
+
+      <p class="text-xl"></p>
+    </section>
+
+    <section class="flex flex-col gap-8">
+      <h1 class="text-5xl sm:text-2xl">Exploring & defining</h1>
+
+      <p class="text-xl"></p>
+    </section>
+
+    <section class="flex flex-col gap-8">
+      <h1 class="text-5xl sm:text-2xl">Developing</h1>
+
+      <p class="text-xl"></p>
+    </section>
+
+    <section class="flex flex-col gap-8">
+      <h1 class="text-5xl sm:text-2xl">Delivering & listening</h1>
+
+      <p class="text-xl"></p>
+    </section>
+  </div>
 </Layout>

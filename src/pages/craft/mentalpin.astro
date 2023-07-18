@@ -3,14 +3,20 @@ import Metadata from "../../components/Metadata.astro";
 import Layout from "../../layouts/Layout.astro";
 ---
 
-<Layout title="Mental Pin">
+<Layout title="Mental Pin | Kristjan Poska ~ Design Engineer">
   <div class="mt-40 max-w-prose flex flex-col gap-8">
     <h1 class="text-5xl sm:text-2xl">Mental Pin</h1>
 
-    <p class="text-2xl sm:text-lg text-slate-800">
+    <p class="text-2xl sm:text-lg">
       A user interface & user experience design project to make AI feel humane.
     </p>
   </div>
+
+  <img
+    class="object-cover bg-center aspect-video transition max-w-full mt-16"
+    src="/images/mentalpin-cover.jpeg"
+    alt="A man holding a phone in an airplane and logging his anxious airport episode."
+  />
 
   <Metadata
     role={[
@@ -20,7 +26,7 @@ import Layout from "../../layouts/Layout.astro";
       "Interviewing",
       "Figma prototyping",
     ]}
-    duration="6 weeks"
+    duration="6 weeks in 2023"
     methods={[
       "User persona creation",
       "Crazy 8-s",
@@ -29,4 +35,68 @@ import Layout from "../../layouts/Layout.astro";
       "Low fidelity user journey mapping",
     ]}
   />
+
+  <div class="flex flex-col gap-16">
+    <section class="flex flex-col gap-8">
+      <h1 class="text-5xl sm:text-2xl">Summary</h1>
+
+      <p class="text-xl">
+        The goal of this project was for my team, consisting of Zac Heisey, Inka
+        Jerkku & Sofia Kamergorodski, to help two alumni of IxD, the team at
+        <a class="hover:no-underline underline" href="https://www.mentalpin.com"
+          >Mental Pin</a
+        >, to integrate artificial intelligence into their mobile application,
+        which helps people handle their anxiety and OCD ticks. While at first,
+        we thought that it was another "keeping up with the craze" project, the
+        result turned out different.
+      </p>
+    </section>
+
+    <section class="flex flex-col gap-8">
+      <h1 class="text-5xl sm:text-2xl">Research</h1>
+
+      <p class="text-xl">
+        The team and I delved deep into the world of artificial intelligence
+        combined with mental health. This was at the time as ChatGPT was first
+        blooming and everybody was getting into language models. Needless to
+        say, we found a bunch of amazing experiences with people using ChatGPT
+        as their personal assistant to using it as a place to vent, yet we also
+        found people who had caused more harm than good by putting their
+        thoughts into a lifeless machine.
+      </p>
+
+      <p class="text-xl">
+        We did 6 semi-structured user interviews, 4 of which were people who
+        were on Mental Pin's waiting list & 2 people shared their contacts in a
+        Google Form that we sent out to gather some qualitative data. The
+        interviews went very well – we were a shocked as to how open people were
+        about their mental health struggles and also how open they were to
+        looking towards technology to help them on their journey.
+      </p>
+
+      <p class="text-xl">
+        However, we did not stop there. As we were all slightly skeptical of
+        artificial intelligence taking over mental health solutions, we also
+        explored some out-of-the-box ideas.
+      </p>
+    </section>
+
+    <section class="flex flex-col gap-8">
+      <h1 class="text-5xl sm:text-2xl">Exploring & defining</h1>
+
+      <p class="text-xl"></p>
+    </section>
+
+    <section class="flex flex-col gap-8">
+      <h1 class="text-5xl sm:text-2xl">Developing</h1>
+
+      <p class="text-xl"></p>
+    </section>
+
+    <section class="flex flex-col gap-8">
+      <h1 class="text-5xl sm:text-2xl">Delivering & listening</h1>
+
+      <p class="text-xl"></p>
+    </section>
+  </div>
 </Layout>
