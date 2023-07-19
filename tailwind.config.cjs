@@ -12,5 +12,5 @@ module.exports = {
       "min-sm": { min: "640px" },
     },
   },
-  plugins: [],
+  plugins: [require("tailwindcss-animated")],
 };

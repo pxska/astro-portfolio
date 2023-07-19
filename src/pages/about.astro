@@ -4,26 +4,40 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout title="About | Kristjan Poska ~ Design Engineer">
   <section>
-    <div class="mt-40 max-w-prose flex flex-col gap-8">
-      <h1 class="text-5xl sm:text-2xl">
-        My name is Kristjan Poska, I'm a <em>design engineer</em> working and living
-        in Estonia.
+    <div class="mt-40 max-w-[70ch] flex flex-col gap-8">
+      <h1
+        class="text-5xl sm:text-2xl animate-fade-right animate-once animate-ease-out">
+        My name is Kristjan Poska, I'm a <em>design engineer</em><span
+          class="text-[#5689cb]">*</span
+        > working and living in Estonia. 🇪🇪
       </h1>
-      <p class="text-2xl sm:text-lg">
+
+      <p class="text-sm animate-fade-right animate-once animate-ease-out">
+        <span class="text-[#5689cb]">*</span> I love combining design & engineering,
+        ensuring code quality and facilitating collabiration between designers and
+        engineers for optimal product development and innovation.
+      </p>
+
+      <p
+        class="text-2xl sm:text-lg animate-fade-right animate-once animate-ease-out animate-delay-100">
         I realised halfway through my Bachelor's that design and development are
         two areas that excite me the most in the world. While it took me some
         time to delve deeper into in it, I have always appreciated people, who
         deeply believe in me, even if I might not be able to sell myself as
         well.
       </p>
-      <p class="text-2xl sm:text-lg">
+
+      <p
+        class="text-2xl sm:text-lg animate-fade-right animate-once animate-ease-out animate-delay-200">
         I take pride in being meticulous in my work and going through every
         single detail. I love systematization and organization, however I do not
         back down from presenting out-of-the-box ideas and pursuing experimental
         ideas if I see a direct connection in how it increases the experience of
         users.
       </p>
-      <p class="text-2xl sm:text-lg">
+
+      <p
+        class="text-2xl sm:text-lg animate-fade-right animate-once animate-ease-out animate-delay-300">
         I strongly believe in teamwork, however as I am also a very avid
         learner, quick-witted and pretty independent – it makes me an useful
         ally in any situation.
@@ -31,14 +45,36 @@ import Layout from "../layouts/Layout.astro";
     </div>
   </section>
 
-  <section class="my-40 sm:my-20">
+  <section
+    class="my-40 sm:my-20 sm:text-center animate-fade-right animate-once animate-ease-out animate-delay-500">
     <h1 class="text-5xl mb-2 sm:text-2xl">Let's get to know eachother.</h1>
-    <a
+    <button
+      id="email-button"
       class="text-5xl hover:no-underline underline sm:text-2xl"
-      href="mailto:kristjanposka@gmail.com?subject=I want to work with you, Kristjan"
-      >Get in touch.</a
+      >kristjanposka@gmail.com</button
     >
+    <span id="change-text-left" class="sm:hidden"
+      >{`<–`} Click on me to copy</span
+    >
+    <div id="change-text-up" class="min-sm:hidden mt-2">
+      Click on me to copy ⤴
+    </div>
   </section>
 </Layout>
 
-<style></style>
+<script>
+  document.querySelector("#email-button").addEventListener("click", () => {
+    navigator.clipboard.writeText("kristjanposka@gmail.com");
+
+    const copiedElUp = document.querySelector("#change-text-up");
+    const copiedElLeft = document.querySelector("#change-text-left");
+
+    copiedElUp.innerHTML = "Copied ⤴";
+    copiedElLeft.innerHTML = "<– Copied";
+
+    setTimeout(() => {
+      copiedElLeft.innerHTML = "<– Click on me to copy";
+      copiedElUp.innerHTML = "Click on me to copy ⤴";
+    }, 1500);
+  });
+</script>

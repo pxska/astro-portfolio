@@ -25,49 +25,49 @@ const { title } = Astro.props;
 
   <body>
     <div class="mx-auto px-8 max-w-[1200px]">
-      <header>
-        <nav class="flex items-center justify-between py-6">
-          <a class="text-lg sm:text-sm" href="/">✱ Kristjan Poska</a>
-          <ul role="list" class="m-0 flex items-center gap-8 sm:gap-4">
-            <li>
-              <a
-                class="text-lg sm:text-sm hover:bg-[#5688cb] hover:text-white p-2 rounded-lg transition-colors"
-                href="/#craft">Craft</a
-              >
-            </li>
-            <li>
-              <a
-                class="text-lg sm:text-sm hover:bg-[#5688cb] hover:text-white p-2 rounded-lg transition-colors"
-                href="/about">About</a
-              >
-            </li>
-            <li>
-              <a
-                class="text-lg sm:text-sm hover:bg-[#5688cb] hover:text-white p-2 rounded-lg transition-colors"
-                href="mailto:kristjanposka@gmail.com?subject=I want to work with you, Kristjan"
-                >Contact</a
-              >
-            </li>
-          </ul>
-        </nav>
-      </header>
+      <nav class="flex items-center justify-between py-6">
+        <a class="text-lg sm:text-sm" href="/">✱ Kristjan Poska</a>
+        <ul role="list" class="m-0 flex items-center gap-8 sm:gap-2">
+          <li>
+            <a
+              class="text-lg sm:text-sm hover:no-underline underline"
+              href="/#craft">Craft</a
+            >
+          </li>
+          <li>
+            <a
+              class="text-lg sm:text-sm hover:no-underline underline"
+              href="/about">About</a
+            >
+          </li>
+          <li>
+            <a
+              class="text-lg sm:text-sm hover:no-underline underline"
+              href="/contact"
+              >Contact
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
 
+    <div class="mx-auto px-8 max-w-[1200px] slot-wrapper">
       <slot />
     </div>
 
     <footer
       class="max-w-[1200px] mx-auto p-8 pb-16 flex justify-between items-center">
-      <div class="text-sm">&copy; Kristjan Poska 2023</div>
+      <div class="text-lg sm:text-sm">&copy; Kristjan Poska 2023</div>
       <ul class="flex gap-4">
         <li>
           <a
-            class="text-sm hover:no-underline underline"
+            class="text-lg sm:text-sm hover:no-underline underline"
             href="https://instagram.com/kristjanposka">Instagram</a
           >
         </li>
         <li>
           <a
-            class="text-sm hover:no-underline underline"
+            class="text-lg sm:text-sm hover:no-underline underline"
             href="https://twitter.com/kristjanposka">Twitter</a
           >
         </li>
@@ -75,3 +75,5 @@ const { title } = Astro.props;
     </footer>
   </body>
 </html>
+
+<style></style>

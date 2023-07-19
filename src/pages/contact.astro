@@ -1,0 +1,43 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Contact | Kristjan Poska ~ Design Engineer">
+  <section
+    class="my-80 sm:my-80 sm:text-center animate-fade-right animate-once animate-ease-out">
+    <h1 class="text-5xl mb-2 sm:text-2xl">Let's get to know eachother.</h1>
+
+    <button
+      id="email-button"
+      class="text-5xl hover:no-underline underline sm:text-2xl"
+      >kristjanposka@gmail.com</button
+    >
+    <span id="change-text-left" class="sm:hidden"
+      >{`<–`} Click on me to copy</span
+    >
+    <div id="change-text-up" class="min-sm:hidden mt-2">
+      Click on me to copy ⤴
+    </div>
+
+    <p class="text-2xl mt-16 max-w-prose sm:text-center">
+      I'm pretty good at getting back to e-mails.
+    </p>
+  </section>
+</Layout>
+
+<script>
+  document.querySelector("#email-button").addEventListener("click", () => {
+    navigator.clipboard.writeText("kristjanposka@gmail.com");
+
+    const copiedElUp = document.querySelector("#change-text-up");
+    const copiedElLeft = document.querySelector("#change-text-left");
+
+    copiedElUp.innerHTML = "Copied ⤴";
+    copiedElLeft.innerHTML = "<– Copied";
+
+    setTimeout(() => {
+      copiedElLeft.innerHTML = "<– Click on me to copy";
+      copiedElUp.innerHTML = "Click on me to copy ⤴";
+    }, 1500);
+  });
+</script>

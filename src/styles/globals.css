@@ -25,7 +25,7 @@ ol[role="list"] {
 html {
   scroll-behavior: smooth;
   color: #131313;
-  overflow-y: scroll;
+  overflow-y: auto;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   font-family: "Inter", sans-serif !important;
@@ -58,6 +58,11 @@ select {
 
 a {
   text-decoration: none;
+}
+
+em {
+  font-family: "Georgia";
+  font-style: italic;
 }
 
 @media (prefers-reduced-motion: reduce) {
