@@ -14,7 +14,7 @@ import Layout from "../../layouts/Layout.astro";
   </div>
 
   <img
-    class="object-cover bg-center aspect-video transition max-w-full mt-16"
+    class="object-cover bg-center aspect-video transition max-w-full mt-16 rounded-lg"
     src="/images/splitwise-cover.jpg"
     alt="A phone on a table showing the updated emotional looks of the Splitwise application."
   />
@@ -65,8 +65,14 @@ import Layout from "../../layouts/Layout.astro";
     </section>
 
     <section class="flex my-20 items-center justify-between gap-8">
-      <a href="/craft/mentalpin">{`<– Previous project (Mental Pin)`}</a>
-      <a href="/craft/playser">{`Next project (Playser) –>`}</a>
+      <a
+        class="text-lg sm:text-sm hover:no-underline underline"
+        href="/craft/mentalpin">{`<– Previous project (Mental Pin)`}</a
+      >
+      <a
+        class="text-lg sm:text-sm hover:no-underline underline"
+        href="/craft/playser">{`Next project (Playser) –>`}</a
+      >
     </section>
   </div>
 </Layout>

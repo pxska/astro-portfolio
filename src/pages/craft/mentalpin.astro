@@ -13,7 +13,7 @@ import Layout from "../../layouts/Layout.astro";
   </div>
 
   <img
-    class="object-cover bg-center aspect-video transition max-w-full mt-16"
+    class="object-cover bg-center aspect-video transition max-w-full mt-16 rounded-lg"
     src="/images/mentalpin-cover.jpeg"
     alt="A man holding a phone in an airplane and logging his anxious airport episode."
   />
@@ -100,7 +100,10 @@ import Layout from "../../layouts/Layout.astro";
     </section>
 
     <section class="flex my-20 items-center justify-end gap-8">
-      <a href="/craft/splitwise">{`Next project (Splitwise) –>`}</a>
+      <a
+        class="text-lg sm:text-sm hover:no-underline underline"
+        href="/craft/splitwise">{`Next project (Splitwise) –>`}</a
+      >
     </section>
   </div>
 </Layout>
