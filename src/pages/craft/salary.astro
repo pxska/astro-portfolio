@@ -1,0 +1,41 @@
+---
+import Block from "../../components/Block.astro";
+import Link from "../../components/Link.astro";
+import Metadata from "../../components/Metadata.astro";
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="Kristjan Poska – Design Engineer">
+  <div class="mt-40 max-w-prose flex flex-col gap-8">
+    <h1 class="text-5xl sm:text-2xl">Salary calculator</h1>
+
+    <p class="text-2xl sm:text-lg">
+      One of the first UI projects I worked on, redesigning the Estonian salary
+      calculator.
+    </p>
+  </div>
+
+  <img
+    class="object-contain bg-center aspect-video transition max-w-full mt-16 rounded-lg"
+    src="/images/salary-calc-mockup.png"
+    alt="A screenshot of the Estonian salary calculator."
+  />
+
+  <Metadata
+    role={["UI design", "Idea generation", "Figma prototyping"]}
+    duration="3 weeks in 2022"
+    methods={["I had no idea what methods were at this point 🤷🏻"]}
+  />
+
+  <div class="flex flex-col gap-16">
+    <Block title="Summary"><p class="text-xl"></p></Block>
+    <Block title="Research"><p class="text-xl"></p></Block>
+    <Block title="Exploring & defining"><p class="text-xl"></p></Block>
+    <Block title="Developing"><p class="text-xl"></p></Block>
+    <Block title="Delivering & listening"><p class="text-xl"></p></Block>
+
+    <section class="flex my-20 items-center justify-start gap-8">
+      <Link title="<– Previous project (INVL)" href="/craft/invl" />
+    </section>
+  </div>
+</Layout>

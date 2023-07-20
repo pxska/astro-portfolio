@@ -2,7 +2,11 @@
 module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
-    extend: {},
+    extend: {
+      scale: {
+        101: "1.01",
+      },
+    },
     screens: {
       "2xl": { max: "1535px" },
       xl: { max: "1279px" },

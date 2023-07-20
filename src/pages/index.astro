@@ -3,76 +3,70 @@ import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 ---
 
-<Layout title="Home | Kristjan Poska ~ Design Engineer">
+<Layout title="Kristjan Poska – Design Engineer">
   <header
-    class="mt-80 mb-40 sm:my-20 flex flex-col gap-8 animate-fade-right animate-once animate-ease-out">
+    class="my-48 sm:my-24 flex flex-col gap-8 animate-fade-right animate-once animate-ease-out">
     <h1 class="text-5xl sm:text-2xl max-w-3xl">
-      My name is Kristjan Poska, I'm a <em>design engineer</em><a
-        class="text-[#5689cb]"
+      My name is Kristjan Poska,<br /> I'm a design engineer<a
+        class="text-[#91C5F7]"
         href="/about">*</a
-      > working and living in Estonia. 🇪🇪
+      > working, studying and living in Estonia. 🇪🇪
     </h1>
 
     <div class="flex flex-col justify-between gap-8">
-      <h2 class="text-2xl sm:text-lg max-w-2xl">
+      <h2 class="text-lg max-w-prose">
         I take the deepest possible plunge into anything I do, while paying
         meticulous attention to even the smallest details.
       </h2>
-
-      <ul class="flex gap-4">
-        <li>
-          <a
-            class="text-lg hover:no-underline underline"
-            href="https://instagram.com/kristjanposka">Instagram</a
-          >
-        </li>
-        <li>
-          <a
-            class="text-lg hover:no-underline underline"
-            href="https://twitter.com/kristjanposka">Twitter</a
-          >
-        </li>
-      </ul>
     </div>
-
-    <div class="text-lg">↓ Scroll down to see my projects!</div>
   </header>
 
   <section
     id="craft"
-    class="flex flex-col gap-8 scroll-mt-16 animate-fade-right animate-once animate-ease-out animate-delay-200">
+    class="flex flex-col gap-4 scroll-mt-16 animate-fade-right animate-once animate-ease-out animate-delay-200">
+    <h3 class="text-gray-600 uppercase mb-4">Recent work</h3>
+
     <Card
       title="Mental Pin"
       description="A user interface & user experience design project to make AI feel like someone you'd want to express your worries to."
-      imageSrc="/images/mentalpin-cover.jpeg"
+      imageSrc="/images/mental-pin-mockup.png"
       alt="A man holding a phone in an airplane and logging his anxious airport episode."
       href="/craft/mentalpin"
+      background="bg-[#FEEA93]"
     />
+
     <Card
       title="Splitwise"
       description="An emotional design project to reduce the anxiety around tracking group expenses."
-      imageSrc="/images/splitwise-cover.jpg"
+      imageSrc="/images/splitwise-mockup.png"
       alt="A phone on a table showing the updated emotional looks of the Splitwise application."
       href="/craft/splitwise"
+      background="bg-[#91C6F7]"
     />
-    <Card
-      title="Playser"
-      description="A tangible design project to help musicians in the future."
-      imageSrc="/images/playser-cover.jpg"
-      alt="A man putting his hand into the lasers to play notes on the prototype."
-      href="/craft/playser"
-    />
+
     <Card
       title="INVL"
       description="A service design project to help INVL find their blue ocean."
-      imageSrc="/images/invl-cover.jpeg"
-      alt="A drawing of a lady behind a table, receiving a big amount of money."
+      imageSrc="/images/invl-margus-journey.jpg"
+      alt="A user journey map displaying the journey of the user the team came up with – Margus."
       href="/craft/invl"
+      background="bg-[#FED4E7]"
+      laptop
+    />
+
+    <Card
+      title="Salary calculator"
+      description="One of the first UI projects I worked on, redesigning the Estonian salary calculator."
+      imageSrc="/images/salary-calc-mockup.png"
+      alt="A redesign of the Estonian salary calculator found online."
+      href="/craft/salary"
+      background="bg-[#9CE6CF]"
+      laptop
     />
   </section>
 
   <section
-    class="my-40 sm:my-20 sm:text-center animate-fade-right animate-once animate-ease-out animate-delay-500">
+    class="my-40 sm:my-20 sm:text-center animate-fade-right animate-once animate-ease-out animate-delay-[400ms]">
     <h1 class="text-5xl mb-2 sm:text-2xl">Let's get to know eachother.</h1>
     <button
       id="email-button"

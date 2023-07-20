@@ -24,12 +24,10 @@ ol[role="list"] {
 
 html {
   scroll-behavior: smooth;
-  color: #131313;
   overflow-y: auto;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   font-family: "Inter", sans-serif !important;
-  background: rgba(86, 136, 203, 0.2);
   overscroll-behavior: none;
 }
 

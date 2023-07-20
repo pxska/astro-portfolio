@@ -1,14 +1,17 @@
 ---
 import Metadata from "../../components/Metadata.astro";
 import Layout from "../../layouts/Layout.astro";
+import Link from "../../components/Link.astro";
+import Block from "../../components/Block.astro";
 ---
 
-<Layout title="Mental Pin | Kristjan Poska ~ Design Engineer">
+<Layout title="Kristjan Poska – Design Engineer">
   <div class="mt-40 max-w-prose flex flex-col gap-8">
     <h1 class="text-5xl sm:text-2xl">Mental Pin</h1>
 
     <p class="text-2xl sm:text-lg">
-      A user interface & user experience design project to make AI feel humane.
+      A user interface & user experience design project to make AI feel like
+      someone you'd want to express your worries to.
     </p>
   </div>
 
@@ -37,24 +40,19 @@ import Layout from "../../layouts/Layout.astro";
   />
 
   <div class="flex flex-col gap-16">
-    <section class="flex flex-col gap-8">
-      <h1 class="text-5xl sm:text-2xl">Summary</h1>
-
+    <Block title="Summary">
       <p class="text-xl">
         The goal of this project was for my team, consisting of Zac Heisey, Inka
         Jerkku & Sofia Kamergorodski, to help two alumni of IxD, the team at
-        <a class="hover:no-underline underline" href="https://www.mentalpin.com"
-          >Mental Pin</a
-        >, to integrate artificial intelligence into their mobile application,
-        which helps people handle their anxiety and OCD ticks. While at first,
-        we thought that it was another "keeping up with the craze" project, the
+        <Link title="Mental Pin" href="https://www.mentalpin.com" />, to
+        integrate artificial intelligence into their mobile application, which
+        helps people handle their anxiety and OCD ticks. While at first, we
+        thought that it was another "keeping up with the craze" project, the
         result turned out different.
       </p>
-    </section>
+    </Block>
 
-    <section class="flex flex-col gap-8">
-      <h1 class="text-5xl sm:text-2xl">Research</h1>
-
+    <Block title="Research">
       <p class="text-xl">
         The team and I delved deep into the world of artificial intelligence
         combined with mental health. This was at the time as ChatGPT was first
@@ -79,31 +77,22 @@ import Layout from "../../layouts/Layout.astro";
         artificial intelligence taking over mental health solutions, we also
         explored some out-of-the-box ideas.
       </p>
-    </section>
+    </Block>
 
-    <section class="flex flex-col gap-8">
-      <h1 class="text-5xl sm:text-2xl">Exploring & defining</h1>
+    <Block title="Exploring & defining">
+      <p class="text-xl">
+        As said, since we were quite skeptical of AI at first, we looked to some
+        out-of-the-box ideas. We did lots of crazy 8-s, but had a few great
+        ideas from the beginning. For example, an "analog" unboxing experience
+        instead of a digital one.
+      </p>
+    </Block>
 
-      <p class="text-xl"></p>
-    </section>
-
-    <section class="flex flex-col gap-8">
-      <h1 class="text-5xl sm:text-2xl">Developing</h1>
-
-      <p class="text-xl"></p>
-    </section>
-
-    <section class="flex flex-col gap-8">
-      <h1 class="text-5xl sm:text-2xl">Delivering & listening</h1>
-
-      <p class="text-xl"></p>
-    </section>
+    <Block title="Developing"><p class="text-xl"></p></Block>
+    <Block title="Delivering & listening"><p class="text-xl"></p></Block>
 
     <section class="flex my-20 items-center justify-end gap-8">
-      <a
-        class="text-lg sm:text-sm hover:no-underline underline"
-        href="/craft/splitwise">{`Next project (Splitwise) –>`}</a
-      >
+      <Link href="/craft/splitwise" title="Next project (Splitwise) –>" />
     </section>
   </div>
 </Layout>

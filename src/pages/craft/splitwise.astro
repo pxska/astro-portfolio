@@ -1,9 +1,11 @@
 ---
+import Block from "../../components/Block.astro";
+import Link from "../../components/Link.astro";
 import Metadata from "../../components/Metadata.astro";
 import Layout from "../../layouts/Layout.astro";
 ---
 
-<Layout title="Splitwise | Kristjan Poska ~ Design Engineer">
+<Layout title="Kristjan Poska – Design Engineer">
   <div class="mt-40 max-w-prose flex flex-col gap-8">
     <h1 class="text-5xl sm:text-2xl">Splitwise</h1>
 
@@ -26,9 +28,7 @@ import Layout from "../../layouts/Layout.astro";
   />
 
   <div class="flex flex-col gap-16">
-    <section class="flex flex-col gap-8">
-      <h1 class="text-5xl sm:text-2xl">Summary</h1>
-
+    <Block title="Summary">
       <p class="text-xl">
         My role in the project was to take an existing application from any
         realm possible (desktop, tablet, mobile, coffee machine…) and redesign
@@ -38,41 +38,16 @@ import Layout from "../../layouts/Layout.astro";
         >. I then created wireflows and an emotional map of the application and
         made it more emotional.
       </p>
-    </section>
+    </Block>
 
-    <section class="flex flex-col gap-8">
-      <h1 class="text-5xl sm:text-2xl">Research</h1>
-
-      <p class="text-xl"></p>
-    </section>
-
-    <section class="flex flex-col gap-8">
-      <h1 class="text-5xl sm:text-2xl">Exploring & defining</h1>
-
-      <p class="text-xl"></p>
-    </section>
-
-    <section class="flex flex-col gap-8">
-      <h1 class="text-5xl sm:text-2xl">Developing</h1>
-
-      <p class="text-xl"></p>
-    </section>
-
-    <section class="flex flex-col gap-8">
-      <h1 class="text-5xl sm:text-2xl">Delivering & listening</h1>
-
-      <p class="text-xl"></p>
-    </section>
+    <Block title="Research"><p class="text-xl"></p></Block>
+    <Block title="Exploring & defining"><p class="text-xl"></p></Block>
+    <Block title="Developing"><p class="text-xl"></p></Block>
+    <Block title="Delivering & listening"><p class="text-xl"></p></Block>
 
     <section class="flex my-20 items-center justify-between gap-8">
-      <a
-        class="text-lg sm:text-sm hover:no-underline underline"
-        href="/craft/mentalpin">{`<– Previous project (Mental Pin)`}</a
-      >
-      <a
-        class="text-lg sm:text-sm hover:no-underline underline"
-        href="/craft/playser">{`Next project (Playser) –>`}</a
-      >
+      <Link title="<– Previous project (Mental Pin)" href="/craft/mentalpin" />
+      <Link title="Next project (INVL) –>" href="/craft/invl" />
     </section>
   </div>
 </Layout>
