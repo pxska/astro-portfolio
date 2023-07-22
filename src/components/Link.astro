@@ -1,5 +1,10 @@
 ---
-const { href, title } = Astro.props;
+const { href, title, keepXl } = Astro.props;
 ---
 
-<a class="text-md sm:text-sm hover:text-gray-600" href={href}>{title}</a>
+<a
+  class={`${
+    keepXl ? "text-xl underline" : "text-md sm:text-sm"
+  } hover:text-gray-600`}
+  href={href}>{title}</a
+>

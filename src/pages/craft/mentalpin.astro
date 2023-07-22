@@ -3,6 +3,7 @@ import Metadata from "../../components/Metadata.astro";
 import Layout from "../../layouts/Layout.astro";
 import Link from "../../components/Link.astro";
 import Block from "../../components/Block.astro";
+import ProjectImage from "../../components/ProjectImage.astro";
 ---
 
 <Layout title="Kristjan Poska – Design Engineer">
@@ -17,7 +18,7 @@ import Block from "../../components/Block.astro";
 
   <img
     class="object-cover bg-center aspect-video transition max-w-full mt-16 rounded-lg"
-    src="/images/mentalpin-cover.jpeg"
+    src="/images/mental-pin/mentalpin-cover.jpeg"
     alt="A man holding a phone in an airplane and logging his anxious airport episode."
   />
 
@@ -41,38 +42,46 @@ import Block from "../../components/Block.astro";
 
   <div class="flex flex-col gap-16">
     <Block title="Summary">
-      <p class="text-xl">
-        The goal of this project was for my team, consisting of Zac Heisey, Inka
-        Jerkku & Sofia Kamergorodski, to help two alumni of IxD, the team at
-        <Link title="Mental Pin" href="https://www.mentalpin.com" />, to
-        integrate artificial intelligence into their mobile application, which
-        helps people handle their anxiety and OCD ticks. While at first, we
-        thought that it was another "keeping up with the craze" project, the
-        result turned out different.
+      <p>
+        The goal of this project was for our team of <Link
+          title="IxD.ma"
+          href="https://ixd.ma/"
+          keepXl
+        /> students, consisting of Zac Heisey, Inka Jerkku & Sofia Kamergorodski,
+        to help two alumni of IxD, the team at
+        <Link title="Mental Pin" href="https://www.mentalpin.com" keepXl />, to
+        <strong
+          >integrate artificial intelligence into their mobile application</strong
+        >, which helps people handle their anxiety and OCD ticks. While at
+        first, we thought that it was another "keeping up with the craze"
+        project, the result turned out different.
       </p>
     </Block>
 
     <Block title="Research">
-      <p class="text-xl">
-        The team and I delved deep into the world of artificial intelligence
-        combined with mental health. This was at the time as ChatGPT was first
-        blooming and everybody was getting into language models. Needless to
-        say, we found a bunch of amazing experiences with people using ChatGPT
-        as their personal assistant to using it as a place to vent, yet we also
-        found people who had caused more harm than good by putting their
-        thoughts into a lifeless machine.
+      <p>
+        Our delved deep into the world of artificial intelligence combined with
+        mental health. This was at the time as large language models (mainly
+        ChatGPT) was first blooming and everybody was getting into language
+        models. Needless to say, we found <strong
+          >a bunch of amazing experiences with people using ChatGPT as their
+          personal assistant to using it as a place to vent, yet we also found
+          people who had caused more harm than good by putting their thoughts
+          into a lifeless machine</strong
+        >.
       </p>
 
-      <p class="text-xl">
-        We did 6 semi-structured user interviews, 4 of which were people who
-        were on Mental Pin's waiting list & 2 people shared their contacts in a
-        Google Form that we sent out to gather some qualitative data. The
-        interviews went very well – we were a shocked as to how open people were
-        about their mental health struggles and also how open they were to
-        looking towards technology to help them on their journey.
+      <p>
+        We did <strong>6 semi-structured user interviews</strong>, 4 of which
+        were people who were on Mental Pin's waiting list & 2 people shared
+        their contacts in a Google Form that we sent out to gather some
+        qualitative data. The interviews went very well – we were a shocked as
+        to how open people were about their mental health struggles and also how
+        open they were to looking towards technology to help them on their
+        journey.
       </p>
 
-      <p class="text-xl">
+      <p>
         However, we did not stop there. As we were all slightly skeptical of
         artificial intelligence taking over mental health solutions, we also
         explored some out-of-the-box ideas.
@@ -80,16 +89,145 @@ import Block from "../../components/Block.astro";
     </Block>
 
     <Block title="Exploring & defining">
-      <p class="text-xl">
+      <p>
         As said, since we were quite skeptical of AI at first, we looked to some
         out-of-the-box ideas. We did lots of crazy 8-s, but had a few great
         ideas from the beginning. For example, an "analog" unboxing experience
-        instead of a digital one.
+        instead of a digital one, as Mental Pin's usage revolved around an
+        analog device and the application was not mandatory. We wanted to <strong
+          >make it feel less like a chore and more like an act of self-care</strong
+        >.
+      </p>
+
+      <ProjectImage
+        src="/images/mental-pin/unboxing-example.png"
+        alt="An unboxing experience for a physical journal."
+      />
+
+      <small class="-mt-6"
+        >One of the examples we found on the internet of a cute unboxing
+        experience.</small
+      >
+
+      <p>
+        We, of course, talked about <strong>gamifying the application</strong>,
+        because that is what most apps seem to be doing today. When thinking
+        about this, we considered, for example, Duolingo.
+      </p>
+
+      <p>
+        As we were trying to slowly but surely diverge away from the AI
+        principle, we had the feeling that we might have to kill our babies in
+        the sense that however cool these initial ideas might seem, we still
+        have to look into how to exactly integrate a language model or something
+        to the application. <strong>And that is exactly what happened.</strong>
+      </p>
+
+      <p>
+        When presenting our four ideas, which turned out to be the following:
+      </p>
+
+      <ul class="text-xl">
+        <li>– A physical / analog journal</li>
+        <li>– A tasks & rewards system in the application</li>
+        <li>– Peer support (creating <em>another</em> type of social media)</li>
+        <li>– A personal AI-guided experience</li>
+      </ul>
+
+      <p>
+        we still had to follow up with the ones that were most exciting for
+        Mental Pin's team, the <strong>AI-guided experience</strong> and <strong
+          >the tasks and rewards system</strong
+        >.
+      </p>
+
+      <ProjectImage
+        src="/images/mental-pin/mental-pin-ai-experience.png"
+        alt="A slide example from the presentation talking about the personalised AI experience."
+      />
+
+      <small class="-mt-6"
+        >A slide explaining the personalized AI experience idea, which we
+        presented to the team of Mental Pin.</small
+      >
+
+      <ProjectImage
+        src="/images/mental-pin/mental-pin-tasks-and-rewards.png"
+        alt="A slide example from the presentation talking about the tasks and rewards system."
+      />
+
+      <small class="-mt-6"
+        >A slide explaining the tasks and rewards idea, which we presented to
+        the team of Mental Pin.</small
+      >
+    </Block>
+
+    <Block title="Results">
+      <p>
+        We then delved deep into continuing on with the two aforementioned
+        ideas. For this, we made a Figma board to prototype the ideas in the
+        mobile app. I was mostly in charge of Figma-related things, because my
+        teammates weren't as proficient with it. I mean, sure, neither was I,
+        but <strong
+          >I was very willing to jump right in and spend time with it as it's
+          one of the tools of the trade</strong
+        >.
+      </p>
+
+      <p>We split the application into three rough parts:</p>
+
+      <ul class="text-xl">
+        <li>– The onboarding</li>
+        <li>– Episode annotation</li>
+        <li>– Tasks & Rewards system (which was split into multiple parts)</li>
+      </ul>
+
+      <ProjectImage
+        src="/images/mental-pin/mental-pin-onboarding.png"
+        alt="A few screenshots from the application in the onboarding phase."
+      />
+
+      <small class="-mt-6">
+        A few screenshots from the application in the onboarding phase. We also
+        created a ChatGPT-esque animation, where the questions appear a few
+        words at a time instead of all at once.
+      </small>
+
+      <ProjectImage
+        src="/images/mental-pin/mental-pin-annotation.png"
+        alt="A few screenshots from the application in the episode annotation phase."
+      />
+
+      <small class="-mt-6">
+        A few screenshots from the application in the annotation phase.
+      </small>
+
+      <p>
+        As the above two were mostly topics, which I spent the most time on, I
+        will explain them a bit further. For the onboarding, we received
+        inspiration, as said, from ChatGPT. The questions were going to be <strong
+          >contextual</strong
+        >, so that Penny, the onboarding assistant actually learns from whatever
+        the user is answering.
+      </p>
+
+      <p>
+        For the episode annotation, I, sort of out-of-the-blue, came up with a
+        Grammarly-like idea: you can either type or use speech recognition to
+        talk about your episode and then the application will run <strong
+          >automatic sentiment analysis</strong
+        > so you wouldn't have to go through the trouble of annotating everything
+        yourself.
       </p>
     </Block>
 
-    <Block title="Developing"><p class="text-xl"></p></Block>
-    <Block title="Delivering & listening"><p class="text-xl"></p></Block>
+    <Block title="The Figma board">
+      <a
+        class="border-gray-600 border-2 w-fit p-4 hover:bg-gray-600 hover:text-white transition-colors"
+        href="https://www.figma.com/file/74tddu7foRTW6gzJ3LZXQp/Mental-Pin-%C3%97-IXD?type=design&node-id=1058%3A3534&mode=design&t=SysNZG2kgIuwolZG-1"
+        >Click here to see the Figma board and test out the prototypes.</a
+      >
+    </Block>
 
     <section class="flex my-20 items-center justify-end gap-8">
       <Link href="/craft/splitwise" title="Next project (Splitwise) –>" />

@@ -2,6 +2,7 @@
 import Block from "../../components/Block.astro";
 import Link from "../../components/Link.astro";
 import Metadata from "../../components/Metadata.astro";
+import ProjectImage from "../../components/ProjectImage.astro";
 import Layout from "../../layouts/Layout.astro";
 ---
 
@@ -16,7 +17,7 @@ import Layout from "../../layouts/Layout.astro";
 
   <img
     class="object-cover bg-center aspect-video transition max-w-full mt-16 rounded-lg"
-    src="/images/invl-cover.jpeg"
+    src="/images/invl/invl-cover.jpeg"
     alt="A drawing of a lady behind a table, receiving a big amount of money."
   />
 
@@ -38,15 +39,182 @@ import Layout from "../../layouts/Layout.astro";
   />
 
   <div class="flex flex-col gap-16">
-    <Block title="Summary"><p class="text-xl"></p></Block>
-    <Block title="Research"><p class="text-xl"></p></Block>
-    <Block title="Exploring & defining"><p class="text-xl"></p></Block>
-    <Block title="Developing"><p class="text-xl"></p></Block>
-    <Block title="Delivering & listening"><p class="text-xl"></p></Block>
+    <Block title="Summary">
+      <p>
+        The goal of the project was to offer a life insurance company named
+        <Link href="https://www.invl.ee/en/" title="INVL" keepXl />
+        a way to get out of the "red ocean" and reach the <Link
+          href="https://www.blueoceanstrategy.com/what-is-blue-ocean-strategy/"
+          title='"blue ocean"'
+          keepXl
+        />.
+      </p>
+    </Block>
 
-    <section class="flex my-20 items-center justify-between gap-8">
-      <Link title="<– Previous project (Splitwise)" href="/craft/splitwise" />
-      <Link title="Next project (Salary calculator) –>" href="/craft/salary" />
-    </section>
+    <Block title="Background">
+      <p>
+        The challenge at hand seemed simple at first – make more people pay for
+        life insurance. The idea seemed simple as well: why not get life
+        insurance? If something happens to you or a close loved one, the life
+        insurance money that you receive ensures that you won't be on your back
+        after an accident of some sort. It seemed simple enough to understand
+        that once you have paying customers, they will probably want to stay for
+        a lifetime. But it was definitely not that simple.
+      </p>
+    </Block>
+    <Block title="More research…">
+      <p>
+        Our course kicked off the course with a presentation from the customer.
+        To me, the presentation seemed more like a presentation for selling us
+        life insurance instead of explaining how the company actually works and
+        what life insurance actually is. We took it upon ourselves to deep dive
+        into all things life insurance, such as company insights, industry
+        analysis, competitive overview, interviews with stakeholders and so much
+        more. We definitely reached the point of lag due to so many sticky notes
+        on our Miro board quite quickly.
+      </p>
+
+      <ProjectImage
+        src="/images/invl/mapping.jpg"
+        alt="IxD.ma students behind a glass wall putting post-its on paper."
+      />
+      <small class="-mt-6"
+        >I was put in charge of putting the post-its from Miro onto the wall.</small
+      >
+
+      <p>
+        After that, we tried to make sense of all the data we had gathered. To
+        do this, I teamed up with my coursemate Zac to create a presentation for
+        the INVL representatives, but at the same time the whole course started
+        creating small snippets to be put into the presentation. We also created
+        a few affinity maps and, to our surprise, immediately saw many types of
+        personas emerging, such as:
+      </p>
+
+      <ul>
+        <li class="text-xl">
+          – person shying away from insurance & thinking about <strong
+            >alternatives</strong
+          >, such as investing
+        </li>
+        <li class="text-xl">
+          – <strong>procrastinator</strong>, who is constantly delaying getting
+          life insurance due to being busy
+        </li>
+        <li class="text-xl">
+          – person with <strong>barriers</strong> due to life insurance being too
+          expensive for them
+        </li>
+        <li class="text-xl">
+          – person with <strong>prejudice</strong> against life insurance due to
+          previous experiences
+        </li>
+      </ul>
+
+      <p>
+        We then presented all our findings to the INVL representatives, who were
+        very avid to learn what we are going to come up with.
+      </p>
+    </Block>
+    <Block title="Our persona & his journey">
+      <p>
+        We divided the course into groups of three and started figuring out who
+        the personas are in the life insurance journey. Our team came up with
+        Margus, who is 35 years old and works as a back-end developer. Margus is
+        the person of <strong>alternatives</strong> – he doesn't believe necessarily
+        in insurances, unless it comes with the products he's buying. He lifes life
+        to the fullest and loves to spend his money.
+      </p>
+
+      <ProjectImage
+        src="/images/invl/margus-persona.jpg"
+        alt="Our persona's, Margus' persona board"
+      />
+      <small class="-mt-6">Our persona's, Margus' persona board</small>
+
+      <p>
+        After creating a persona, we also mapped out the user journey for Margus
+        to find the drop-off points in his journey.
+      </p>
+
+      <ProjectImage
+        src="/images/invl/margus-journey.jpg"
+        alt="Our persona's, Margus' user journey"
+      />
+      <small class="-mt-6">Our persona's, Margus' user journey</small>
+
+      <p>
+        Everyone in our team got a point of focus – for me it was the needing
+        help & maintenance section, where Margus' mom turns 70 years old, loses
+        her life insurance contract and all the money she has paid into it for
+        many years.
+      </p>
+    </Block>
+
+    <Block title="Developing">
+      <p>
+        Out of the problem mentioned in the previous section, I started out with
+        the following "How might we…" question:
+      </p>
+
+      <p>
+        How might we ensure that the person feels valued after their contract
+        ends and that their money didn't vanish into thin air?
+      </p>
+
+      <p>
+        As the insurance business relies heavily on getting positive
+        recommendations from current customers, the offboarding process is very
+        important. If the person doesn't feel valued after they become 70, why
+        would they recommend getting the insurance to others?
+      </p>
+
+      <p>
+        During many ideation rounds, I stumbled upon a very weird solution,
+        which I initially thought of as a joke, but which turned out to be a
+        very real idea.
+      </p>
+    </Block>
+
+    <Block title="Solution">
+      <p><strong>Give the customer back all the money they've paid.</strong></p>
+
+      <p>
+        It might sound crazy from a business perspective, but it is actually
+        <Link
+          href="https://www.progressive.com/answers/return-of-premium-life-insurance-rider"
+          title="already being done by some big insurance firms in the U.S."
+          keepXl
+        />, and quite successfully so. Insurance companies usually make profit
+        by investing the money that they receive from the customers and even if
+        the customer is paid out some amount of it, the insurance firm usually
+        stays in a profit.
+      </p>
+
+      <p>
+        I proposed a solution in which they ask their customers for a bit more
+        money each month, and depending on however big their investment margins
+        are, they can then make a profit during the time the customer is paying
+        to the company and then even pay them back the money if possible. This
+        means that the insurance becomes a savings account for people. To
+        explain and illustrate the idea, I presented a <em>wicked</em> Excel sheet.
+      </p>
+
+      <p>
+        And, of course, who wouldn't love to get an envelope full of cash for
+        their time as a pensioner.
+      </p>
+
+      <p>
+        After the presentation, I immediately saw interest from INVL towards
+        this idea; got an A for the course and finished the year with a smile on
+        my face.
+      </p>
+    </Block>
   </div>
+
+  <section class="flex my-20 items-center justify-between gap-8">
+    <Link title="<– Previous project (Splitwise)" href="/craft/splitwise" />
+    <Link title="Next project (Salary calculator) –>" href="/craft/salary" />
+  </section>
 </Layout>

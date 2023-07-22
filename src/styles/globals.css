@@ -25,10 +25,9 @@ ol[role="list"] {
 html {
   scroll-behavior: smooth;
   overflow-y: auto;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased !important;
+  text-rendering: optimizeLegibility !important;
   font-family: "Inter", sans-serif !important;
-  overscroll-behavior: none;
 }
 
 body {
@@ -61,6 +60,15 @@ a {
 em {
   font-family: "Georgia";
   font-style: italic;
+  @apply text-xl;
+}
+
+strong {
+  @apply font-black !important;
+}
+
+p {
+  @apply text-xl;
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -2,6 +2,7 @@
 import Block from "../../components/Block.astro";
 import Link from "../../components/Link.astro";
 import Metadata from "../../components/Metadata.astro";
+import ProjectImage from "../../components/ProjectImage.astro";
 import Layout from "../../layouts/Layout.astro";
 ---
 
@@ -17,22 +18,99 @@ import Layout from "../../layouts/Layout.astro";
 
   <img
     class="object-contain bg-center aspect-video transition max-w-full mt-16 rounded-lg"
-    src="/images/salary-calc-mockup.png"
+    src="/images/salary/salary-calc-mockup.png"
     alt="A screenshot of the Estonian salary calculator."
   />
 
   <Metadata
     role={["UI design", "Idea generation", "Figma prototyping"]}
     duration="3 weeks in 2022"
-    methods={["I had no idea what methods were at this point 🤷🏻"]}
+    methods={["Gestalt principles", "Peer reviews", "Color wheels", "UI kits"]}
   />
 
   <div class="flex flex-col gap-16">
-    <Block title="Summary"><p class="text-xl"></p></Block>
-    <Block title="Research"><p class="text-xl"></p></Block>
-    <Block title="Exploring & defining"><p class="text-xl"></p></Block>
-    <Block title="Developing"><p class="text-xl"></p></Block>
-    <Block title="Delivering & listening"><p class="text-xl"></p></Block>
+    <Block title="Summary">
+      <p>
+        The goal of this project was to get to know the basics of visual design:
+        typography, Gestalt principles, colors and their use-cases etc. This
+        project was one of the first thorough introductions to visual design
+        that I had – I wrote down lots of notes and feel that I learned a lot.
+      </p>
+    </Block>
+
+    <Block title="The first iteration">
+      <p>
+        I have to say, at first, I felt very lost when trying to redesign the
+        calculator. The first (filled out) iteration of the calculator looked
+        like this:
+      </p>
+
+      <ProjectImage
+        src="/images/salary/salary-calc-initial-empty.png"
+        alt="A screenshot of the initial iteration of the salary calculator."
+      />
+
+      <ProjectImage
+        src="/images/salary/salary-calc-initial.png"
+        alt="Another screenshot of the initial iteration of the salary calculator, which is filled with data."
+      />
+
+      <p>
+        I did make an UI kit, tried to choose colors that might fit with the
+        money and confidence theme (blue-ish colours), however there were some
+        very odd mistakes, e.g the "pie chart" looked very odd and the text on
+        the right wasn't explanatory enough.
+      </p>
+
+      <p>
+        Needless to say, the empty state looked quite weird as well – the area
+        on the right would not have had data unless the form was actually filled
+        out, so it was taking up unnecessary space.
+      </p>
+
+      <p>
+        So I went to Pinterest and Dribbble for some inspiration, and with that,
+        the second iteration was born.
+      </p>
+    </Block>
+
+    <Block title="The second iteration">
+      <img
+        class="object-cover bg-center transition max-w-full rounded-lg"
+        src="/images/salary/salary-calc-second-empty.png"
+        alt="The second iteration of the calculator."
+      />
+
+      <img
+        class="object-cover bg-center transition max-w-full rounded-lg"
+        src="/images/salary/salary-calc-second.png"
+        alt="The second iteration of the calculator with filled data."
+      />
+
+      <p>
+        I am definitely happier with how the second iteration turned out. I saw
+        some great examples on the web and learned my first learning in design:
+      </p>
+
+      <p>
+        <strong
+          >You sometimes have to <Link
+            title="steal like an artist"
+            href="https://austinkleon.com/steal/"
+            keepXl
+          />.</strong
+        >
+      </p>
+
+      <p>
+        I definitely got better feedback and our mentors said that this was a
+        huge step up from the initial version and that they're happy to see
+        progress. Of course, there were still odd parts, e.g the salary input
+        being too long (because who would have millions, right?) and the pie
+        chart part appearing at the bottom of the form (which might make it not
+        as visible), but those were just nitpicks.
+      </p>
+    </Block>
 
     <section class="flex my-20 items-center justify-start gap-8">
       <Link title="<– Previous project (INVL)" href="/craft/invl" />
