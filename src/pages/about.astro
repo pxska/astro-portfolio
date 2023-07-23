@@ -3,8 +3,8 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Kristjan Poska – Design Engineer">
-  <section>
-    <div class="my-48 sm:my-24 max-w-4xl flex flex-col gap-8">
+  <section class="my-48 sm:my-24">
+    <div class="max-w-4xl flex flex-col gap-8">
       <h1
         class="text-5xl sm:text-2xl animate-fade-right animate-once animate-ease-out">
         My name is Kristjan Poska, <br />I'm a design engineer<span
@@ -12,7 +12,7 @@ import Layout from "../layouts/Layout.astro";
         > working, studying and living in Estonia. 🇪🇪
       </h1>
 
-      <div class="max-w-prose flex flex-col gap-8">
+      <div class="flex flex-col gap-8">
         <p class="text-sm animate-fade-right animate-once animate-ease-out">
           <span class="text-[#91C5F7]">*</span> I love combining design & engineering,
           ensuring code quality and facilitating collaboration between designers
@@ -47,6 +47,17 @@ import Layout from "../layouts/Layout.astro";
         </p>
       </div>
     </div>
+
+    <img
+      class="mt-8 object-cover bg-center aspect-video w-full rounded-lg"
+      src="/images/kristjan.jpg"
+      alt="Kristjan Poska"
+    />
+
+    <small class="-mt-6"
+      >Me wearing the black hat during the "six thinking hats" technique when
+      critiquing.</small
+    >
   </section>
 
   <section
