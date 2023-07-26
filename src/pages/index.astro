@@ -72,10 +72,10 @@ import Card from "../components/Card.astro";
       >kristjanposka@gmail.com</button
     >
     <span id="change-text-left" class="sm:hidden"
-      >{`<–`} Click on me to copy</span
+      >{`<–`} Click on the e-mail to copy</span
     >
     <div id="change-text-up" class="min-sm:hidden mt-2">
-      Click on me to copy ⤴
+      Click on the e-mail to copy ⤴
     </div>
   </section>
 </Layout>
@@ -91,8 +91,8 @@ import Card from "../components/Card.astro";
     copiedElLeft.innerHTML = "<– Copied";
 
     setTimeout(() => {
-      copiedElLeft.innerHTML = "<– Click on me to copy";
-      copiedElUp.innerHTML = "Click on me to copy ⤴";
+      copiedElLeft.innerHTML = "<– Click on the e-mail to copy";
+      copiedElUp.innerHTML = "Click on the e-mail to copy ⤴";
     }, 1500);
   });
 </script>
