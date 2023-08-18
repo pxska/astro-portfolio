@@ -6,7 +6,7 @@ import Card from "../components/Card.astro";
 <Layout title="Kristjan Poska – Design Engineer">
   <header
     class="my-48 sm:my-24 flex flex-col gap-8 animate-fade-right animate-once animate-ease-out">
-    <h1 class="text-5xl sm:text-2xl max-w-3xl">
+    <h1 class="text-5xl tracking-wide sm:text-2xl max-w-3xl">
       Hey, I'm Kristjan. I craft memorable digital experiences with precision
       and passion.
     </h1>
@@ -22,7 +22,7 @@ import Card from "../components/Card.astro";
   <section
     id="craft"
     class="flex flex-col gap-4 scroll-mt-16 animate-fade-right animate-once animate-ease-out animate-delay-200">
-    <h3 class="text-gray-600 uppercase mb-4">Recent work</h3>
+    <h3 class="text-neutral-600 uppercase mb-4">Recent work</h3>
 
     <Card
       title="Mental Pin"
@@ -65,14 +65,16 @@ import Card from "../components/Card.astro";
 
   <section
     class="my-40 sm:my-20 sm:text-center animate-fade-right animate-once animate-ease-out animate-delay-[400ms]">
-    <h1 class="text-5xl mb-2 sm:text-2xl">Let's get to know each other.</h1>
+    <h1 class="text-5xl tracking-wide mb-2 sm:text-2xl">
+      Let's get to know each other.
+    </h1>
     <button
       id="email-button"
-      class="text-5xl hover:no-underline underline sm:text-2xl"
+      class="text-5xl tracking-wide hover:no-underline underline sm:text-2xl"
       >kristjanposka@gmail.com</button
     >
     <span id="change-text-left" class="sm:hidden"
-      >{`<–`} Click on the e-mail to copy</span
+      >{`←`} Click on the e-mail to copy</span
     >
     <div id="change-text-up" class="min-sm:hidden mt-2">
       Click on the e-mail to copy ⤴
@@ -88,10 +90,10 @@ import Card from "../components/Card.astro";
     const copiedElLeft = document.querySelector("#change-text-left");
 
     copiedElUp.innerHTML = "Copied ⤴";
-    copiedElLeft.innerHTML = "<– Copied";
+    copiedElLeft.innerHTML = "← Copied";
 
     setTimeout(() => {
-      copiedElLeft.innerHTML = "<– Click on the e-mail to copy";
+      copiedElLeft.innerHTML = "← Click on the e-mail to copy";
       copiedElUp.innerHTML = "Click on the e-mail to copy ⤴";
     }, 1500);
   });

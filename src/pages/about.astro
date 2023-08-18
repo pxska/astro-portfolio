@@ -6,7 +6,7 @@ import Layout from "../layouts/Layout.astro";
   <section class="my-48 sm:my-24">
     <div class="max-w-4xl flex flex-col gap-8">
       <h1
-        class="text-5xl sm:text-2xl animate-fade-right animate-once animate-ease-out">
+        class="text-5xl tracking-wide sm:text-2xl animate-fade-right animate-once animate-ease-out">
         My name is Kristjan Poska, <br />I'm a design engineer<span
           class="text-[#91C5F7]">*</span
         > working, studying, and living in Estonia. 🇪🇪
@@ -41,7 +41,7 @@ import Layout from "../layouts/Layout.astro";
           class="text-lg sm:text-lg animate-fade-right animate-once animate-ease-out animate-delay-300">
           I strongly believe in teamwork, however as I am also a very avid
           learner, quick-witted, and, when necessary, quite independent. I
-          always strive to be the very best <span class="text-gray-400"
+          always strive to be the very best <span class="text-neutral-400"
             >(like no one ever was)</span
           > and grow from even the most critical feedback.
         </p>
@@ -62,16 +62,16 @@ import Layout from "../layouts/Layout.astro";
 
   <section
     class="mb-40 sm:mb-20 sm:text-center animate-fade-right animate-once animate-ease-out animate-delay-500">
-    <h1 class="text-5xl mb-2 sm:text-2xl">
+    <h1 class="text-5xl tracking-wide mb-2 sm:text-2xl">
       Let's get to know each each other.
     </h1>
     <button
       id="email-button"
-      class="text-5xl hover:no-underline underline sm:text-2xl"
+      class="text-5xl tracking-wide hover:no-underline underline sm:text-2xl"
       >kristjanposka@gmail.com</button
     >
     <span id="change-text-left" class="sm:hidden"
-      >{`<–`} Click on the e-mail to copy</span
+      >{`←`} Click on the e-mail to copy</span
     >
     <div id="change-text-up" class="min-sm:hidden mt-2">
       Click on the e-mail to copy ⤴
@@ -87,10 +87,10 @@ import Layout from "../layouts/Layout.astro";
     const copiedElLeft = document.querySelector("#change-text-left");
 
     copiedElUp.innerHTML = "Copied ⤴";
-    copiedElLeft.innerHTML = "<– Copied";
+    copiedElLeft.innerHTML = "← Copied";
 
     setTimeout(() => {
-      copiedElLeft.innerHTML = "<– Click on the e-mail to copy";
+      copiedElLeft.innerHTML = "← Click on the e-mail to copy";
       copiedElUp.innerHTML = "Click on the e-mail to copy ⤴";
     }, 1500);
   });

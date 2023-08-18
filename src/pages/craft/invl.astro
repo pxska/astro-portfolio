@@ -3,12 +3,13 @@ import Block from "../../components/Block.astro";
 import Link from "../../components/Link.astro";
 import Metadata from "../../components/Metadata.astro";
 import ProjectImage from "../../components/ProjectImage.astro";
+import TextLink from "../../components/TextLink.astro";
 import Layout from "../../layouts/Layout.astro";
 ---
 
 <Layout title="Kristjan Poska – Design Engineer">
   <div class="mt-48 sm:mt-24 max-w-prose flex flex-col gap-8">
-    <h1 class="text-5xl sm:text-2xl">INVL</h1>
+    <h1 class="text-5xl tracking-wide sm:text-2xl">INVL</h1>
 
     <p class="text-2xl sm:text-lg">
       A service design project to help INVL find their blue ocean.
@@ -42,36 +43,39 @@ import Layout from "../../layouts/Layout.astro";
     <Block title="Summary">
       <p>
         The goal of the project was to offer a life insurance company named
-        <Link href="https://www.invl.ee/en/" title="INVL" keepXl />
-        a way to get out of the "red ocean" and reach the <Link
+        <TextLink color="#FED4E7" href="https://www.invl.ee/en/" title="INVL" />
+        a way to get out of the "red ocean" and reach the <TextLink
+          color="#FED4E7"
           href="https://www.blueoceanstrategy.com/what-is-blue-ocean-strategy/"
           title='"blue ocean"'
-          keepXl
         />.
       </p>
     </Block>
 
     <Block title="Background">
       <p>
-        The challenge at hand seemed simple at first – make more people pay for
-        life insurance. The idea seemed simple as well: why not get life
-        insurance? If something happens to you or a close loved one, the life
-        insurance money that you receive ensures that you won't be on your back
-        after an accident of some sort. It seemed simple enough to understand
-        that once you have customers, they will probably want to stay for a
-        lifetime. But it was not that simple.
+        The challenge at hand seemed simple at first – <strong
+          >make more people pay for life insurance</strong
+        >. The idea seemed simple as well: why not get life insurance? If
+        something happens to you or a close loved one, the life insurance money
+        that you receive ensures that you won't be on your back after an
+        accident of some sort. It seemed simple enough to understand that once
+        you have customers, they will probably want to stay for a lifetime. <strong
+          >However, as usual, it was not that simple</strong
+        >.
       </p>
     </Block>
     <Block title="More research…">
       <p>
-        Our course kicked off the course with a presentation from the customer.
-        To me, the presentation seemed more like a presentation for selling us
-        life insurance instead of explaining how the company actually works and
-        what life insurance is. We took it upon ourselves to deep dive into all
-        things life insurance, such as company insights, industry analysis,
-        competitive overview, interviews with stakeholders and so much more. We
-        reached the point of lag due to so many sticky notes on our Miro board
-        quite quickly.
+        Our course kicked off the course with a <strong
+          >presentation from the client</strong
+        >. To me, the presentation seemed more like a presentation for selling
+        us life insurance instead of explaining how the company actually works
+        and what life insurance is. <strong
+          >We took it upon ourselves to deep dive into all things life insurance</strong
+        >, such as company insights, industry analysis, competitive overview,
+        interviews with stakeholders and so much more. We reached the point of
+        lag due to so many sticky notes on our Miro board quite quickly.
       </p>
 
       <ProjectImage
@@ -83,30 +87,33 @@ import Layout from "../../layouts/Layout.astro";
       >
 
       <p>
-        After that, we tried to make sense of all the data we had gathered. To
-        do this, I teamed up with my coursemate Zac to create a presentation for
-        the INVL representatives, but at the same time, the whole course started
-        creating small snippets to be put into the presentation. We also created
-        a few affinity maps and, to our surprise, immediately saw many types of
-        personas emerging, such as:
+        After that, we tried to <strong
+          >make sense of all the data we had gathered</strong
+        >. To do this, I teamed up with my coursemate Zac to create a
+        presentation for the INVL representatives, but at the same time, the
+        whole course started creating small snippets to be put into the
+        presentation. We also created a few <strong>affinity maps</strong> and, to
+        our surprise, immediately saw <strong
+          >many types of personas emerging</strong
+        >, such as:
       </p>
 
       <ul>
         <li class="text-xl">
-          – a person shying away from insurance & thinking about <strong
+          → a person shying away from insurance & thinking about <strong
             >alternatives</strong
           >, such as investing
         </li>
         <li class="text-xl">
-          – a <strong>procrastinator</strong>, who is constantly delaying
+          → a <strong>procrastinator</strong>, who is constantly delaying
           getting life insurance due to being busy
         </li>
         <li class="text-xl">
-          – a person with <strong>barriers</strong> due to life insurance being too
+          → a person with <strong>barriers</strong> due to life insurance being too
           expensive for them
         </li>
         <li class="text-xl">
-          – a person with <strong>prejudice</strong> against life insurance due to
+          → a person with <strong>prejudice</strong> against life insurance due to
           previous experiences
         </li>
       </ul>
@@ -144,10 +151,10 @@ import Layout from "../../layouts/Layout.astro";
       <small class="-mt-6">Our persona's, Margus' user journey</small>
 
       <p>
-        Everyone in our team got a point of focus – for me, it was the needing
-        help & maintenance section, where Margus' mom turns 70 years old, loses
-        her life insurance contract, and all the money she has paid into it for
-        many years.
+        Everyone in our team got <strong>a point of focus</strong> – for me, it was
+        the needing help & maintenance section, where Margus' mom turns 70 years
+        old, loses her life insurance contract, and all the money she has paid into
+        it for many years.
       </p>
     </Block>
 
@@ -163,16 +170,19 @@ import Layout from "../../layouts/Layout.astro";
       </p>
 
       <p>
-        As the insurance business relies heavily on getting positive
-        recommendations from current customers, the offboarding process is very
-        important. If the person doesn't feel valued after they become 70, why
-        would they recommend getting the insurance to others?
+        As the insurance business relies heavily on getting <strong
+          >positive recommendations from current customers</strong
+        >, the <strong>offboarding process is very important</strong>. If the
+        person doesn't feel valued after they become 70, <strong
+          >why would they recommend getting the insurance to others</strong
+        >?
       </p>
 
       <p>
-        During many ideation rounds, I stumbled upon a very weird solution,
-        which I initially thought of as a joke, but which turned out to be a
-        very real idea.
+        During many ideation rounds, I stumbled upon <strong
+          >a very weird solution, which I initially thought of as a joke, but
+          which turned out to be a very real idea</strong
+        >.
       </p>
     </Block>
 
@@ -181,14 +191,15 @@ import Layout from "../../layouts/Layout.astro";
 
       <p>
         It might sound crazy from a business perspective, but it is
-        <Link
+        <TextLink
+          color="#FED4E7"
           href="https://www.progressive.com/answers/return-of-premium-life-insurance-rider"
           title="already being done by some big insurance firms in the U.S."
-          keepXl
         />, and quite successfully so. Insurance companies usually make a profit
         by investing the money that they receive from the customers and even if
-        the customer is paid out some amount of it, the insurance firm usually
-        stays in a profit.
+        the customer is paid out some amount of it, <strong
+          >the insurance firm usually stays in a profit</strong
+        >.
       </p>
 
       <p>
@@ -197,7 +208,8 @@ import Layout from "../../layouts/Layout.astro";
         they can then make a profit during the time the customer is paying to
         the company and then even pay them back the money if possible. This
         means that the insurance becomes a savings account for people. To
-        explain and illustrate the idea, I presented a <em>wicked</em> Excel sheet.
+        explain and illustrate the idea, I presented a <strong>wicked</strong> Excel
+        sheet.
       </p>
 
       <p>
@@ -214,7 +226,7 @@ import Layout from "../../layouts/Layout.astro";
   </div>
 
   <section class="flex my-20 items-center justify-between gap-8">
-    <Link title="<– Previous project (Splitwise)" href="/craft/splitwise" />
-    <Link title="Next project (Salary calculator) –>" href="/craft/salary" />
+    <Link title="← Previous project (Splitwise)" href="/craft/splitwise" />
+    <Link title="Next project (Salary calculator) →" href="/craft/salary" />
   </section>
 </Layout>

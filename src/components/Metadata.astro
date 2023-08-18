@@ -2,24 +2,24 @@
 const { methods = [], duration, role = [] } = Astro.props;
 ---
 
-<hr class="my-16 border-gray-600 border" />
+<hr class="my-16 border-neutral-600 border" />
 
 <div class="metadata-grid">
   <div>
-    <h2 class="text-lg text-gray-600">Role</h2>
+    <h2 class="text-lg text-neutral-600">Role</h2>
     <div class="text-lg mt-4">{role.join(" · ")}</div>
   </div>
   <div>
-    <h2 class="text-lg text-gray-600">Duration</h2>
+    <h2 class="text-lg text-neutral-600">Duration</h2>
     <div class="text-lg mt-4">{duration}</div>
   </div>
   <div>
-    <h2 class="text-lg text-gray-600">Methods</h2>
+    <h2 class="text-lg text-neutral-600">Methods</h2>
     <div class="text-lg mt-4">{methods.join(" · ")}</div>
   </div>
 </div>
 
-<hr class="my-16 border-gray-600 border" />
+<hr class="my-16 border-neutral-600 border" />
 
 <style>
   .metadata-grid {

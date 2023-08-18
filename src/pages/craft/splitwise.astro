@@ -3,13 +3,13 @@ import Block from "../../components/Block.astro";
 import Link from "../../components/Link.astro";
 import Metadata from "../../components/Metadata.astro";
 import ProjectImage from "../../components/ProjectImage.astro";
+import TextLink from "../../components/TextLink.astro";
 import Layout from "../../layouts/Layout.astro";
-import About from "../about.astro";
 ---
 
 <Layout title="Kristjan Poska – Design Engineer">
   <div class="mt-48 sm:mt-24 max-w-prose flex flex-col gap-8">
-    <h1 class="text-5xl sm:text-2xl">Splitwise</h1>
+    <h1 class="text-5xl tracking-wide sm:text-2xl">Splitwise</h1>
 
     <p class="text-2xl sm:text-lg">
       An emotional design project to reduce the anxiety around tracking group
@@ -40,12 +40,12 @@ import About from "../about.astro";
     <Block title="Summary">
       <p class="text-xl">
         My role in the project was to take an existing application from any
-        realm possible (desktop, tablet, mobile, coffee machine…) and redesign
-        it using the emotional design principles. As the application, I chose
-        something I use every week if not every day: <a
-          href="https://www.splitwise.com/">Splitwise</a
-        >. I then created wireflows and an emotional map of the application and
-        made it more emotional.
+        realm possible (desktop, tablet, mobile, coffee machine…) and <strong
+          >redesign it using the emotional design principles</strong
+        >. As the application, I chose something I use every week if not every
+        day: <a href="https://www.splitwise.com/">Splitwise</a>. I then created <strong
+          >wireflows and an emotional map</strong
+        > of the application and made it more emotional.
       </p>
     </Block>
 
@@ -73,20 +73,20 @@ import About from "../about.astro";
       </p>
 
       <ul>
-        <li class="text-xl">– Curious (whether I've had any new expenses)</li>
+        <li class="text-xl">→ Curious (whether I've had any new expenses)</li>
         <li class="text-xl">
-          – Confused (the expense-adding flow got confusing at times)
+          → Confused (the expense-adding flow got confusing at times)
         </li>
-        <li class="text-xl">– Relieved & Liberated (when settling up)</li>
+        <li class="text-xl">→ Relieved & Liberated (when settling up)</li>
       </ul>
     </Block>
 
     <Block title="Defining new emotions">
       <p>
-        Me and my coursemates at <Link
+        Me and my coursemates at <TextLink
+          color="#91C6F7"
           title="IxD.ma"
           href="https://ixd.ma/"
-          keepXl
         /> did an exercise where we went through everyone's application and everyone
         could add feedback or ideas for the application. The result looked very nice
         and colorful (my column is the first one on the left):
@@ -99,9 +99,10 @@ import About from "../about.astro";
       />
 
       <p>
-        As you might see from the image, I created a how-might-we question and 4
-        simple design principles to guide me on my way. The how-might-we
-        question was the following:
+        As you might see from the image, I created a <strong
+          >how-might-we question</strong
+        > and <strong>4 simple design principles</strong> to guide me on my way.
+        The how-might-we question was the following:
       </p>
 
       <p>
@@ -132,37 +133,39 @@ import About from "../about.astro";
       />
 
       <p>
-        With the subtle background color, I hoped to evoke the sense of urgency,
-        but at the same time, a quick overview. Same with the colored dots in
-        the dropdown – at a glance you can see whether you're in a "good
+        With the subtle background color, I hoped to <strong
+          >evoke the sense of urgency</strong
+        >, but at the same time, show a quick overview. Same with the colored
+        dots in the dropdown – at a glance you can see whether you're in a "good
         position" or a "bad position". The emojis will also show what the
-        balance is and will try to evoke a sense of understanding.
+        balance is and will try to <strong
+          >evoke a sense of understanding</strong
+        >.
       </p>
 
       <p>
-        I also hid the balance of the group or with your friend behind a click
-        so it wouldn't be the first thing you see when opening the application.
-        It is sort of a way to procrastinate paying up, but also reduces the
-        anxiety around immediately having to pay up.
+        I also <strong>hid the balance</strong> of the group or with your friend
+        behind a click so it wouldn't be the first thing you see when opening the
+        application. It is sort of a way to procrastinate paying up, but also <strong
+          >reduces the anxiety</strong
+        > around immediately having to pay up.
       </p>
 
       <p>
         In the Figma board, which is below, I also created a couple of
-        notifications to remind the person about the balance.
+        <strong>notifications to remind the person about the balance</strong>.
       </p>
-    </Block>
 
-    <Block title="The Figma board">
-      <a
-        class="border-gray-600 border-2 w-fit p-4 hover:bg-gray-600 hover:text-white transition-colors"
+      <TextLink
+        color="#91C6F7"
         href="https://www.figma.com/file/JismZDZU1DWrYsUFiwXJxD/Splitwise-Redesign?type=design&node-id=37%3A139&mode=design&t=OWWv8CNqTUBVPysl-1"
-        >Click here to see the Figma board.</a
-      >
+        title="Click here to see the Figma board"
+      />
     </Block>
 
     <section class="flex my-20 items-center justify-between gap-8">
-      <Link title="<– Previous project (Mental Pin)" href="/craft/mentalpin" />
-      <Link title="Next project (INVL) –>" href="/craft/invl" />
+      <Link title="← Previous project (Mental Pin)" href="/craft/mentalpin" />
+      <Link title="Next project (INVL) →" href="/craft/invl" />
     </section>
   </div>
 </Layout>

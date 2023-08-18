@@ -3,12 +3,13 @@ import Block from "../../components/Block.astro";
 import Link from "../../components/Link.astro";
 import Metadata from "../../components/Metadata.astro";
 import ProjectImage from "../../components/ProjectImage.astro";
+import TextLink from "../../components/TextLink.astro";
 import Layout from "../../layouts/Layout.astro";
 ---
 
 <Layout title="Kristjan Poska – Design Engineer">
   <div class="mt-48 sm:mt-24 max-w-prose flex flex-col gap-8">
-    <h1 class="text-5xl sm:text-2xl">Salary Calculator</h1>
+    <h1 class="text-5xl tracking-wide sm:text-2xl">Salary Calculator</h1>
 
     <p class="text-2xl sm:text-lg">
       One of the first UI projects I worked on, redesigning the Estonian salary
@@ -31,10 +32,12 @@ import Layout from "../../layouts/Layout.astro";
   <div class="flex flex-col gap-16">
     <Block title="Summary">
       <p>
-        The goal of this project was to get to know the basics of visual design:
-        typography, Gestalt principles, colors, and their use cases, etc. This
-        project was one of the first thorough introductions to visual design
-        that I had – I wrote down lots of notes and feel that I learned a lot.
+        The goal of this project was to <strong
+          >get to know the basics of visual design</strong
+        >: typography, Gestalt principles, colors, and their use cases, etc.
+        This project was one of the first thorough introductions to visual
+        design that I had – I wrote down lots of notes and feel that I learned a
+        lot.
       </p>
     </Block>
 
@@ -56,10 +59,12 @@ import Layout from "../../layouts/Layout.astro";
       />
 
       <p>
-        I did make a UI kit, and tried to choose colors that might fit with the
-        money and confidence theme (blue-ish colors), however, there were some
-        very odd mistakes, e.g. the "pie chart" looked very odd and the text on
-        the right wasn't explanatory enough.
+        I did make a <strong>UI kit</strong>, and tried to choose colors that
+        might fit with the money and confidence theme (blue-ish colors),
+        however, there were some very odd mistakes, e.g. the "pie chart" looked
+        very odd and the text on the right <strong
+          >wasn't explanatory enough</strong
+        >.
       </p>
 
       <p>
@@ -70,7 +75,7 @@ import Layout from "../../layouts/Layout.astro";
 
       <p>
         So I went to Pinterest and Dribbble for some inspiration, and with that,
-        the second iteration was born.
+        <strong>the second iteration was born</strong>.
       </p>
     </Block>
 
@@ -89,31 +94,32 @@ import Layout from "../../layouts/Layout.astro";
 
       <p>
         I am happier with how the second iteration turned out. I saw some great
-        examples on the web and learned my first learning in design:
+        examples on the web and learned my first lesson in design:
       </p>
 
       <p>
         <strong
-          >You sometimes have to <Link
+          >You sometimes have to <TextLink
+            color="#9CE6CF"
             title="steal like an artist"
             href="https://austinkleon.com/steal/"
-            keepXl
           />.</strong
         >
       </p>
 
       <p>
-        I got better feedback and our mentors said that this was a huge step up
-        from the initial version and that they're happy to see progress. Of
-        course, there were still odd parts, e.g. the salary input being too long
-        (because who would have millions, right?) and the pie chart part
-        appearing at the bottom of the form (which might make it not as
+        I got better feedback and our mentors said that this was <strong
+          >a huge step up from the initial version and that they're happy to see
+          progress</strong
+        >. Of course, there were still odd parts, e.g. the salary input being
+        too long (because who would have millions, right?) and the pie chart
+        part appearing at the bottom of the form (which might make it not as
         visible), but those were just nitpicked.
       </p>
     </Block>
 
     <section class="flex my-20 items-center justify-start gap-8">
-      <Link title="<– Previous project (INVL)" href="/craft/invl" />
+      <Link title="← Previous project (INVL)" href="/craft/invl" />
     </section>
   </div>
 </Layout>
