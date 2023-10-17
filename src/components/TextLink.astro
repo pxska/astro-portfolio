@@ -1,8 +1,8 @@
 ---
-const { href, title, color } = Astro.props;
+const { href, color } = Astro.props;
 ---
 
-<a class="insideText text-xl w-fit" href={href}>{title}</a>
+<a class="insideText text-xl w-fit" href={href}><slot /></a>
 
 <style define:vars={{ backgroundColor: color }}>
   a {
