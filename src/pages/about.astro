@@ -1,4 +1,5 @@
 ---
+import EmailButton from "@components/EmailButton.astro";
 import Layout from "@layouts/Layout.astro";
 ---
 
@@ -65,18 +66,7 @@ import Layout from "@layouts/Layout.astro";
     <h1 class="text-5xl tracking-wide mb-2 sm:text-2xl">
       Let's get to know each each other.
     </h1>
-    <button
-      id="email-button"
-      class="text-5xl tracking-wide hover:no-underline underline sm:text-2xl"
-      >kristjanposka@gmail.com</button
-    >
-    <span id="change-text-left" class="sm:hidden"
-      >{`←`} Click on the e-mail to copy</span
-    >
-    <div id="change-text-up" class="min-sm:hidden mt-2">
-      Click on the e-mail to copy ⤴
-    </div>
+
+    <EmailButton />
   </section>
 </Layout>
-
-<script src="../utils/email-copy.ts"></script>
