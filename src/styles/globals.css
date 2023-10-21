@@ -68,7 +68,7 @@ strong {
 }
 
 p {
-  @apply text-xl;
+  @apply text-base;
 }
 
 @media (prefers-reduced-motion: reduce) {

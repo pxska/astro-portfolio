@@ -2,7 +2,7 @@
 const { href, color } = Astro.props;
 ---
 
-<a class="insideText text-xl w-fit" href={href}><slot /></a>
+<a class="insideText text-base w-fit" href={href}><slot /></a>
 
 <style define:vars={{ backgroundColor: color }}>
   a {

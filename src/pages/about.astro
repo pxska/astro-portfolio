@@ -1,11 +1,12 @@
 ---
 import EmailButton from "@components/EmailButton.astro";
+import ProjectImage from "@components/ProjectImage.astro";
 import Layout from "@layouts/Layout.astro";
 ---
 
 <Layout title="Kristjan Poska – Design Engineer">
   <section class="my-48 sm:my-24">
-    <div class="max-w-4xl flex flex-col gap-8">
+    <div class="max-w-4xl flex flex-col gap-8 mb-8">
       <h1
         class="text-5xl tracking-wide sm:text-2xl animate-fade-right animate-once animate-ease-out">
         My name is Kristjan Poska, <br />I'm a design engineer<span
@@ -14,14 +15,14 @@ import Layout from "@layouts/Layout.astro";
       </h1>
 
       <div class="flex flex-col gap-8">
-        <p class="text-sm animate-fade-right animate-once animate-ease-out">
+        <p class="animate-fade-right animate-once animate-ease-out">
           <span class="text-[#91C5F7]">*</span> I love combining design & engineering,
           ensuring code quality and facilitating collaboration between designers
           and engineers for optimal product development and innovation.
         </p>
 
         <p
-          class="text-lg sm:text-lg animate-fade-right animate-once animate-ease-out animate-delay-100">
+          class="animate-fade-right animate-once animate-ease-out animate-delay-100">
           I am a designer and self-taught developer, who does not back down from
           difficult tasks. Having a non-development background, I have an
           advantage in the design process – I have experience in lots of
@@ -30,7 +31,7 @@ import Layout from "@layouts/Layout.astro";
         </p>
 
         <p
-          class="text-lg sm:text-lg animate-fade-right animate-once animate-ease-out animate-delay-200">
+          class="animate-fade-right animate-once animate-ease-out animate-delay-200">
           I take pride in being meticulous in my work and going through every
           single detail. I love systematization and organization, however, I do
           not back down from presenting out-of-the-box ideas and pursuing
@@ -39,7 +40,7 @@ import Layout from "@layouts/Layout.astro";
         </p>
 
         <p
-          class="text-lg sm:text-lg animate-fade-right animate-once animate-ease-out animate-delay-300">
+          class="animate-fade-right animate-once animate-ease-out animate-delay-300">
           I strongly believe in teamwork, however as I am also a very avid
           learner, quick-witted, and, when necessary, quite independent. I
           always strive to be the very best <span class="text-neutral-400"
@@ -49,16 +50,12 @@ import Layout from "@layouts/Layout.astro";
       </div>
     </div>
 
-    <img
-      class="mt-8 object-cover bg-center aspect-video w-full rounded-md"
+    <ProjectImage
       src="/images/kristjan.jpg"
       alt="Kristjan Poska"
+      description={`Me wearing the black hat during the "six thinking hats" technique when
+      critiquing.`}
     />
-
-    <small class="-mt-6"
-      >Me wearing the black hat during the "six thinking hats" technique when
-      critiquing.</small
-    >
   </section>
 
   <section
