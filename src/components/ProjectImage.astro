@@ -1,5 +1,5 @@
 ---
-const { src, alt } = Astro.props;
+const { src, alt, description } = Astro.props;
 ---
 
 <img
@@ -7,3 +7,4 @@ const { src, alt } = Astro.props;
   src={src}
   alt={alt}
 />
+{(description || alt) && <small class="-mt-6">{description || alt}</small>}
