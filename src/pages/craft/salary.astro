@@ -17,19 +17,19 @@ import Layout from "@layouts/Layout.astro";
     </p>
   </div>
 
+  <Metadata
+    role={["UI design", "Idea generation", "Figma prototyping"]}
+    duration="Oct 2022"
+    methods={["Gestalt principles", "Peer reviews", "Color wheels", "UI kits"]}
+  />
+
   <img
-    class="object-contain bg-center aspect-video transition max-w-full mt-16 rounded-lg"
+    class="object-contain bg-center aspect-video transition max-w-full mt-16 rounded-md"
     src="/images/salary/salary-calc-mockup.png"
     alt="A screenshot of the Estonian salary calculator."
   />
 
-  <Metadata
-    role={["UI design", "Idea generation", "Figma prototyping"]}
-    duration="3 weeks in 2022"
-    methods={["Gestalt principles", "Peer reviews", "Color wheels", "UI kits"]}
-  />
-
-  <div class="flex flex-col gap-16">
+  <div class="flex flex-col gap-16 mt-16">
     <Block title="Summary">
       <p>
         The goal of this project was to <strong
@@ -81,13 +81,13 @@ import Layout from "@layouts/Layout.astro";
 
     <Block title="The second iteration">
       <img
-        class="object-cover bg-center transition max-w-full rounded-lg"
+        class="object-cover bg-center transition max-w-full rounded-md"
         src="/images/salary/salary-calc-second-empty.png"
         alt="The second iteration of the calculator."
       />
 
       <img
-        class="object-cover bg-center transition max-w-full rounded-lg"
+        class="object-cover bg-center transition max-w-full rounded-md"
         src="/images/salary/salary-calc-second.png"
         alt="The second iteration of the calculator with filled data."
       />

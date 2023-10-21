@@ -2,24 +2,20 @@
 const { methods = [], duration, role = [] } = Astro.props;
 ---
 
-<hr class="my-16 border-neutral-600 border" />
-
-<div class="metadata-grid">
+<div class="metadata-grid mt-8">
   <div>
-    <h2 class="text-lg text-neutral-600">Role</h2>
-    <div class="text-lg mt-4">{role.join(" · ")}</div>
+    <h2 class="text-xs text-neutral-500">Role</h2>
+    <div class="text-xs mt-2 font-medium">{role.join(" · ")}</div>
   </div>
   <div>
-    <h2 class="text-lg text-neutral-600">Duration</h2>
-    <div class="text-lg mt-4">{duration}</div>
+    <h2 class="text-xs text-neutral-500">Duration</h2>
+    <div class="text-xs mt-2 font-medium">{duration}</div>
   </div>
   <div>
-    <h2 class="text-lg text-neutral-600">Methods</h2>
-    <div class="text-lg mt-4">{methods.join(" · ")}</div>
+    <h2 class="text-xs text-neutral-500">Methods</h2>
+    <div class="text-xs mt-2 font-medium">{methods.join(" · ")}</div>
   </div>
 </div>
-
-<hr class="my-16 border-neutral-600 border" />
 
 <style>
   .metadata-grid {
@@ -32,6 +28,7 @@ const { methods = [], duration, role = [] } = Astro.props;
   @media screen and (max-width: 639px) {
     .metadata-grid {
       grid-template-columns: 1fr;
+      row-gap: 1rem;
     }
   }
 </style>
