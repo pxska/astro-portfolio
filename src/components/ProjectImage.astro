@@ -8,4 +8,8 @@ const { src, alt, description } = Astro.props;
   alt={alt}
 />
 
-{(description || alt) && <small class="-mt-4">{description || alt}</small>}
+{
+  (description || alt) && (
+    <small class="-mt-4 leading-snug">{description || alt}</small>
+  )
+}
