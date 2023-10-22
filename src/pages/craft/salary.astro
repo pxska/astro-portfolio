@@ -3,15 +3,14 @@ import Block from "@components/Block.astro";
 import Link from "@components/Link.astro";
 import Metadata from "@components/Metadata.astro";
 import ProjectImage from "@components/ProjectImage.astro";
-import TextLink from "@components/TextLink.astro";
 import Layout from "@layouts/Layout.astro";
 ---
 
 <Layout title="Kristjan Poska – Design Engineer">
   <div class="mt-48 sm:mt-24 max-w-prose flex flex-col gap-8">
-    <h1 class="text-5xl tracking-wide sm:text-2xl">Salary Calculator</h1>
+    <h1 class="text-4xl sm:text-2xl">Salary Calculator</h1>
 
-    <p class="text-2xl sm:text-lg">
+    <p>
       One of the first UI projects I worked on, redesigning the Estonian salary
       calculator.
     </p>
@@ -99,11 +98,11 @@ import Layout from "@layouts/Layout.astro";
 
       <p>
         <strong
-          >You sometimes have to <TextLink
+          >You sometimes have to <Link
             color="#9CE6CF"
-            href="https://austinkleon.com/steal/">
-            steal like an artist
-          </TextLink>.</strong
+            href="https://austinkleon.com/steal/"
+            text="steal like an artist"
+          />.</strong
         >
       </p>
 
@@ -119,7 +118,9 @@ import Layout from "@layouts/Layout.astro";
     </Block>
 
     <section class="flex my-20 items-center justify-start gap-8">
-      <Link title="← Previous project (INVL)" href="/craft/invl" />
+      <a class="text-base hover:text-neutral-600" href="/craft/invl"
+        >← Previous project (INVL)</a
+      >
     </section>
   </div>
 </Layout>

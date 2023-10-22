@@ -27,7 +27,8 @@ html {
   overflow-y: auto;
   -webkit-font-smoothing: antialiased !important;
   text-rendering: optimizeLegibility !important;
-  font-family: "Montserrat", sans-serif !important;
+  font-family: "Inter", sans-serif !important;
+  @apply tracking-tight;
 }
 
 body {
@@ -67,7 +68,8 @@ strong {
   @apply font-black !important;
 }
 
-p {
+p,
+li {
   @apply text-base;
 }
 

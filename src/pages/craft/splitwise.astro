@@ -3,15 +3,14 @@ import Block from "@components/Block.astro";
 import Link from "@components/Link.astro";
 import Metadata from "@components/Metadata.astro";
 import ProjectImage from "@components/ProjectImage.astro";
-import TextLink from "@components/TextLink.astro";
 import Layout from "@layouts/Layout.astro";
 ---
 
 <Layout title="Kristjan Poska – Design Engineer">
   <div class="mt-48 sm:mt-24 max-w-prose flex flex-col gap-8">
-    <h1 class="text-5xl tracking-wide sm:text-2xl">Splitwise</h1>
+    <h1 class="text-4xl sm:text-2xl">Splitwise</h1>
 
-    <p class="text-2xl sm:text-lg">
+    <p>
       An emotional design project to reduce the anxiety around tracking group
       expenses.
     </p>
@@ -38,14 +37,17 @@ import Layout from "@layouts/Layout.astro";
 
   <div class="flex flex-col gap-16 mt-16">
     <Block title="Summary">
-      <p class="text-xl">
+      <p>
         My role in the project was to take an existing application from any
         realm possible (desktop, tablet, mobile, coffee machine…) and <strong
           >redesign it using the emotional design principles</strong
         >. As the application, I chose something I use every week if not every
-        day: <a href="https://www.splitwise.com/">Splitwise</a>. I then created <strong
-          >wireflows and an emotional map</strong
-        > of the application and made it more emotional.
+        day: <Link
+          color="#91C6F7"
+          href="https://www.splitwise.com/"
+          text="Splitwise"
+        />. I then created <strong>wireflows and an emotional map</strong> of the
+        application and made it more emotional.
       </p>
     </Block>
 
@@ -70,23 +72,21 @@ import Layout from "@layouts/Layout.astro";
       </p>
 
       <ul>
-        <li class="text-xl">→ Curious (whether I've had any new expenses)</li>
-        <li class="text-xl">
-          → Confused (the expense-adding flow got confusing at times)
-        </li>
-        <li class="text-xl">→ Relieved & Liberated (when settling up)</li>
+        <li>→ Curious (whether I've had any new expenses)</li>
+        <li>→ Confused (the expense-adding flow got confusing at times)</li>
+        <li>→ Relieved & Liberated (when settling up)</li>
       </ul>
     </Block>
 
     <Block title="Defining new emotions">
       <p>
-        Me and my coursemates at <TextLink
+        Me and my coursemates at <Link
           color="#91C6F7"
-          href="https://ixd.ma/">
-          IxD.ma
-        </TextLink> did an exercise where we went through everyone's application
-        and everyone could add feedback or ideas for the application. The result
-        looked very nice and colorful (my column is the first one on the left):
+          href="https://ixd.ma/"
+          text="IxD.ma"
+        /> did an exercise where we went through everyone's application and everyone
+        could add feedback or ideas for the application. The result looked very nice
+        and colorful (my column is the first one on the left):
       </p>
 
       <img
@@ -111,10 +111,10 @@ import Layout from "@layouts/Layout.astro";
       <p>And the four design principles guiding me on my way were:</p>
 
       <ul>
-        <li class="text-xl">– Reward!</li>
-        <li class="text-xl">– Simplify!</li>
-        <li class="text-xl">– Surprise!</li>
-        <li class="text-xl">– Empower!</li>
+        <li>– Reward!</li>
+        <li>– Simplify!</li>
+        <li>– Surprise!</li>
+        <li>– Empower!</li>
       </ul>
 
       <p>
@@ -153,16 +153,20 @@ import Layout from "@layouts/Layout.astro";
         <strong>notifications to remind the person about the balance</strong>.
       </p>
 
-      <TextLink
+      <Link
         color="#91C6F7"
-        href="https://www.figma.com/file/JismZDZU1DWrYsUFiwXJxD/Splitwise-Redesign?type=design&node-id=37%3A139&mode=design&t=OWWv8CNqTUBVPysl-1">
-        Click here to see the Figma board
-      </TextLink>
+        href="https://www.figma.com/file/JismZDZU1DWrYsUFiwXJxD/Splitwise-Redesign?type=design&node-id=37%3A139&mode=design&t=OWWv8CNqTUBVPysl-1"
+        text="Click here to see the Figma board"
+      />
     </Block>
 
     <section class="flex my-20 items-center justify-between gap-8">
-      <Link title="← Previous project (Mental Pin)" href="/craft/mentalpin" />
-      <Link title="Next project (INVL) →" href="/craft/invl" />
+      <a class="text-base hover:text-neutral-600" href="/craft/mentalpin"
+        >← Previous project (Mental Pin)</a
+      >
+      <a class="text-base hover:text-neutral-600" href="/craft/invl"
+        >Next project (INVL) →</a
+      >
     </section>
   </div>
 </Layout>

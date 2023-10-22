@@ -4,14 +4,14 @@ import Layout from "@layouts/Layout.astro";
 import Link from "@components/Link.astro";
 import Block from "@components/Block.astro";
 import ProjectImage from "@components/ProjectImage.astro";
-import TextLink from "@components/TextLink.astro";
+import Link from "@components/Link.astro";
 ---
 
 <Layout title="Kristjan Poska – Design Engineer">
   <div class="mt-48 sm:mt-24 max-w-prose flex flex-col gap-8">
-    <h1 class="text-5xl tracking-wide sm:text-2xl">Mental Pin</h1>
+    <h1 class="text-4xl sm:text-2xl">Mental Pin</h1>
 
-    <p class="text-2xl sm:text-lg">
+    <p>
       A user interface & user experience design project to make AI feel like
       someone you'd want to express your worries to.
     </p>
@@ -44,15 +44,17 @@ import TextLink from "@components/TextLink.astro";
   <div class="flex flex-col gap-16 mt-16">
     <Block title="Summary">
       <p>
-        The goal of this project was for our team of <TextLink
+        The goal of this project was for our team of <Link
           color="#FEEEA7"
-          href="https://ixd.ma/">
-          IxD.ma
-        </TextLink> students, consisting of Zac Heisey, Inka Jerkku & Sofia Kamergorodski,
+          href="https://ixd.ma/"
+          text="IxD.ma"
+        /> students, consisting of Zac Heisey, Inka Jerkku & Sofia Kamergorodski,
         to help two alumni of IxD, the team at
-        <TextLink color="#FEEEA7" href="https://www.mentalpin.com">
-          Mental Pin
-        </TextLink>, to
+        <Link
+          color="#FEEEA7"
+          href="https://www.mentalpin.com"
+          text="Mental Pin"
+        />, to
         <strong
           >integrate artificial intelligence into their mobile application</strong
         >, which helps people handle their anxiety and OCD ticks. While at
@@ -200,15 +202,17 @@ import TextLink from "@components/TextLink.astro";
         yourself.
       </p>
 
-      <TextLink
+      <Link
         color="#FEEEA7"
-        href="https://www.figma.com/file/74tddu7foRTW6gzJ3LZXQp/Mental-Pin-%C3%97-IXD?type=design&node-id=1058%3A3534&mode=design&t=SysNZG2kgIuwolZG-1">
-        Click here to see the Figma board and test out the prototypes
-      </TextLink>
+        href="https://www.figma.com/file/74tddu7foRTW6gzJ3LZXQp/Mental-Pin-%C3%97-IXD?type=design&node-id=1058%3A3534&mode=design&t=SysNZG2kgIuwolZG-1"
+        text="Click here to see the Figma board"
+      />
     </Block>
 
     <section class="flex my-20 items-center justify-end gap-8">
-      <Link href="/craft/splitwise" title="Next project (Splitwise) →" />
+      <a class="text-base hover:text-neutral-600" href="/craft/splitwise"
+        >Next project (Splitwise) →</a
+      >
     </section>
   </div>
 </Layout>
