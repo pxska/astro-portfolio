@@ -1,0 +1,80 @@
+---
+import Block from "@components/Block.astro";
+import Metadata from "@components/Metadata.astro";
+import ProjectImage from "@components/ProjectImage.astro";
+import Link from "@components/Link.astro";
+import Layout from "@layouts/Layout.astro";
+
+const COLOR = '#F98948';
+---
+
+<Layout title="Kristjan Poska – Design Engineer">
+  <div class="mt-48 sm:mt-24 max-w-prose flex flex-col gap-8">
+    <h1 class="text-4xl sm:text-2xl">Workshop Series Plan for ERC</h1>
+
+    <p>
+      A social innovation project to help the Estonian Refugee Council to
+      integrate young Ukrainians to the Estonian society.
+    </p>
+  </div>
+
+  <Metadata
+    role={["User interviews", "Service design", "Facilitating"]}
+    duration="Sep – Oct 2023"
+    methods={[
+      "Crazy 8-s",
+      "Low-fidelity prototyping",
+      "High-fidelity prototyping",
+      "Facilitating a Workshop",
+    ]}
+  />
+
+  <img
+    class="object-cover bg-center aspect-video transition max-w-full mt-16 rounded-md"
+    src="/images/erc/erc-cover.jpg"
+    alt="A tracing of participants in the first workshop that we did."
+  />
+
+  <div class="flex flex-col gap-16 mt-16">
+    <Block title="Summary">
+      <p>
+        The goal of the project was help the
+        <Link color={COLOR} href="https://www.pagulasabi.ee/en" text="Estonian Refugee Council" />
+        to integrate young Ukrainians into the Estonian society. More specifically, the initial brief my classmates and I were given went as follows:
+      </p>
+
+      <p>How might the Refugee Council support the integration of young Ukrainian war refugees in Estonia?</p>
+    </Block>
+
+    <Block title="Research">
+      <p>We started the project off in one big group of 11 people – the whole group of students in IxD.ma. As usual, we firstly took a deep dive in the background of the topic and conducted some desk research. We were guided by our instructors to, at first, focus on four main topics:</p>
+
+      <ul>
+        <li>→ The cultural background & historical perspective</li>
+        <li>→ The current overall situation in Estonia in the context of Ukrainians</li>
+        <li>→ Equity and Inclusion</li>
+        <li>→ Ukrainian <i>vs</i> Estonian education system</li>
+      </ul>
+
+      <p>Later we found out that it was not very wise to hyperfocus just on these four topics, as there was so much other stuff to find, but that's what happened. After having introduced all of the desk research, we stepped into "define" part of the double diamond.</p>
+    </Block>
+
+    <Block title="Exploring & defining">
+      <p></p>
+    </Block>
+
+    <Block title="Developing">
+      <p></p>
+    </Block>
+
+    <Block title="Delivering & listening">
+      <p></p>
+    </Block>
+  </div>
+
+  <section class="flex my-20 items-center justify-end gap-8">
+    <a class="text-base hover:text-neutral-600" href="/craft/mentalpin"
+      >Next project (Mental Pin) →</a
+    >
+  </section>
+</Layout>

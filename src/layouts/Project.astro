@@ -1,0 +1,51 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Metadata from "@components/Metadata.astro";
+import Block from "@components/Block.astro";
+
+const { frontmatter } = Astro.props;
+---
+
+<Layout title="Kristjan Poska – Design Engineer">
+  <div class="mt-48 sm:mt-24 max-w-prose flex flex-col gap-8">
+    <h1 class="text-4xl sm:text-2xl">{frontmatter.title}</h1>
+
+    <p>{frontmatter.description}</p>
+  </div>
+
+  <Metadata
+    role={frontmatter.role}
+    duration={frontmatter.duration}
+    methods={frontmatter.methods}
+  />
+
+  <img
+    class="object-cover bg-center aspect-video transition max-w-full mt-16 rounded-md"
+    src={frontmatter.cover}
+    alt={frontmatter.cover_alt}
+  />
+
+  <div class="flex flex-col gap-16 mt-16">
+    <Block title="Summary">
+      <p></p>
+    </Block>
+
+    <Block title="Research">
+      <p></p>
+    </Block>
+
+    <Block title="Exploring & defining">
+      <p></p>
+    </Block>
+
+    <Block title="Developing">
+      <p></p>
+    </Block>
+
+    <Block title="Delivering & listening">
+      <p></p>
+    </Block>
+  </div>
+
+  <slot />
+</Layout>
