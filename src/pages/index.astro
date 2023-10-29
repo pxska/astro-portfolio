@@ -2,6 +2,10 @@
 import Layout from "@layouts/Layout.astro";
 import Card from "@components/Card.astro";
 import EmailButton from "@components/EmailButton.astro";
+
+import {sortAndHidePosts} from '@utils/utils';
+
+const posts = await Astro.glob('../pages/craft-mdx/*.mdx');
 ---
 
 <Layout title="Kristjan Poska – Design Engineer">
@@ -27,53 +31,21 @@ import EmailButton from "@components/EmailButton.astro";
   >
     <h3 class="text-neutral-600 uppercase mb-4">Recent work</h3>
 
-    <Card
-      alt="A tracing of participants in the first workshop that we did."
-      background="bg-[#F98948]"
-      description="A social innovation project to help the Estonian Refugee Council to integrate young Ukrainians to the Estonian society."
-      href="/craft/erc"
-      imageSrc="/images/erc/erc-transfer.svg"
-      centered
-      title="ERC"
-    />
+    {sortAndHidePosts(posts).map((post) => {
+      const {alt, color, description, href, card_cover, title, laptop} = post.frontmatter;
 
-    <Card
-      alt="A screenshot of the Mental Pin application's annotation process."
-      background="bg-[#FEEA93]"
-      description="A user interface & user experience design project to make AI feel like someone you'd want to express your worries to."
-      href="/craft/mentalpin"
-      imageSrc="/images/mental-pin/mental-pin-mockup.png"
-      title="Mental Pin"
-    />
-
-    <Card
-      alt="A screenshot of the redesigned Splitwise application."
-      background="bg-[#91C6F7]"
-      description="An emotional design project to reduce the anxiety around tracking group expenses."
-      href="/craft/splitwise"
-      imageSrc="/images/splitwise/splitwise-mockup.png"
-      title="Splitwise"
-    />
-
-    <Card
-      alt="A user journey map displaying the journey of the user the team came up with – Margus."
-      background="bg-[#FED4E7]"
-      description="A service design project to help INVL find their blue ocean."
-      href="/craft/invl"
-      imageSrc="/images/invl/margus-journey.jpg"
-      laptop
-      title="INVL"
-    />
-
-    <Card
-      alt="A redesign of the Estonian salary calculator found online."
-      background="bg-[#9CE6CF]"
-      description="One of the first UI projects I worked on, redesigning the Estonian salary calculator."
-      href="/craft/salary"
-      imageSrc="/images/salary/salary-calc-mockup.png"
-      laptop
-      title="Salary Calculator"
-    />
+      return (
+        <Card
+          alt={alt}
+          background={`bg-[${color}]`}
+          description={description}
+          href={post.url}
+          imageSrc={card_cover}
+          title={title}
+          laptop={laptop}
+        />
+      )
+    })}
   </section>
 
   <section
