@@ -5,7 +5,7 @@ import { sortAndHidePosts } from "@utils/utils";
 
 const { frontmatter } = Astro.props;
 
-const posts = await Astro.glob('../pages/craft-mdx/*.mdx');
+const posts = await Astro.glob('../pages/craft/*.mdx');
 const sortedPosts = sortAndHidePosts(posts);
 
 const currPostIdx = sortedPosts.findIndex((post) => post.frontmatter.title === frontmatter.title);
@@ -49,8 +49,8 @@ if (!prevProject && nextProject) {
   </div>
 
   <section class={`flex my-20 items-center ${projectNavClassName} gap-8`}>
-    {prevProject && <a class="text-base hover:text-neutral-600" href={`/craft-mdx/${prevHref}`}>← Previous project ({prevTitle})</a>}
-    {nextProject && <a class="text-base hover:text-neutral-600" href={`/craft-mdx/${nextHref}`}>Next project ({nextTitle}) →</a>}
+    {prevProject && <a class="text-base hover:text-neutral-600" href={`/craft/${prevHref}`}>← Previous project ({prevTitle})</a>}
+    {nextProject && <a class="text-base hover:text-neutral-600" href={`/craft/${nextHref}`}>Next project ({nextTitle}) →</a>}
   </section>
 </Layout>
 

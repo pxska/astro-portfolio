@@ -5,7 +5,7 @@ import EmailButton from "@components/EmailButton.astro";
 
 import {sortAndHidePosts} from '@utils/utils';
 
-const posts = await Astro.glob('../pages/craft-mdx/*.mdx');
+const posts = await Astro.glob('../pages/craft/*.mdx');
 ---
 
 <Layout title="Kristjan Poska – Design Engineer">
@@ -32,12 +32,11 @@ const posts = await Astro.glob('../pages/craft-mdx/*.mdx');
     <h3 class="text-neutral-600 uppercase mb-4">Recent work</h3>
 
     {sortAndHidePosts(posts).map((post) => {
-      const {alt, color, description, href, card_cover, title, laptop} = post.frontmatter;
+      const {alt, description, card_cover, title, laptop} = post.frontmatter;
 
       return (
         <Card
           alt={alt}
-          background={`bg-[${color}]`}
           description={description}
           href={post.url}
           imageSrc={card_cover}

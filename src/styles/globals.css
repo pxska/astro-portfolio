@@ -90,8 +90,12 @@ li {
   @apply my-4;
 }
 
-.project img {
+.project img:not(.full-height) {
   @apply object-cover bg-center aspect-video transition max-w-full rounded-md;
+}
+
+.project img.full-height {
+  @apply rounded-md;
 }
 
 .project a {
