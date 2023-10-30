@@ -1,0 +1,57 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Metadata from "@components/Metadata.astro";
+import { sortAndHidePosts } from "@utils/utils";
+
+const { frontmatter } = Astro.props;
+
+const posts = await Astro.glob('../pages/craft/*.mdx');
+const sortedPosts = sortAndHidePosts(posts);
+
+const currPostIdx = sortedPosts.findIndex((post) => post.frontmatter.title === frontmatter.title);
+const prevProject = sortedPosts[currPostIdx - 1];
+const nextProject = sortedPosts[currPostIdx + 1];
+
+const prevHref = prevProject?.frontmatter?.href;
+const prevTitle = prevProject?.frontmatter?.title;
+
+const nextHref = nextProject?.frontmatter?.href;
+const nextTitle = nextProject?.frontmatter?.title;
+
+let projectNavClassName = 'justify-between';
+
+if (!prevProject && nextProject) {
+  projectNavClassName = 'justify-end';
+}
+---
+
+<Layout title="Kristjan Poska – Design Engineer">
+  <div class="mt-48 sm:mt-24 max-w-prose flex flex-col gap-8">
+    <h1 class="text-4xl sm:text-2xl">{frontmatter.title}</h1>
+
+    <p>{frontmatter.description}</p>
+  </div>
+
+  <Metadata
+    role={frontmatter.role}
+    duration={frontmatter.duration}
+    methods={frontmatter.methods}
+  />
+
+  <img
+    class="object-cover bg-center aspect-video transition max-w-full mt-16 rounded-md"
+    src={frontmatter.cover}
+    alt={frontmatter.cover_alt}
+  />
+
+  <div class="project mt-16">
+    <slot />
+  </div>
+
+  <section class={`flex my-20 items-center ${projectNavClassName} gap-8`}>
+    {prevProject && <a class="text-base hover:text-neutral-600" href={`/craft/${prevHref}`}>← Previous project ({prevTitle})</a>}
+    {nextProject && <a class="text-base hover:text-neutral-600" href={`/craft/${nextHref}`}>Next project ({nextTitle}) →</a>}
+  </section>
+</Layout>
+
+<style define:vars={{ backgroundColor: frontmatter.color }}></style>

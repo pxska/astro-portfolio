@@ -58,12 +58,6 @@ a {
   text-decoration: none;
 }
 
-em {
-  font-family: "Georgia";
-  font-style: italic;
-  @apply text-xl;
-}
-
 strong {
   @apply font-black !important;
 }
@@ -86,4 +80,33 @@ li {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+.project h1 {
+  @apply text-2xl mt-8;
+}
+
+.project p {
+  @apply my-4;
+}
+
+.project img:not(.full-height) {
+  @apply object-cover bg-center aspect-video transition max-w-full rounded-md;
+}
+
+.project img.full-height {
+  @apply rounded-md;
+}
+
+.project a {
+  @apply relative;
+}
+
+.project a::before {
+  @apply content-[''] absolute left-0 bottom-0 w-full h-2 -z-[1] transition-all;
+  background-color: var(--backgroundColor);
+}
+
+.project a:hover::before {
+  @apply bottom-0 h-full;
 }

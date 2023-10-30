@@ -2,11 +2,16 @@
 import Layout from "@layouts/Layout.astro";
 import Card from "@components/Card.astro";
 import EmailButton from "@components/EmailButton.astro";
+
+import {sortAndHidePosts} from '@utils/utils';
+
+const posts = await Astro.glob('../pages/craft/*.mdx');
 ---
 
 <Layout title="Kristjan Poska – Design Engineer">
   <header
-    class="my-48 sm:my-24 flex flex-col gap-8 animate-fade-right animate-once animate-ease-out">
+    class="my-48 sm:my-24 flex flex-col gap-8 animate-fade-right animate-once animate-ease-out"
+  >
     <h1 class="text-4xl sm:text-2xl max-w-3xl">
       Hey, I'm Kristjan. I craft memorable digital experiences with precision
       and passion.
@@ -22,50 +27,29 @@ import EmailButton from "@components/EmailButton.astro";
 
   <section
     id="craft"
-    class="flex flex-col gap-4 scroll-mt-16 animate-fade-right animate-once animate-ease-out animate-delay-200">
+    class="flex flex-col gap-4 scroll-mt-16 animate-fade-right animate-once animate-ease-out animate-delay-200"
+  >
     <h3 class="text-neutral-600 uppercase mb-4">Recent work</h3>
 
-    <Card
-      title="Mental Pin"
-      description="A user interface & user experience design project to make AI feel like someone you'd want to express your worries to."
-      imageSrc="/images/mental-pin/mental-pin-mockup.png"
-      alt="A screenshot of the Mental Pin application's annotation process."
-      href="/craft/mentalpin"
-      background="bg-[#FEEA93]"
-    />
+    {sortAndHidePosts(posts).map((post) => {
+      const {alt, description, card_cover, title, laptop} = post.frontmatter;
 
-    <Card
-      title="Splitwise"
-      description="An emotional design project to reduce the anxiety around tracking group expenses."
-      imageSrc="/images/splitwise/splitwise-mockup.png"
-      alt="A screenshot of the redesigned Splitwise application."
-      href="/craft/splitwise"
-      background="bg-[#91C6F7]"
-    />
-
-    <Card
-      title="INVL"
-      description="A service design project to help INVL find their blue ocean."
-      imageSrc="/images/invl/margus-journey.jpg"
-      alt="A user journey map displaying the journey of the user the team came up with – Margus."
-      href="/craft/invl"
-      background="bg-[#FED4E7]"
-      laptop
-    />
-
-    <Card
-      title="Salary Calculator"
-      description="One of the first UI projects I worked on, redesigning the Estonian salary calculator."
-      imageSrc="/images/salary/salary-calc-mockup.png"
-      alt="A redesign of the Estonian salary calculator found online."
-      href="/craft/salary"
-      background="bg-[#9CE6CF]"
-      laptop
-    />
+      return (
+        <Card
+          alt={alt}
+          description={description}
+          href={post.url}
+          imageSrc={card_cover}
+          title={title}
+          laptop={laptop}
+        />
+      )
+    })}
   </section>
 
   <section
-    class="my-40 sm:my-20 sm:text-center animate-fade-right animate-once animate-ease-out animate-delay-[400ms]">
+    class="my-40 sm:my-20 sm:text-center animate-fade-right animate-once animate-ease-out animate-delay-[400ms]"
+  >
     <h1 class="text-4xl mb-2 sm:text-2xl">Let's get to know each other.</h1>
     <EmailButton />
   </section>
