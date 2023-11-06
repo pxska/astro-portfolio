@@ -1,35 +1,47 @@
 ---
-const { title, description, imageSrc, alt, href, laptop, centered } =
-  Astro.props;
+const {
+  title,
+  description,
+  imageSrc,
+  alt,
+  href,
+  laptop,
+  centered,
+} = Astro.props;
 
-const laptopClasses = "sm:object-contain object-right sm:object-center py-10 pr-4 sm:px-4 sm:py-0"
+const laptopClasses =
+  "sm:object-contain object-right sm:object-center py-10 pr-4 sm:px-4 sm:py-0";
 const mobileClasses = "object-top pt-4 px-4";
 const centeredClasses = "object-contain p-4";
 
-const className = `object-cover ${laptop ? laptopClasses : centered ? centeredClasses : mobileClasses} w-1/3 bg-center transition sm:w-full sm:h-80 md:w-full`;
+const className = `object-cover ${
+  laptop
+    ? laptopClasses
+    : centered
+    ? centeredClasses
+    : mobileClasses
+} w-1/3 bg-center transition sm:w-full sm:h-80 md:w-full`;
 
 const backgroundVariants = {
-  mentalpin: 'bg-[#FEEA93]',
-  splitwise: 'bg-[#91C6F7]',
-  salary: 'bg-[#9CE6CF]',
-  invl: 'bg-[#FED4E7]'
-}
+  mentalpin: "bg-[#FEEA93]",
+  splitwise: "bg-[#91C6F7]",
+  salary: "bg-[#9CE6CF]",
+  invl: "bg-[#FED4E7]",
+};
 ---
 
 <a
   href={href}
-  class={`${backgroundVariants[href.split('/').at(-1)]} h-64 sm:h-auto flex justify-between sm:flex-col sm:min-h-full shadow-sm transition-all hover:scale-101 hover:shadow-lg overflow-hidden`}>
-  <img
-    class={className}
-    src={imageSrc}
-    alt={alt}
-  />
+  class={`${
+    backgroundVariants[href.split("/").at(-1)]
+  } h-96 sm:h-auto flex justify-between sm:flex-col sm:min-h-full shadow-sm transition-all hover:scale-101 hover:shadow-lg overflow-hidden`}>
+  <img class={className} src={imageSrc} alt={alt} />
 
   <div
-    class="flex flex-col gap-8 md:gap-4 p-8 sm:px-8 justify-center w-2/3 sm:w-full">
-    <h2 class="text-2xl sm:text-lg">
+    class="flex w-2/3 flex-col justify-center gap-8 p-8 md:gap-4 sm:w-full sm:px-8">
+    <h2 class="text-2xl font-bold sm:text-lg">
       {title}
     </h2>
-    <p class="text-md sm:text-sm">{description}</p>
+    <p class="text-base">{description}</p>
   </div>
 </a>
