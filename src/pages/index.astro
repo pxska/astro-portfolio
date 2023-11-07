@@ -1,14 +1,13 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import Card from "@components/Card.astro";
-import EmailButton from "@components/EmailButton.astro";
 
 import { sortAndHidePosts } from "@utils/utils";
 
 const posts = await Astro.glob("../pages/craft/*.mdx");
 ---
 
-<Layout title="Kristjan Poska – Design Engineer">
+<Layout title="Kristjan Poska – Product Designer">
   <header
     class="my-48 flex animate-fade-right flex-col gap-8 animate-once animate-ease-out sm:my-24">
     <div
@@ -73,7 +72,7 @@ const posts = await Astro.glob("../pages/craft/*.mdx");
     </p>
 
     <a
-      class="mt-8 flex w-fit select-none items-center gap-2 rounded-full border border-neutral-500 bg-neutral-50 px-3 py-1 text-sm text-[#151515] transition-colors hover:cursor-pointer hover:bg-[#151515] hover:text-[#ffffff]"
+      class="mt-8 flex w-fit select-none items-center gap-2 rounded-full border border-neutral-500 px-3 py-1 text-sm text-[#151515] transition-colors hover:cursor-pointer hover:bg-[#151515] hover:text-[#ffffff]"
       href="mailto:kristjanposka@gmail.com">
       <svg
         class="h-4 w-4"

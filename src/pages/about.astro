@@ -1,14 +1,14 @@
 ---
-import EmailButton from "@components/EmailButton.astro";
-import ProjectImage from "@components/ProjectImage.astro";
+import Pill from "@components/Pill.astro";
 import Layout from "@layouts/Layout.astro";
 ---
 
-<Layout title="Kristjan Poska – Design Engineer">
+<Layout title="Kristjan Poska – Product Designer">
   <section class="mt-48 sm:mt-24">
     <div
       class="mb-8 flex max-w-4xl gap-8 sm:flex-col sm:items-center">
-      <div class="flex flex-col gap-8">
+      <div
+        class="flex animate-fade-right flex-col gap-8 animate-delay-200 animate-once animate-ease-out">
         <h1 class="text-4xl font-bold sm:text-2xl">
           I'm Kristjan, a Product Designer working,
           studying, and living in Estonia. 🇪🇪
@@ -34,59 +34,40 @@ import Layout from "@layouts/Layout.astro";
       </div>
     </div>
 
-    <div class="mb-8 flex flex-col gap-4">
+    <div
+      class="mb-8 flex animate-fade-right flex-col gap-4 animate-delay-200 animate-once animate-ease-out">
       <h1 class="text-base font-bold">What I like:</h1>
 
       <div class="flex gap-2 sm:flex-col">
-        <div
-          class="flex w-fit items-center gap-2 rounded-full border border-neutral-500 px-3 py-1 text-sm">
-          <span>🤓 Coding</span>
-        </div>
-
-        <div
-          class="flex w-fit items-center gap-2 rounded-full border border-neutral-500 px-3 py-1 text-sm">
-          <span>🧑🏻‍🎨 Visual Design</span>
-        </div>
-
-        <div
-          class="flex w-fit items-center gap-2 rounded-full border border-neutral-500 px-3 py-1 text-sm">
-          <span>📷 Photography</span>
-        </div>
+        <Pill title="🤓 Coding" />
+        <Pill title="🧑🏻‍🎨 Visual Design" />
+        <Pill title="📷 Photography" />
+        <Pill title="🎵 Music" />
+        <Pill title="☕ Coffee" />
       </div>
 
       <h1 class="text-base font-bold">What I'm like:</h1>
-
-      <div
-        class="flex w-fit items-center gap-2 rounded-full border border-neutral-500 px-3 py-1 text-sm">
-        <span>Executive (ESTJ-T)</span>
-      </div>
+      <Pill title="Executive (ESTJ-T)" />
 
       <h1 class="text-base font-bold">
         What I'm learning:
       </h1>
 
       <div class="flex gap-2 sm:flex-col">
-        <div
-          class="flex w-fit items-center gap-2 rounded-full border border-neutral-500 px-3 py-1 text-sm">
-          <span>🎸 Guitar</span>
-        </div>
-
-        <div
-          class="flex w-fit items-center gap-2 rounded-full border border-neutral-500 px-3 py-1 text-sm">
-          <span>🇩🇪 German</span>
-        </div>
+        <Pill title="🎸 Guitar" />
+        <Pill title="🇩🇪 German" />
       </div>
     </div>
 
     <img
-      class="max-w-full rounded-md object-cover shadow-md"
+      class="max-w-full animate-fade-right rounded-md object-cover shadow-md animate-delay-300 animate-once animate-ease-out"
       src="/images/kristjan.jpg"
       alt="Kristjan Poska"
     />
   </section>
 
   <section
-    class="mx-auto my-48 flex w-full max-w-6xl flex-col sm:my-24">
+    class="mx-auto my-48 flex w-full max-w-6xl animate-fade-right flex-col animate-delay-500 animate-once animate-ease-out sm:my-24">
     <h1 class="max-w-6xl text-4xl font-bold sm:text-2xl">
       Got a project in mind? I'm all ears!
     </h1>
@@ -96,7 +77,7 @@ import Layout from "@layouts/Layout.astro";
     </p>
 
     <a
-      class="mt-8 flex w-fit select-none items-center gap-2 rounded-full border border-neutral-500 bg-neutral-50 px-3 py-1 text-sm text-[#151515] transition-colors hover:cursor-pointer hover:bg-[#151515] hover:text-[#ffffff]"
+      class="mt-8 flex w-fit select-none items-center gap-2 rounded-full border border-neutral-500 px-3 py-1 text-sm text-[#151515] transition-colors hover:cursor-pointer hover:bg-[#151515] hover:text-[#ffffff]"
       href="mailto:kristjanposka@gmail.com">
       <svg
         class="h-4 w-4"
