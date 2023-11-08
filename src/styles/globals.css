@@ -83,7 +83,7 @@ li {
 }
 
 .project h1 {
-  @apply text-2xl mt-8;
+  @apply mt-8 text-2xl;
 }
 
 .project p {
@@ -91,7 +91,7 @@ li {
 }
 
 .project img:not(.full-height) {
-  @apply object-cover bg-center aspect-video transition max-w-full rounded-md;
+  @apply aspect-video max-w-full rounded-md bg-center object-cover transition;
 }
 
 .project img.full-height {
@@ -103,7 +103,7 @@ li {
 }
 
 .project a::before {
-  @apply content-[''] absolute left-0 bottom-0 w-full h-2 -z-[1] transition-all;
+  @apply absolute bottom-0 left-0 -z-[1] h-2 w-full transition-all content-[''];
   background-color: var(--backgroundColor);
 }
 
