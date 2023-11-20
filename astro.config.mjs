@@ -6,14 +6,18 @@ import mdx from "@astrojs/mdx";
 // https://astro.build/config
 export default defineConfig({
   adapter: vercel({
-    webAnalytics: true
+    webAnalytics: {
+      enabled: true,
+    },
   }),
   integrations: [tailwind(), mdx()],
   plugins: ["prettier-plugin-astro"],
-  overrides: [{
-    files: "*.astro",
-    options: {
-      parser: "astro"
-    }
-  }]
+  overrides: [
+    {
+      files: "*.astro",
+      options: {
+        parser: "astro",
+      },
+    },
+  ],
 });
