@@ -1,5 +1,4 @@
 ---
-import "@fontsource/inter";
 import "@styles/globals.css";
 
 const { title } = Astro.props;
@@ -55,59 +54,38 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
 
-  <body class="flex flex-col bg-[#ffffff] text-[#151515]">
-    <div
-      class="sticky top-0 z-10 w-full border-b border-b-neutral-300 bg-[#ffffff]">
-      <nav
-        class="mx-auto flex max-w-6xl items-center justify-between px-8 py-6">
-        <a class="text-base hover:text-neutral-600" href="/"
-          >Kristjan Poska</a
-        >
+  <body class="mx-8">
+    <nav
+      class="mx-auto my-10 flex max-w-4xl items-center justify-between">
+      <a
+        class="text-sm font-semibold hover:text-neutral-500"
+        href="/">Kristjan Poska</a
+      >
 
-        <ul role="list" class="m-0 flex items-center gap-4">
-          <li>
-            <a
-              class="text-base hover:text-neutral-600"
-              href="/#craft">Craft</a
-            >
-          </li>
-          <li>
-            <a
-              class="text-base hover:text-neutral-600"
-              href="/about">About</a
-            >
-          </li>
-          <li>
-            <a
-              class="flex w-fit select-none items-center gap-2 rounded-full border border-neutral-500 px-3 py-1 text-sm text-[#151515] transition-colors hover:cursor-pointer hover:bg-[#151515] hover:text-[#ffffff]"
-              href="mailto:kristjanposka@gmail.com">
-              <svg
-                class="h-4 w-4"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                viewBox="0 0 20 16">
-                <path
-                  d="m10.036 8.278 9.258-7.79A1.979 1.979 0 0 0 18 0H2A1.987 1.987 0 0 0 .641.541l9.395 7.737Z"
-                ></path>
-                <path
-                  d="M11.241 9.817c-.36.275-.801.425-1.255.427-.428 0-.845-.138-1.187-.395L0 2.6V14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2.5l-8.759 7.317Z"
-                ></path>
-              </svg>
-               Contact
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </div>
+      <ul role="list" class="m-0 flex items-center gap-8">
+        <li>
+          <a
+            class="text-sm font-semibold tracking-tighter text-neutral-500 hover:text-inherit"
+            href="/about">About</a
+          >
+        </li>
+        <li>
+          <a
+            class="text-sm font-semibold tracking-tighter text-neutral-500 hover:text-inherit"
+            href="mailto:kristjanposka@gmail.com">Contact</a
+          >
+        </li>
+      </ul>
+    </nav>
 
-    <div
-      class="relative mx-auto flex w-full max-w-6xl flex-grow flex-col px-8">
+    <div class="relative mx-auto flex max-w-4xl flex-col">
       <slot />
     </div>
 
-    <footer class="mb-6 text-center">
-      &copy; Kristjan Poska {new Date().getFullYear()}
+    <footer
+      class="mb-10 mt-48 text-center text-sm font-semibold text-neutral-500">
+      &copy; {new Date().getFullYear()} Kristjan Poska. Made
+      with ✧˖° in Estonia.
     </footer>
   </body>
 </html>

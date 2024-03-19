@@ -5,89 +5,60 @@ import Card from "@components/Card.astro";
 import { sortAndHidePosts } from "@utils/utils";
 
 const posts = await Astro.glob("../pages/craft/*.mdx");
+const parsedPosts = sortAndHidePosts(posts);
 ---
 
 <Layout title="Kristjan Poska – Product Designer">
   <header
-    class="my-48 flex animate-fade-right flex-col gap-8 animate-once animate-ease-out sm:my-24">
-    <div
-      class="flex w-fit items-center gap-2 rounded-full border border-green-500 bg-green-50 px-3 py-1 text-sm">
-      <div
-        class="h-2.5 w-2.5 animate-pulse rounded-full border border-white bg-green-500">
-      </div>
-      <span>Open to work!</span>
-    </div>
-
-    <h1 class="max-w-4xl text-4xl font-bold sm:text-2xl">
-      Hey, I'm Kristjan. I craft memorable digital
-      experiences with precision and passion.
+    class="mb-8 flex animate-fade-up flex-col items-start gap-8 rounded-3xl py-48 animate-once animate-ease-out md:items-center md:py-24">
+    <h1
+      class="text-6xl tracking-tighter md:text-center md:text-2xl">
+      Creative designer
+      <span class="font-semibold">
+        designing tomorrow's solutions today</span
+      >.
     </h1>
 
-    <h2 class="max-w-prose text-base">
-      I bring your vision to life while paying meticulous
-      attention to even the smallest details.
-    </h2>
+    <div class="group relative inline-flex">
+      <div
+        class="animate-tilt absolute -inset-px rounded-full bg-gradient-to-r from-[#FEEA93] via-[#91C6F7] to-[#9CE6CF] opacity-70 blur-lg transition-all duration-1000 group-hover:-inset-3 group-hover:opacity-100 group-hover:duration-200">
+      </div>
+      <a
+        href="mailto:kristjanposka@gmail.com"
+        title="Say hi!"
+        class="relative inline-flex items-center justify-center rounded-full bg-neutral-700 px-8 py-4 text-sm font-semibold text-white transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-neutral-700 focus:ring-offset-2"
+        role="button"
+        >Say hi!
+      </a>
+    </div>
   </header>
 
   <section
-    id="craft"
-    class="flex animate-fade-right scroll-mt-16 flex-col gap-4 animate-delay-200 animate-once animate-ease-out">
-    <h3 class="mb-4 uppercase text-neutral-600">
-      Recent work
-    </h3>
-
+    class="grid scroll-mt-16 grid-cols-2 gap-8 md:grid-cols-1">
     {
-      sortAndHidePosts(posts).map((post) => {
+      parsedPosts.map((post, index) => {
         const {
           alt,
           description,
           card_cover,
           title,
-          laptop,
+          duration,
+          role,
         } = post.frontmatter;
 
         return (
           <Card
+            index={index + 1}
+            role={role}
             alt={alt}
+            duration={duration}
             description={description}
             href={post.url}
             imageSrc={card_cover}
             title={title}
-            laptop={laptop}
           />
         );
       })
     }
-  </section>
-
-  <section
-    class="mx-auto my-48 flex w-full max-w-6xl animate-fade-right flex-col animate-delay-500
-    animate-once animate-ease-out sm:my-24">
-    <h1 class="max-w-6xl text-4xl font-bold sm:text-2xl">
-      Got a project in mind? I'm all ears!
-    </h1>
-
-    <p class="mt-4">
-      I'm really-really good at getting back to e-mails.
-    </p>
-
-    <a
-      class="mt-8 flex w-fit select-none items-center gap-2 rounded-full border border-neutral-500 px-3 py-1 text-sm text-[#151515] transition-colors hover:cursor-pointer hover:bg-[#151515] hover:text-[#ffffff]"
-      href="mailto:kristjanposka@gmail.com">
-      <svg
-        class="h-4 w-4"
-        aria-hidden="true"
-        xmlns="http://www.w3.org/2000/svg"
-        fill="currentColor"
-        viewBox="0 0 20 16">
-        <path
-          d="m10.036 8.278 9.258-7.79A1.979 1.979 0 0 0 18 0H2A1.987 1.987 0 0 0 .641.541l9.395 7.737Z"
-        ></path>
-        <path
-          d="M11.241 9.817c-.36.275-.801.425-1.255.427-.428 0-.845-.138-1.187-.395L0 2.6V14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2.5l-8.759 7.317Z"
-        ></path>
-      </svg>
-       Contact
-    </a>
   </section>
 </Layout>

@@ -1,26 +1,6 @@
 ---
-const {
-  title,
-  description,
-  imageSrc,
-  alt,
-  href,
-  laptop,
-  centered,
-} = Astro.props;
-
-const laptopClasses =
-  "sm:object-contain object-right sm:object-center py-10 pr-4 sm:px-4 sm:py-0";
-const mobileClasses = "object-top pt-4 px-4";
-const centeredClasses = "object-contain p-4";
-
-const className = `object-cover ${
-  laptop
-    ? laptopClasses
-    : centered
-    ? centeredClasses
-    : mobileClasses
-} w-1/3 bg-center transition sm:w-full sm:h-80 md:w-full`;
+const { index, title, description, href, role, duration } =
+  Astro.props;
 
 const backgroundVariants = {
   mentalpin: "bg-[#FEEA93]",
@@ -28,20 +8,38 @@ const backgroundVariants = {
   salary: "bg-[#9CE6CF]",
   invl: "bg-[#FED4E7]",
 };
+
+const bgClass = backgroundVariants[href.split("/").at(-1)];
+const animateDelay = {
+  1: "animate-delay-75",
+  2: "animate-delay-100",
+  3: "animate-delay-150",
+  4: "animate-delay-200",
+};
 ---
 
-<a
-  href={href}
-  class={`${
-    backgroundVariants[href.split("/").at(-1)]
-  } h-96 sm:h-auto flex justify-between sm:flex-col sm:min-h-full shadow-sm transition-all hover:scale-101 hover:shadow-lg overflow-hidden`}>
-  <img class={className} src={imageSrc} alt={alt} />
-
-  <div
-    class="flex w-2/3 flex-col justify-center gap-8 p-8 md:gap-4 sm:w-full sm:px-8">
-    <h2 class="text-2xl font-bold sm:text-lg">
-      {title}
-    </h2>
-    <p class="text-base">{description}</p>
+<div
+  class={`animate-fade-up ${animateDelay[index]} text-sm`}>
+  <div class="text-4xl font-semibold">
+    {String(index).padStart(3, "0")}
   </div>
-</a>
+  <div class="border-t border-[#e7e7e7] py-0.5">
+    {role.join(", ")}
+  </div>
+  <div
+    class="border-t border-[#e7e7e7] py-0.5 font-semibold">
+    {title}
+  </div>
+  <div class="border-t border-[#e7e7e7] py-0.5">
+    {duration}
+  </div>
+  <div class="border-t border-[#e7e7e7] py-0.5">
+    {description}
+  </div>
+  <div class="border-t border-[#e7e7e7] py-1">
+    <a
+      class={`${bgClass} py-0.5 px-3 text-sm rounded-full hover:opacity-80 transition-opacity shadow-2xl`}
+      href={href}>Read more here →</a
+    >
+  </div>
+</div>

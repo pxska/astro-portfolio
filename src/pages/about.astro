@@ -4,95 +4,70 @@ import Layout from "@layouts/Layout.astro";
 ---
 
 <Layout title="Kristjan Poska – Product Designer">
-  <section class="mt-48 sm:mt-24">
-    <div
-      class="mb-8 flex max-w-4xl gap-8 sm:flex-col sm:items-center">
+  <section class="mt-48 flex gap-8 md:mt-24 md:flex-col">
+    <div>
+      <div class="mb-8 max-w-4xl gap-8">
+        <div class="flex flex-col gap-8">
+          <h1
+            class="max-w-4xl animate-fade-up text-6xl tracking-tighter animate-once md:text-2xl">
+            Hey, I'm Kristjan!
+          </h1>
+
+          <p
+            class="animate-fade-up
+          animate-delay-200 animate-once">
+            I am a designer and self-taught developer, who
+            does not back down from difficult tasks. Having
+            a non-development background, I have an
+            advantage in the design process – I have
+            experience in lots of different fields, be it
+            language, music, philosophy, etc., which makes
+            me a powerful ally in any situation.
+          </p>
+
+          <p
+            class="animate-fade-up
+          animate-delay-300 animate-once">
+            I strongly believe in teamwork, however as I am
+            also a very avid learner, quick-witted, and,
+            when necessary, quite independent. I always
+            strive to do better and grow from even the most
+            critical feedback.
+          </p>
+        </div>
+      </div>
+
       <div
-        class="flex animate-fade-right flex-col gap-8 animate-delay-200 animate-once animate-ease-out">
-        <h1 class="text-4xl font-bold sm:text-2xl">
-          I'm Kristjan, a Product Designer working,
-          studying, and living in Estonia. 🇪🇪
-        </h1>
-
-        <p>
-          I am a designer and self-taught developer, who
-          does not back down from difficult tasks. Having a
-          non-development background, I have an advantage in
-          the design process – I have experience in lots of
-          different fields, be it language, music,
-          philosophy, etc., which makes me a powerful ally
-          in any situation.
+        class="animate-fade-up
+      animate-delay-500 animate-once">
+        <p class="mb-2">
+          Some random (semi-cool 😎) facts about me:
         </p>
-
-        <p>
-          I strongly believe in teamwork, however as I am
-          also a very avid learner, quick-witted, and, when
-          necessary, quite independent. I always strive to
-          do better and grow from even the most critical
-          feedback.
-        </p>
-      </div>
-    </div>
-
-    <div
-      class="mb-8 flex animate-fade-right flex-col gap-4 animate-delay-200 animate-once animate-ease-out">
-      <h1 class="text-base font-bold">What I like:</h1>
-
-      <div class="flex gap-2 sm:flex-col">
-        <Pill title="🤓 Coding" />
-        <Pill title="🧑🏻‍🎨 Visual Design" />
-        <Pill title="📷 Photography" />
-        <Pill title="🎵 Music" />
-        <Pill title="☕ Coffee" />
-      </div>
-
-      <h1 class="text-base font-bold">What I'm like:</h1>
-      <Pill title="Executive (ESTJ-T)" />
-
-      <h1 class="text-base font-bold">
-        What I'm learning:
-      </h1>
-
-      <div class="flex gap-2 sm:flex-col">
-        <Pill title="🎸 Guitar" />
-        <Pill title="🇩🇪 German" />
+        <ul class="list-inside list-disc">
+          <li>
+            I have the personality type of an <span
+              class="font-semibold">Executive (ESTJ-T)</span
+            >.
+          </li>
+          <li>
+            After being a classical musician for 15 years, <span
+              class="font-semibold">I turned to guitar</span
+            >.
+          </li>
+          <li>
+            <span class="font-semibold"
+              >I love cycling.</span
+            > I have a cheap single-speed bicycle that I
+            adore to bits.
+          </li>
+        </ul>
       </div>
     </div>
 
     <img
-      class="max-w-full animate-fade-right rounded-md object-cover shadow-md animate-delay-300 animate-once animate-ease-out"
-      src="/images/kristjan.png"
+      class="h-full w-96 animate-fade-up rounded-md shadow-md animate-once animate-ease-out md:w-full md:animate-delay-700"
+      src="/images/kristjan.JPG"
       alt="Kristjan Poska"
     />
-  </section>
-
-  <section
-    class="mx-auto my-48 flex w-full max-w-6xl animate-fade-right flex-col animate-delay-500 animate-once animate-ease-out sm:my-24">
-    <h1 class="max-w-6xl text-4xl font-bold sm:text-2xl">
-      Got a project in mind? I'm all ears!
-    </h1>
-
-    <p class="mt-4">
-      I'm really-really good at getting back to e-mails.
-    </p>
-
-    <a
-      class="mt-8 flex w-fit select-none items-center gap-2 rounded-full border border-neutral-500 px-3 py-1 text-sm text-[#151515] transition-colors hover:cursor-pointer hover:bg-[#151515] hover:text-[#ffffff]"
-      href="mailto:kristjanposka@gmail.com">
-      <svg
-        class="h-4 w-4"
-        aria-hidden="true"
-        xmlns="http://www.w3.org/2000/svg"
-        fill="currentColor"
-        viewBox="0 0 20 16">
-        <path
-          d="m10.036 8.278 9.258-7.79A1.979 1.979 0 0 0 18 0H2A1.987 1.987 0 0 0 .641.541l9.395 7.737Z"
-        ></path>
-        <path
-          d="M11.241 9.817c-.36.275-.801.425-1.255.427-.428 0-.845-.138-1.187-.395L0 2.6V14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2.5l-8.759 7.317Z"
-        ></path>
-      </svg>
-       Contact
-    </a>
   </section>
 </Layout>
