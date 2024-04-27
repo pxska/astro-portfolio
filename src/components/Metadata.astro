@@ -1,34 +1,28 @@
 ---
-const { methods = [], duration, role = [] } = Astro.props;
+const { methods = [], date, role = [] } = Astro.props;
 ---
 
-<div class="metadata-grid mt-8">
-  <div>
-    <h2 class="text-xs text-neutral-500">Role</h2>
-    <div class="text-xs mt-2 font-medium">{role.join(" · ")}</div>
-  </div>
-  <div>
-    <h2 class="text-xs text-neutral-500">Duration</h2>
-    <div class="text-xs mt-2 font-medium">{duration}</div>
-  </div>
-  <div>
-    <h2 class="text-xs text-neutral-500">Methods</h2>
-    <div class="text-xs mt-2 font-medium">{methods.join(" · ")}</div>
+<div class="mb-2">
+  <h2 class="text-xs font-semibold text-neutral-900">
+    Role
+  </h2>
+  <div class="text-xs text-neutral-500">
+    {role.join(" · ")}
   </div>
 </div>
 
-<style>
-  .metadata-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr 2fr;
-    row-gap: 2rem;
-    column-gap: 2rem;
-  }
+<div class="mb-2">
+  <h2 class="text-xs font-semibold text-neutral-900">
+    Date
+  </h2>
+  <div class="text-xs text-neutral-500">{date}</div>
+</div>
 
-  @media screen and (max-width: 639px) {
-    .metadata-grid {
-      grid-template-columns: 1fr;
-      row-gap: 1rem;
-    }
-  }
-</style>
+<div class="mb-8">
+  <h2 class="text-xs font-semibold text-neutral-900">
+    Methods
+  </h2>
+  <div class="text-xs text-neutral-500">
+    {methods.join(" · ")}
+  </div>
+</div>
