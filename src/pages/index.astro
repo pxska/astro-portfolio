@@ -9,53 +9,27 @@ const parsedPosts = sortAndHidePosts(posts);
 ---
 
 <Layout title="Kristjan Poska – Product Designer">
-  <header
-    class="mb-8 flex animate-fade-up flex-col items-start gap-8 rounded-3xl py-48 animate-once animate-ease-out md:items-center md:py-24">
-    <h1
-      class="text-6xl tracking-tighter md:text-center md:text-2xl">
-      Creative designer
-      <span class="font-semibold">
-        designing tomorrow's solutions today</span
-      >.
-    </h1>
-
-    <div class="group relative inline-flex">
-      <div
-        class="animate-tilt absolute -inset-px rounded-full bg-gradient-to-r from-[#FEEA93] via-[#91C6F7] to-[#9CE6CF] opacity-70 blur-lg transition-all duration-1000 group-hover:-inset-3 group-hover:opacity-100 group-hover:duration-200">
-      </div>
-      <a
-        href="mailto:kristjanposka@gmail.com"
-        title="Say hi!"
-        class="relative inline-flex items-center justify-center rounded-full bg-neutral-700 px-8 py-4 text-sm font-semibold text-white transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-neutral-700 focus:ring-offset-2"
-        role="button"
-        >Say hi!
-      </a>
-    </div>
+  <header class="mt-8 text-neutral-500">
+    <p>
+      A passionate product designer based in Tallinn,
+      Estonia. Working on UX/UI projects with the power of
+      front-end development in my rucksack. Comfortable
+      using TypeScript, React and TailwindCSS on the
+      development side and Figma plus my creative-side of
+      the brain on the design side.
+    </p>
   </header>
 
-  <section
-    class="grid scroll-mt-16 grid-cols-2 gap-8 md:grid-cols-1">
+  <section class="mt-8 flex flex-col gap-2">
     {
-      parsedPosts.map((post, index) => {
-        const {
-          alt,
-          description,
-          card_cover,
-          title,
-          duration,
-          role,
-        } = post.frontmatter;
+      parsedPosts.map((post) => {
+        const { description, date } = post.frontmatter;
 
         return (
           <Card
-            index={index + 1}
-            role={role}
-            alt={alt}
-            duration={duration}
+            date={date}
             description={description}
             href={post.url}
-            imageSrc={card_cover}
-            title={title}
           />
         );
       })

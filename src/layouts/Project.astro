@@ -9,7 +9,7 @@ const posts = await Astro.glob("../pages/craft/*.mdx");
 const sortedPosts = sortAndHidePosts(posts);
 
 const currPostIdx = sortedPosts.findIndex(
-  (post) => post.frontmatter.title === frontmatter.title,
+  (post) => post.frontmatter.title === frontmatter.title
 );
 const prevProject = sortedPosts[currPostIdx - 1];
 const nextProject = sortedPosts[currPostIdx + 1];
@@ -28,28 +28,29 @@ if (!prevProject && nextProject) {
 ---
 
 <Layout title="Kristjan Poska – Product Designer">
-  <div
-    class="mt-48 flex max-w-prose flex-col gap-8 sm:mt-24">
-    <h1 class="text-4xl font-bold sm:text-2xl">
+  <div class="my-8">
+    <h1 class="font-semibold">
       {frontmatter.title}
     </h1>
 
-    <p>{frontmatter.description}</p>
+    <div class="mb-4 font-medium text-neutral-500">
+      {frontmatter.description}
+    </div>
+
+    <Metadata
+      role={frontmatter.role}
+      date={frontmatter.date}
+      methods={frontmatter.methods}
+    />
+
+    <img
+      class="aspect-video max-w-full bg-center object-cover transition"
+      src={frontmatter.cover}
+      alt={frontmatter.cover_alt}
+    />
   </div>
 
-  <Metadata
-    role={frontmatter.role}
-    duration={frontmatter.duration}
-    methods={frontmatter.methods}
-  />
-
-  <img
-    class="mt-16 aspect-video max-w-full rounded-md bg-center object-cover transition"
-    src={frontmatter.cover}
-    alt={frontmatter.cover_alt}
-  />
-
-  <div class="project mt-16">
+  <div class="project">
     <slot />
   </div>
 
@@ -58,7 +59,7 @@ if (!prevProject && nextProject) {
     {
       prevProject && (
         <a
-          class="text-base hover:text-neutral-600"
+          class="text-sm hover:text-green-500"
           href={`/craft/${prevHref}`}>
           ← Previous project ({prevTitle})
         </a>
@@ -67,14 +68,15 @@ if (!prevProject && nextProject) {
     {
       nextProject && (
         <a
-          class="text-base hover:text-neutral-600"
+          class="text-sm hover:text-green-500"
           href={`/craft/${nextHref}`}>
           Next project ({nextTitle}) →
         </a>
       )
     }
   </section>
-</Layout>
 
-<style define:vars={{ backgroundColor: frontmatter.color }}
-></style>
+  <style
+    define:vars={{ backgroundColor: frontmatter.color }}
+  ></style>
+</Layout>

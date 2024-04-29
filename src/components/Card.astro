@@ -1,45 +1,11 @@
 ---
-const { index, title, description, href, role, duration } =
-  Astro.props;
-
-const backgroundVariants = {
-  mentalpin: "bg-[#FEEA93]",
-  splitwise: "bg-[#91C6F7]",
-  salary: "bg-[#9CE6CF]",
-  invl: "bg-[#FED4E7]",
-};
-
-const bgClass = backgroundVariants[href.split("/").at(-1)];
-const animateDelay = {
-  1: "animate-delay-75",
-  2: "animate-delay-100",
-  3: "animate-delay-150",
-  4: "animate-delay-200",
-};
+const { description, href, date } = Astro.props;
 ---
 
-<div
-  class={`animate-fade-up ${animateDelay[index]} text-sm`}>
-  <div class="text-4xl font-semibold">
-    {String(index).padStart(3, "0")}
-  </div>
-  <div class="border-t border-[#e7e7e7] py-0.5">
-    {role.join(", ")}
-  </div>
-  <div
-    class="border-t border-[#e7e7e7] py-0.5 font-semibold">
-    {title}
-  </div>
-  <div class="border-t border-[#e7e7e7] py-0.5">
-    {duration}
-  </div>
-  <div class="border-t border-[#e7e7e7] py-0.5">
-    {description}
-  </div>
-  <div class="border-t border-[#e7e7e7] py-1">
-    <a
-      class={`${bgClass} py-0.5 px-3 text-sm rounded-full hover:opacity-80 transition-opacity shadow-2xl`}
-      href={href}>Read more here →</a
-    >
-  </div>
+<div class="text-sm">
+  <a
+    class="underline transition-colors hover:text-green-500"
+    href={href}>{description}</a
+  >
+  <div class="text-neutral-500">{date}</div>
 </div>

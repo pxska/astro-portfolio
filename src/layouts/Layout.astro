@@ -1,6 +1,8 @@
 ---
 import "@styles/globals.css";
 
+import { ArrowUpRight } from "lucide-astro";
+
 const { title } = Astro.props;
 ---
 
@@ -56,36 +58,35 @@ const { title } = Astro.props;
 
   <body class="mx-8">
     <nav
-      class="mx-auto my-10 flex max-w-4xl items-center justify-between">
+      class="mx-auto mt-10 flex max-w-xl items-center justify-between">
       <a
-        class="text-sm font-semibold hover:text-neutral-500"
+        class="text-sm font-medium transition-colors hover:text-green-500"
         href="/">Kristjan Poska</a
       >
 
-      <ul role="list" class="m-0 flex items-center gap-8">
+      <ul role="list" class="m-0 flex items-center gap-4">
         <li>
           <a
-            class="text-sm font-semibold tracking-tighter text-neutral-500 hover:text-inherit"
-            href="/about">About</a
-          >
-        </li>
-        <li>
-          <a
-            class="text-sm font-semibold tracking-tighter text-neutral-500 hover:text-inherit"
+            class="text-sm font-medium tracking-tighter text-neutral-800 transition-colors hover:text-green-500"
             href="mailto:kristjanposka@gmail.com">Contact</a
           >
+        </li>
+        <li class="group">
+          <a
+            class="text-sm font-medium tracking-tighter text-neutral-800 transition-colors group-hover:text-green-500"
+            href="https://read.cv/poska"
+            target="_blank"
+            >Resume
+            <ArrowUpRight
+              class="-ml-0.5 inline h-3 w-3 align-text-top text-current text-neutral-800 group-hover:text-inherit"
+            />
+          </a>
         </li>
       </ul>
     </nav>
 
-    <div class="relative mx-auto flex max-w-4xl flex-col">
+    <main class="relative mx-auto flex max-w-xl flex-col">
       <slot />
-    </div>
-
-    <footer
-      class="mb-10 mt-48 text-center text-sm font-semibold text-neutral-500">
-      &copy; {new Date().getFullYear()} Kristjan Poska. Made
-      with ✧˖° in Estonia.
-    </footer>
+    </main>
   </body>
 </html>
