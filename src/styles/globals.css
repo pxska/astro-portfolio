@@ -88,5 +88,5 @@ select {
 }
 
 .project a {
-  @apply underline hover:text-green-500;
+  @apply underline hover:text-orange-500;
 }

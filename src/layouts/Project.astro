@@ -33,7 +33,7 @@ if (!prevProject && nextProject) {
       {frontmatter.title}
     </h1>
 
-    <div class="mb-4 font-medium text-neutral-500">
+    <div class="mb-4 font-medium text-neutral-700">
       {frontmatter.description}
     </div>
 
@@ -59,7 +59,7 @@ if (!prevProject && nextProject) {
     {
       prevProject && (
         <a
-          class="text-sm hover:text-green-500"
+          class="text-sm hover:text-orange-500"
           href={`/craft/${prevHref}`}>
           ← Previous project ({prevTitle})
         </a>
@@ -68,7 +68,7 @@ if (!prevProject && nextProject) {
     {
       nextProject && (
         <a
-          class="text-sm hover:text-green-500"
+          class="text-sm hover:text-orange-500"
           href={`/craft/${nextHref}`}>
           Next project ({nextTitle}) →
         </a>
