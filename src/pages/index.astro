@@ -1,11 +1,11 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import Card from "@components/Card.astro";
+import { sortPosts } from "@utils/utils";
 
-import { sortAndHidePosts } from "@utils/utils";
-
-const posts = await Astro.glob("../pages/craft/*.mdx");
-const parsedPosts = sortAndHidePosts(posts);
+const posts = sortPosts(
+  await Astro.glob("../pages/craft/*.mdx")
+);
 ---
 
 <Layout title="Kristjan Poska – Product Designer">
@@ -22,7 +22,7 @@ const parsedPosts = sortAndHidePosts(posts);
 
   <section class="mt-8 flex flex-col gap-2">
     {
-      parsedPosts.map((post) => {
+      posts.map((post) => {
         const { description, date } = post.frontmatter;
 
         return (

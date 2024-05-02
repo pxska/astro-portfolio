@@ -1,30 +1,22 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import Metadata from "@components/Metadata.astro";
-import { sortAndHidePosts } from "@utils/utils";
+import { sortPosts } from "@utils/utils";
 
 const { frontmatter } = Astro.props;
 
-const posts = await Astro.glob("../pages/craft/*.mdx");
-const sortedPosts = sortAndHidePosts(posts);
+const posts = sortPosts(
+  await Astro.glob("../pages/craft/*.mdx")
+);
 
-const currPostIdx = sortedPosts.findIndex(
+const currPostIdx = posts.findIndex(
   (post) => post.frontmatter.title === frontmatter.title
 );
-const prevProject = sortedPosts[currPostIdx - 1];
-const nextProject = sortedPosts[currPostIdx + 1];
+const prevProject = posts[currPostIdx - 1];
+const nextProject = posts[currPostIdx + 1];
 
-const prevHref = prevProject?.frontmatter?.href;
 const prevTitle = prevProject?.frontmatter?.title;
-
-const nextHref = nextProject?.frontmatter?.href;
 const nextTitle = nextProject?.frontmatter?.title;
-
-let projectNavClassName = "justify-between";
-
-if (!prevProject && nextProject) {
-  projectNavClassName = "justify-end";
-}
 ---
 
 <Layout title="Kristjan Poska – Product Designer">
@@ -55,12 +47,16 @@ if (!prevProject && nextProject) {
   </div>
 
   <section
-    class={`flex my-20 items-center ${projectNavClassName} gap-8`}>
+    class:list={[
+      "my-20 flex items-center gap-8",
+      { "justify-end": !prevProject && nextProject },
+      { "justify-between": prevProject && nextProject },
+    ]}>
     {
       prevProject && (
         <a
           class="text-sm hover:text-orange-500"
-          href={`/craft/${prevHref}`}>
+          href={prevProject?.url}>
           ← Previous project ({prevTitle})
         </a>
       )
@@ -69,14 +65,10 @@ if (!prevProject && nextProject) {
       nextProject && (
         <a
           class="text-sm hover:text-orange-500"
-          href={`/craft/${nextHref}`}>
+          href={nextProject?.url}>
           Next project ({nextTitle}) →
         </a>
       )
     }
   </section>
-
-  <style
-    define:vars={{ backgroundColor: frontmatter.color }}
-  ></style>
 </Layout>
