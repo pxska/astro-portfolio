@@ -4,6 +4,7 @@ import heroImage from "@assets/kristjan.JPG";
 import Layout from "@layouts/Layout.astro";
 import Card from "@components/Card.astro";
 import { sortPosts } from "@utils/utils";
+import ArrowUpRight from "node_modules/lucide-astro/dist/ArrowUpRight.astro";
 
 const posts = sortPosts(
   await Astro.glob("../pages/craft/*.mdx")
@@ -11,35 +12,65 @@ const posts = sortPosts(
 ---
 
 <Layout title="Kristjan Poska – Product Designer">
-  <Image
-    src={heroImage}
-    alt="Kristjan Poska taking a picture of himself in a reflection."
-  />
+  <nav
+    class="mx-auto flex max-w-xl items-center justify-between">
+    <a
+      class="hover:text-theme-orange transition-colors"
+      href="/">Kristjan Poska</a
+    >
 
-  <header class="mt-8">
-    <p>
-      A passionate product designer based in Tallinn,
-      Estonia. Working on UX/UI projects with the power of
-      front-end development in my rucksack. Comfortable
-      using TypeScript, React and TailwindCSS on the
-      development side and Figma plus my creative-side of
-      the brain on the design side.
-    </p>
-  </header>
-
-  <section class="mt-8 flex flex-col gap-2">
-    {
-      posts.map((post) => {
-        const { description, date } = post.frontmatter;
-
-        return (
-          <Card
-            date={date}
-            description={description}
-            href={post.url}
+    <ul role="list" class="flex items-center gap-4">
+      <li>
+        <a
+          class="hover:text-theme-orange transition-colors"
+          href="mailto:kristjanposka@gmail.com">Contact</a
+        >
+      </li>
+      <li class="group">
+        <a
+          class="group-hover:text-theme-orange transition-colors"
+          href="https://read.cv/poska"
+          target="_blank"
+          >Resume
+          <ArrowUpRight
+            class="-ml-0.5 inline h-3 w-3 align-text-top"
           />
-        );
-      })
-    }
-  </section>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <main class="mx-auto mt-8">
+    <Image
+      src={heroImage}
+      alt="Kristjan Poska taking a picture of himself in a reflection."
+    />
+
+    <header class="mt-8">
+      <p>
+        A passionate product designer based in Tallinn,
+        Estonia. Working on UX/UI projects with the power of
+        front-end development in my rucksack. Comfortable
+        using TypeScript, React and TailwindCSS on the
+        development side and Figma plus my creative-side of
+        the brain on the design side.
+      </p>
+    </header>
+
+    <section class="mt-8 flex flex-col gap-2">
+      {
+        posts.map((post) => {
+          const { description, date } = post.frontmatter;
+
+          return (
+            <Card
+              date={date}
+              description={description}
+              href={post.url}
+            />
+          );
+        })
+      }
+    </section>
+  </main>
 </Layout>
