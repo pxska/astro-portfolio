@@ -55,7 +55,7 @@ const nextTitle = nextProject?.frontmatter?.title;
     {
       prevProject && (
         <a
-          class="text-sm hover:text-orange-500"
+          class="hover:text-theme-orange text-sm"
           href={prevProject?.url}>
           ← Previous project ({prevTitle})
         </a>
@@ -64,7 +64,7 @@ const nextTitle = nextProject?.frontmatter?.title;
     {
       nextProject && (
         <a
-          class="text-sm hover:text-orange-500"
+          class="hover:text-theme-orange text-sm"
           href={nextProject?.url}>
           Next project ({nextTitle}) →
         </a>

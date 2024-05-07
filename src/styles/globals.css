@@ -1,36 +1,10 @@
 html {
-  overflow-y: auto;
-  -webkit-font-smoothing: antialiased !important;
-  font-family:
-    ui-sans-serif,
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    Segoe UI,
-    Roboto,
-    Helvetica Neue,
-    Arial;
+  @apply font-sans tracking-tight antialiased transition-colors;
   scrollbar-gutter: stable;
-  @apply tracking-tight transition-colors;
 }
 
 body {
   @apply bg-white text-sm text-neutral-900;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html:focus-within {
-    scroll-behavior: auto;
-  }
-
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
 }
 
 .project {
@@ -46,5 +20,5 @@ body {
 }
 
 .project a {
-  @apply underline hover:text-orange-500;
+  @apply hover:text-theme-orange underline;
 }
