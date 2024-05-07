@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+import heroImage from "@assets/kristjan.JPG";
 import Layout from "@layouts/Layout.astro";
 import Card from "@components/Card.astro";
 import { sortPosts } from "@utils/utils";
@@ -9,6 +11,12 @@ const posts = sortPosts(
 ---
 
 <Layout title="Kristjan Poska – Product Designer">
+  <Image
+    class="mt-8"
+    src={heroImage}
+    alt="Kristjan Poska taking a picture of himself in a reflection."
+  />
+
   <header class="mt-8 text-neutral-700">
     <p>
       A passionate product designer based in Tallinn,
