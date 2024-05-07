@@ -4,15 +4,15 @@ html {
 }
 
 body {
-  @apply bg-white text-sm text-neutral-900;
+  @apply bg-white text-neutral-900;
 }
 
 .project {
-  @apply flex flex-col gap-4 text-neutral-900;
+  @apply flex flex-col gap-2 leading-7;
 }
 
 .project h1 {
-  @apply font-semibold text-black;
+  @apply mt-6 font-semibold;
 }
 
 .project strong {
@@ -20,5 +20,9 @@ body {
 }
 
 .project a {
-  @apply hover:text-theme-orange underline;
+  @apply hover:text-theme-orange underline transition-colors;
+}
+
+.project img {
+  @apply my-3;
 }
