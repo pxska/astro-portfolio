@@ -93,6 +93,11 @@ const posts = sortPosts(
     </header>
 
     <section class="mt-8 flex flex-col gap-2">
+      <Card
+        date="May 2024"
+        description="An ever-evolving project of different UI replications"
+        href="/craft/playground"
+      />
       {
         posts.map((post) => {
           const { description, date } = post.frontmatter;
