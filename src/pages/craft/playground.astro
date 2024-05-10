@@ -3,10 +3,11 @@ import BrutalistMs from "@components/playground/MsCard.astro";
 import HoverCard from "@components/playground/HoverCard.astro";
 import Layout from "@layouts/Layout.astro";
 import CornerUpLeft from "node_modules/lucide-astro/dist/CornerUpLeft.astro";
+import Wrapper from "@components/Wrapper.astro";
 ---
 
 <Layout title="Kristjan Poska – Product Designer">
-  <div class="mx-auto max-w-xl">
+  <Wrapper>
     <div class="relative my-8">
       <a
         class="mb-8 flex items-center gap-2 text-sm leading-6 text-neutral-500 transition-colors hover:text-theme-orange lg:absolute lg:-left-32"
@@ -22,7 +23,7 @@ import CornerUpLeft from "node_modules/lucide-astro/dist/CornerUpLeft.astro";
         tryouts and replications I have created over time.
       </div>
     </div>
-  </div>
+  </Wrapper>
 
   <HoverCard />
   <BrutalistMs />

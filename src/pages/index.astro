@@ -7,6 +7,7 @@ import { sortPosts } from "@utils/utils";
 import ArrowUpRight from "node_modules/lucide-astro/dist/ArrowUpRight.astro";
 import Lines from "@components/Lines.astro";
 import CornerLeftUp from "node_modules/lucide-astro/dist/CornerLeftUp.astro";
+import Wrapper from "@components/Wrapper.astro";
 
 const posts = sortPosts(
   await Astro.glob("../pages/craft/*.mdx")
@@ -34,9 +35,8 @@ const posts = sortPosts(
 </script>
 
 <Layout title="Kristjan Poska – Product Designer">
-  <div class="mx-auto max-w-xl">
-    <nav
-      class="mx-auto flex max-w-xl items-center justify-between">
+  <Wrapper>
+    <nav class="flex items-center justify-between">
       <a
         class="transition-colors hover:text-theme-orange"
         href="/">Kristjan Poska</a
@@ -114,5 +114,5 @@ const posts = sortPosts(
         }
       </section>
     </main>
-  </div>
+  </Wrapper>
 </Layout>

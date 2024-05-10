@@ -2,7 +2,9 @@
 import "@styles/globals.css";
 import { sortPosts } from "@utils/utils";
 import Layout from "@layouts/Layout.astro";
-import { CornerUpLeft } from "lucide-astro";
+import Header from "@components/project/Header.astro";
+import Footer from "@components/project/Footer.astro";
+import Wrapper from "@components/Wrapper.astro";
 
 const { frontmatter } = Astro.props;
 
@@ -21,58 +23,18 @@ const nextTitle = nextProject?.frontmatter?.title;
 ---
 
 <Layout title={frontmatter.title}>
-  <div class="mx-auto max-w-xl">
-    <div class="relative my-8">
-      <a
-        class="mb-8 flex items-center gap-2 text-sm leading-6 text-neutral-500 transition-colors hover:text-theme-orange lg:absolute lg:-left-32"
-        href="/">
-        <CornerUpLeft class="h-3 w-3" />
-         Back
-      </a>
+  <Header {...frontmatter} />
 
-      <h1 class="font-semibold">
-        {frontmatter.title}
-      </h1>
-
-      <div class="mb-4 text-neutral-500">
-        {frontmatter.description}
-      </div>
-
-      <img
-        class="aspect-video max-w-full bg-center object-cover transition"
-        src={frontmatter.cover}
-        alt={frontmatter.cover_alt}
-      />
-    </div>
-
+  <Wrapper>
     <slot />
+  </Wrapper>
 
-    <hr class="my-8" />
+  <hr class="mx-auto my-8 max-w-xl" />
 
-    <section
-      class:list={[
-        "flex items-center gap-8",
-        { "justify-end": !prevProject && nextProject },
-        { "justify-between": prevProject && nextProject },
-      ]}>
-      {
-        prevProject && (
-          <a
-            class="transition-colors hover:text-theme-orange"
-            href={prevProject?.url}>
-            ← Previous project ({prevTitle})
-          </a>
-        )
-      }
-      {
-        nextProject && (
-          <a
-            class="transition-colors hover:text-theme-orange"
-            href={nextProject?.url}>
-            Next project ({nextTitle}) →
-          </a>
-        )
-      }
-    </section>
-  </div>
+  <Footer
+    previous={prevProject}
+    next={nextProject}
+    previousTitle={prevTitle}
+    nextTitle={nextTitle}
+  />
 </Layout>

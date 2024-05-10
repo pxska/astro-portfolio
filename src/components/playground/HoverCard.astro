@@ -1,45 +1,48 @@
 ---
+import Wrapper from "@components/Wrapper.astro";
 import { ArrowUpRight, CornerLeftUp } from "lucide-astro";
 ---
 
-<div class="project mx-auto max-w-xl">
-  <h1>A hover effect for a card</h1>
+<Wrapper>
+  <div class="project">
+    <h1>A hover effect for a card</h1>
 
-  <p>
-    Found this on <a
-      href="https://craighooper.xyz"
-      target="_blank">Craig's website</a
-    > via <a
-      href="https://deadsimplesites.com/"
-      target="_blank">Dead Simple Sites</a
-    >.
-  </p>
+    <p>
+      Found this on <a
+        href="https://craighooper.xyz"
+        target="_blank">Craig's website</a
+      > via <a
+        href="https://deadsimplesites.com/"
+        target="_blank">Dead Simple Sites</a
+      >.
+    </p>
 
-  <p>
-    I am honestly not even sure what it really was that
-    captivated me with this. I guess it was the simplicity
-    and fluidity of the animation. It was really fun to
-    replicate.
-  </p>
+    <p>
+      I am honestly not even sure what it really was that
+      captivated me with this. I guess it was the simplicity
+      and fluidity of the animation. It was really fun to
+      replicate.
+    </p>
 
-  <div
-    class:list={[
-      "group flex min-h-[300px] w-full flex-col justify-between rounded-3xl bg-cover bg-center p-8 hover:cursor-pointer",
-      "bg-[url('/images/phone.jpg')]",
-    ]}>
     <div
-      class="ml-auto grid h-12 w-12 -translate-x-2 rotate-45 place-content-center rounded-full bg-blue-600 opacity-0 transition-all duration-500 group-hover:translate-x-0 group-hover:rotate-0 group-hover:opacity-100">
-      <ArrowUpRight class="text-white" />
+      class:list={[
+        "group flex min-h-[300px] w-full flex-col justify-between rounded-3xl bg-cover bg-center p-8 hover:cursor-pointer",
+        "bg-[url('/images/phone.jpg')]",
+      ]}>
+      <div
+        class="ml-auto grid h-12 w-12 -translate-x-2 rotate-45 place-content-center rounded-full bg-blue-600 opacity-0 transition-all duration-500 group-hover:translate-x-0 group-hover:rotate-0 group-hover:opacity-100">
+        <ArrowUpRight class="text-white" />
+      </div>
+      <div
+        class="w-fit rounded-lg bg-neutral-600 px-3 py-1 text-sm tracking-tight text-white opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+        This is a title for a card.
+      </div>
     </div>
+
     <div
-      class="w-fit rounded-lg bg-neutral-600 px-3 py-1 text-sm tracking-tight text-white opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-      This is a title for a card.
+      class="mt-2 flex gap-1 rounded-xl text-xs text-neutral-500"
+      id="hero-image">
+      <CornerLeftUp class="h-3 w-3" /> Hover on this!
     </div>
   </div>
-
-  <div
-    class="mt-2 flex gap-1 rounded-xl text-xs text-neutral-500"
-    id="hero-image">
-    <CornerLeftUp class="h-3 w-3" /> Hover on this!
-  </div>
-</div>
+</Wrapper>
