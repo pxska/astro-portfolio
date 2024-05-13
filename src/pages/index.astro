@@ -21,14 +21,14 @@ const posts = sortPosts(
 
   document.addEventListener("DOMContentLoaded", () => {
     document.documentElement.style.setProperty(
-      "--randomized-hex-value",
+      "--hero-image-hex",
       generateRandomHexCode()
     );
   });
 
   heroImage.addEventListener("click", () => {
     document.documentElement.style.setProperty(
-      "--randomized-hex-value",
+      "--hero-image-hex",
       generateRandomHexCode()
     );
   });
@@ -36,32 +36,7 @@ const posts = sortPosts(
 
 <Layout title="Kristjan Poska – Product Designer">
   <Wrapper>
-    <nav class="flex items-center justify-between">
-      <a
-        class="transition-colors hover:text-theme-orange"
-        href="/">Kristjan Poska</a
-      >
-
-      <ul role="list" class="flex items-center gap-4">
-        <li>
-          <a
-            class="transition-colors hover:text-theme-orange"
-            href="mailto:kristjanposka@gmail.com">Contact</a
-          >
-        </li>
-        <li class="group">
-          <a
-            class="transition-colors group-hover:text-theme-orange"
-            href="https://read.cv/poska"
-            target="_blank"
-            >Resume
-            <ArrowUpRight
-              class="-ml-0.5 inline h-3 w-3 align-text-top"
-            />
-          </a>
-        </li>
-      </ul>
-    </nav>
+    <h1 class="font-semibold">Kristjan Poska</h1>
 
     <main class="mx-auto mt-8">
       <div
@@ -70,6 +45,7 @@ const posts = sortPosts(
         <Lines />
 
         <Image
+          loading="eager"
           src={heroImage}
           alt="Kristjan Poska taking a picture of himself in a reflection."
         />
@@ -82,16 +58,44 @@ const posts = sortPosts(
         to change colors!
       </div>
 
-      <header class="mt-8">
+      <header class="mt-8 flex flex-col gap-2">
         <p>
-          A passionate product designer based in Tallinn,
-          Estonia. Working on UX/UI projects with the power
-          of front-end development in my rucksack.
-          Comfortable using TypeScript, React and
-          TailwindCSS on the development side and Figma plus
-          my creative-side of the brain on the design side.
+          Hey, I'm Kristjan, ringing in from <a
+            href="https://maps.app.goo.gl/hLcmFBUmjcA2zSe87"
+            target="_blank"
+            class="text-[#016FC8] underline hover:no-underline"
+            >Tallinn, Estonia</a
+          >. I am all about crafting sleek and user-friendly
+          digital spaces and creating systems out of chaos.
+          My toolbox includes (yet is not limited to)
+          TypeScript, React and TailwindCSS on the
+          development side and Figma plus my creative-side
+          of the brain on the design side.
+        </p>
+
+        <p>
+          Currently finishing up my <a
+            class="text-[#FC8B24] underline hover:no-underline"
+            href="https://ixd.ma"
+            target="_blank">Interaction Design</a
+          >
+           degree at and breaking things as a Product
+          Designer at <a
+            href="https://guardtime.com"
+            target="_blank"
+            class="text-[#E62529] underline hover:no-underline"
+            >Guardtime</a
+          >.
+        </p>
+
+        <p>
+          If you don't find me on the internet, I am
+          probably either out riding my bicycle or running
+          around aimlessly with a Fujifilm camera.
         </p>
       </header>
+
+      <hr class="my-8 border-dashed border-zinc-300" />
 
       <section class="mt-8 flex flex-col gap-2">
         <Card
@@ -99,6 +103,7 @@ const posts = sortPosts(
           description="An ever-evolving project of different UI replications"
           href="/craft/playground"
         />
+
         {
           posts.map((post) => {
             const { description, date } = post.frontmatter;
@@ -113,6 +118,37 @@ const posts = sortPosts(
           })
         }
       </section>
+
+      <hr class="my-8 border-dashed border-zinc-300" />
+
+      <ul role="list" class="mt-8 flex items-center gap-2">
+        <li>
+          <a
+            class="underline hover:no-underline"
+            href="https://instagram.com/kristjanposka"
+            >Instagram</a
+          >
+        </li>
+        <li>&middot;</li>
+        <li>
+          <a
+            class="underline hover:no-underline"
+            href="mailto:kristjanposka@gmail.com">E-mail</a
+          >
+        </li>
+        <li>&middot;</li>
+        <li class="group">
+          <a href="https://read.cv/poska" target="_blank"
+            ><span
+              class="underline group-hover:no-underline"
+              >Resume</span
+            >
+            <ArrowUpRight
+              class="-ml-0.5 inline h-3 w-3 align-text-top"
+            />
+          </a>
+        </li>
+      </ul>
     </main>
   </Wrapper>
 </Layout>

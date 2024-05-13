@@ -1,14 +1,16 @@
 html {
-  @apply font-sans tracking-tight antialiased transition-colors;
+  @apply font-sans antialiased transition-colors;
+  text-rendering: optimizeLegibility;
   scrollbar-gutter: stable;
+  text-wrap: pretty;
 }
 
 body {
-  @apply bg-white text-neutral-900;
+  @apply bg-zinc-100 font-medium leading-7 text-zinc-700;
 }
 
 .project {
-  @apply flex flex-col gap-2 leading-7;
+  @apply flex flex-col gap-2;
 }
 
 .project h1 {
@@ -16,11 +18,11 @@ body {
 }
 
 .project strong {
-  @apply font-normal;
+  @apply font-medium;
 }
 
 .project a {
-  @apply hover:text-theme-orange underline transition-colors;
+  @apply underline hover:no-underline;
 }
 
 .project img {

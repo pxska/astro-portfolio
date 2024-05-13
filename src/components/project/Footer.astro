@@ -1,5 +1,6 @@
 ---
 import Wrapper from "@components/Wrapper.astro";
+import { ArrowLeft, ArrowRight } from "lucide-astro";
 
 const { next, nextTitle, previous, previousTitle } =
   Astro.props;
@@ -15,18 +16,16 @@ const { next, nextTitle, previous, previousTitle } =
     {
       previous && (
         <a
-          class="transition-colors hover:text-theme-orange"
+          class="flex items-center gap-1"
           href={previous?.url}>
-          ← Previous project ({previousTitle})
+          <ArrowLeft class="h-3 w-3" /> {previousTitle}
         </a>
       )
     }
     {
       next && (
-        <a
-          class="transition-colors hover:text-theme-orange"
-          href={next?.url}>
-          Next project ({nextTitle}) →
+        <a class="flex items-center gap-1" href={next?.url}>
+          {nextTitle} <ArrowRight class="h-3 w-3" />
         </a>
       )
     }

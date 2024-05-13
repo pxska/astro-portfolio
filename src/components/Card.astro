@@ -4,7 +4,7 @@ const { description, href, date } = Astro.props;
 
 <div>
   <a
-    class="hover:text-theme-orange underline transition-colors"
+    class="underline transition-colors hover:no-underline"
     href={href}>{description}</a
   >
   <div class="text-neutral-500">{date}</div>
