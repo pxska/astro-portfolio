@@ -1,11 +1,47 @@
 ---
-const { description, href, date } = Astro.props;
+const { description, href, date, type } = Astro.props;
+
+let bubbleColor;
+
+switch (type) {
+  case "fun":
+    bubbleColor = "bg-orange-500";
+    break;
+  case "school":
+    bubbleColor = "bg-indigo-400";
+    break;
+  case "thoughts":
+    bubbleColor = "bg-purple-300";
+    break;
+  default:
+    bubbleColor = "bg-black";
+    break;
+}
+
+const formattedDate = new Date(date).toLocaleDateString(
+  "en-US",
+  { month: "long", year: "numeric" }
+);
 ---
 
-<div>
-  <a
-    class="underline transition-colors hover:no-underline"
-    href={href}>{description}</a
-  >
-  <div class="text-neutral-500">{date}</div>
-</div>
+<a
+  href={href}
+  id="list-element"
+  class="group flex items-center gap-2 py-1 transition-opacity first-of-type:pt-0 last-of-type:pb-0">
+  <div class="gap-2 truncate">
+    <div
+      class:list={[
+        "mr-2 inline-block h-2 w-2 rounded-full align-middle",
+        bubbleColor,
+      ]}>
+    </div>
+    <span class="group-hover:text-black">
+      {description}
+    </span>
+  </div>
+  <div class="h-px flex-grow bg-neutral-300"></div>
+  <div
+    class="whitespace-nowrap text-neutral-500 group-hover:text-black">
+    {formattedDate}
+  </div>
+</a>

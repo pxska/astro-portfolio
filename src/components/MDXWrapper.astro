@@ -1,0 +1,23 @@
+<div class="project"><slot /></div>
+
+<style is:global>
+  .project {
+    @apply flex flex-col gap-2;
+  }
+
+  .project h1 {
+    @apply mt-6 font-semibold;
+  }
+
+  .project strong {
+    @apply font-medium;
+  }
+
+  .project a {
+    @apply underline hover:no-underline;
+  }
+
+  .project img {
+    @apply my-3;
+  }
+</style>

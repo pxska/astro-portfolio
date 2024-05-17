@@ -8,23 +8,3 @@ html {
 body {
   @apply bg-zinc-100 font-medium leading-7 text-zinc-700;
 }
-
-.project {
-  @apply flex flex-col gap-2;
-}
-
-.project h1 {
-  @apply mt-6 font-semibold;
-}
-
-.project strong {
-  @apply font-medium;
-}
-
-.project a {
-  @apply underline hover:no-underline;
-}
-
-.project img {
-  @apply my-3;
-}

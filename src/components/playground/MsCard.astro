@@ -2,57 +2,50 @@
 import { Image } from "astro:assets";
 import { Square, X } from "lucide-astro";
 import underscore from "@assets/underscore.svg";
-import Wrapper from "@components/Wrapper.astro";
 ---
 
-<Wrapper>
-  <div class="project">
-    <h1>Microsoft-styled Card</h1>
+<h1>Microsoft-styled Card</h1>
 
-    <p>
-      Saw this in an Instagram advertisement a while ago.
-    </p>
-  </div>
+<p>Saw this in an Instagram advertisement a while ago.</p>
 
-  <div class="mt-2 bg-green-50 p-4">
-    <div class="mx-auto w-[400px]">
-      <div class="flex border border-neutral-800 bg-white">
-        <div
-          class="ml-1 flex-grow border-r border-neutral-800 text-sm">
-          degree_project_final_v1.docx
-        </div>
-        <div
-          class="flex w-5 items-center justify-center border-r border-neutral-800 font-semibold">
-          <Image
-            class="h-4 w-4"
-            src={underscore}
-            alt="Underscore"
-          />
-        </div>
-        <div
-          class="flex w-5 items-center justify-center border-r border-neutral-800">
-          <Square class="h-4 w-4" />
-        </div>
-        <div class="flex w-5 items-center justify-center">
-          <X class="h-4 w-4" />
-        </div>
-      </div>
-
+<div class="mt-2 bg-green-50 p-4">
+  <div class="mx-auto w-[400px]">
+    <div class="flex border border-neutral-800 bg-white">
       <div
-        class="h-[400px] border-x border-b border-neutral-800 bg-[url('/images/kristjan.jpeg')] bg-cover bg-center">
+        class="ml-1 flex-grow border-r border-neutral-800 text-sm">
+        degree_project_final_v1.docx
       </div>
-
       <div
-        class="border-x border-b border-neutral-800 bg-white p-4 text-sm">
-        <div class="font-semibold">Kristjan Poska</div>
-        <div class="text-neutral-700">
-          Senior Product Designer
-        </div>
-        <div>
-          Lorem ipsum dolor sit amet. The big dog jumped
-          over the little dog. Would you look at that!
-        </div>
+        class="flex w-5 items-center justify-center border-r border-neutral-800 font-semibold">
+        <Image
+          class="h-4 w-4"
+          src={underscore}
+          alt="Underscore"
+        />
+      </div>
+      <div
+        class="flex w-5 items-center justify-center border-r border-neutral-800">
+        <Square class="h-4 w-4" />
+      </div>
+      <div class="flex w-5 items-center justify-center">
+        <X class="h-4 w-4" />
+      </div>
+    </div>
+
+    <div
+      class="h-[400px] border-x border-b border-neutral-800 bg-[url('/images/kristjan.jpeg')] bg-cover bg-center">
+    </div>
+
+    <div
+      class="border-x border-b border-neutral-800 bg-white p-4 text-sm">
+      <div class="font-semibold">Kristjan Poska</div>
+      <div class="text-neutral-700">
+        Senior Product Designer
+      </div>
+      <div>
+        Lorem ipsum dolor sit amet. The big dog jumped over
+        the little dog. Would you look at that!
       </div>
     </div>
   </div>
-</Wrapper>
+</div>

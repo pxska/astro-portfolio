@@ -12,6 +12,8 @@ import Wrapper from "@components/Wrapper.astro";
 const posts = sortPosts(
   await Astro.glob("../pages/craft/*.mdx")
 );
+
+const TYPES = ["fun", "school", "thoughts"];
 ---
 
 <script>
@@ -35,7 +37,7 @@ const posts = sortPosts(
 </script>
 
 <Layout title="Kristjan Poska – Product Designer">
-  <Wrapper>
+  <Wrapper shouldWrapMdx={false}>
     <h1 class="font-semibold">Kristjan Poska</h1>
 
     <main class="mx-auto mt-8">
@@ -97,22 +99,18 @@ const posts = sortPosts(
 
       <hr class="my-8 border-dashed border-zinc-300" />
 
-      <section class="mt-8 flex flex-col gap-2">
-        <Card
-          date="May 2024"
-          description="An ever-evolving project of different UI replications"
-          href="/craft/playground"
-        />
-
+      <section class="someKindaClass mt-8">
         {
           posts.map((post) => {
-            const { description, date } = post.frontmatter;
+            const { description, date, type } =
+              post.frontmatter;
 
             return (
               <Card
                 date={date}
                 description={description}
                 href={post.url}
+                type={type}
               />
             );
           })
@@ -152,3 +150,13 @@ const posts = sortPosts(
     </main>
   </Wrapper>
 </Layout>
+
+<style is:global>
+  .someKindaClass:hover #list-element {
+    opacity: 0.7;
+  }
+
+  .someKindaClass #list-element:hover {
+    opacity: 1 !important;
+  }
+</style>

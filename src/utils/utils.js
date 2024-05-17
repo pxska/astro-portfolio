@@ -1,6 +1,8 @@
 function parseDate(dateStr) {
   if (/^\d{4}$/.test(dateStr)) {
     dateStr = `January ${dateStr}`;
+  } else if (/^[A-Za-z]+\s\d{4}$/.test(dateStr)) {
+    dateStr = `1 ${dateStr}`;
   }
 
   return new Date(dateStr).getTime();

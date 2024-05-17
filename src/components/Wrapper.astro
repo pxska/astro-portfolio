@@ -1,3 +1,17 @@
-<div class="relative mx-auto max-w-xl">
-  <slot />
+---
+import MDXWrapper from "@components/MDXWrapper.astro";
+
+const { shouldWrapMdx } = Astro.props;
+---
+
+<div class="relative mx-auto max-w-2xl">
+  {
+    !shouldWrapMdx ? (
+      <slot />
+    ) : (
+      <MDXWrapper>
+        <slot />
+      </MDXWrapper>
+    )
+  }
 </div>

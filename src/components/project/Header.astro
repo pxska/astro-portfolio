@@ -23,10 +23,14 @@ const { title, description, cover, cover_alt } =
       {description}
     </div>
 
-    <img
-      class="aspect-video max-w-full bg-center object-cover transition"
-      src={cover}
-      alt={cover_alt}
-    />
+    {
+      cover && (
+        <img
+          class="aspect-video max-w-full bg-center object-cover transition"
+          src={cover}
+          alt={cover_alt}
+        />
+      )
+    }
   </Wrapper>
 </div>
