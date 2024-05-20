@@ -2,5 +2,8 @@
 module.exports = {
   printWidth: 60,
   bracketSameLine: true,
-  plugins: ['prettier-plugin-tailwindcss'],
-}
+  plugins: [
+    "prettier-plugin-tailwindcss",
+    "prettier-plugin-astro-organize-imports",
+  ],
+};

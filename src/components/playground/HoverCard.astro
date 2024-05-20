@@ -1,6 +1,12 @@
 ---
-import Wrapper from "@components/Wrapper.astro";
+import phoneImg from "@assets/phone.jpg";
+import { getImage } from "astro:assets";
 import { ArrowUpRight, CornerLeftUp } from "lucide-astro";
+
+const bgImg = await getImage({
+  src: phoneImg,
+  format: "jpg",
+});
 ---
 
 <h1>A hover effect for a card</h1>
@@ -22,9 +28,10 @@ import { ArrowUpRight, CornerLeftUp } from "lucide-astro";
 </p>
 
 <div
+  style={{ "--image-url": `url(${bgImg.src})` }}
   class:list={[
     "group flex min-h-[300px] w-full flex-col justify-between rounded-3xl bg-cover bg-center p-8 hover:cursor-pointer",
-    "bg-[url('/images/phone.jpg')]",
+    `bg-[image:var(--image-url)]`,
   ]}>
   <div
     class="ml-auto grid h-12 w-12 -translate-x-2 rotate-45 place-content-center rounded-full bg-blue-600 opacity-0 transition-all duration-500 group-hover:translate-x-0 group-hover:rotate-0 group-hover:opacity-100">

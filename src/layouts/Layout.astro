@@ -2,28 +2,24 @@
 import "@styles/globals.css";
 
 const { title } = Astro.props;
+const metaDescription =
+  "Kristjan Poska is a talented product designer with an ability to think of tomorrow's solutions today.";
+const metaTitle = "Kristjan Poska – Product Designer";
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="description"
-      content="Kristjan Poska is a talented product designer with an ability to think of tomorrow's solutions today."
-    />
+    <meta name="description" content={metaDescription} />
     <meta name="viewport" content="width=device-width" />
 
     <meta name="theme-color" content="#F27059" />
 
-    <meta
-      property="og:title"
-      content="Kristjan Poska – Product Designer"
-    />
-
+    <meta property="og:title" content={metaTitle} />
     <meta
       property="og:description"
-      content="Kristjan Poska is a talented product designer with an ability to think of tomorrow's solutions today."
+      content={metaDescription}
     />
 
     <link

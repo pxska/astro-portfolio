@@ -1,13 +1,13 @@
 ---
-import { Image } from "astro:assets";
 import heroImage from "@assets/kristjan.jpeg";
-import Layout from "@layouts/Layout.astro";
 import Card from "@components/Card.astro";
-import { sortPosts } from "@utils/utils";
-import ArrowUpRight from "node_modules/lucide-astro/dist/ArrowUpRight.astro";
 import Lines from "@components/Lines.astro";
-import CornerLeftUp from "node_modules/lucide-astro/dist/CornerLeftUp.astro";
 import Wrapper from "@components/Wrapper.astro";
+import Layout from "@layouts/Layout.astro";
+import { sortPosts } from "@utils/utils";
+import { Image } from "astro:assets";
+import ArrowUpRight from "node_modules/lucide-astro/dist/ArrowUpRight.astro";
+import CornerLeftUp from "node_modules/lucide-astro/dist/CornerLeftUp.astro";
 
 const posts = sortPosts(
   await Astro.glob("../pages/craft/*.mdx")
@@ -38,7 +38,9 @@ const TYPES = ["fun", "school", "thoughts"];
 
 <Layout title="Kristjan Poska – Product Designer">
   <Wrapper shouldWrapMdx={false}>
-    <h1 class="font-semibold">Kristjan Poska</h1>
+    <h1 class="font-semibold text-zinc-900">
+      Kristjan Poska
+    </h1>
 
     <main class="mx-auto mt-8">
       <div
@@ -60,103 +62,110 @@ const TYPES = ["fun", "school", "thoughts"];
         to change colors!
       </div>
 
-      <header class="mt-8 flex flex-col gap-2">
-        <p>
-          Hey, I'm Kristjan, ringing in from <a
-            href="https://maps.app.goo.gl/hLcmFBUmjcA2zSe87"
-            target="_blank"
-            class="text-[#016FC8] underline hover:no-underline"
-            >Tallinn, Estonia</a
-          >. I am all about crafting sleek and user-friendly
-          digital spaces and creating systems out of chaos.
-          My toolbox includes (yet is not limited to)
-          TypeScript, React and TailwindCSS on the
-          development side and Figma plus my creative-side
-          of the brain on the design side.
-        </p>
+      <header class="mt-8">
+        <h2 class="mb-4 font-semibold text-zinc-900">
+          About
+        </h2>
+        <div class="flex flex-col gap-2">
+          <p>
+            Hey, I'm Kristjan, ringing in from <a
+              href="https://maps.app.goo.gl/hLcmFBUmjcA2zSe87"
+              target="_blank"
+              class="text-[#016FC8] underline hover:no-underline"
+              >Tallinn, Estonia</a
+            >. I am all about crafting sleek and
+            user-friendly digital spaces and creating
+            systems out of chaos. My toolbox includes (yet
+            is not limited to) TypeScript, React and
+            TailwindCSS on the development side and Figma
+            plus my creative-side of the brain on the design
+            side.
+          </p>
 
-        <p>
-          Currently finishing up my <a
-            class="text-[#FC8B24] underline hover:no-underline"
-            href="https://ixd.ma"
-            target="_blank">Interaction Design</a
-          >
-           degree at and breaking things as a Product
-          Designer at <a
-            href="https://guardtime.com"
-            target="_blank"
-            class="text-[#E62529] underline hover:no-underline"
-            >Guardtime</a
-          >.
-        </p>
+          <p>
+            Currently finishing up my <a
+              class="text-[#FC8B24] underline hover:no-underline"
+              href="https://ixd.ma"
+              target="_blank">Interaction Design</a
+            >
+             degree at and breaking things as a Product
+            Designer at <a
+              href="https://guardtime.com"
+              target="_blank"
+              class="text-[#E62529] underline hover:no-underline"
+              >Guardtime</a
+            >.
+          </p>
 
-        <p>
-          If you don't find me on the internet, I am
-          probably either out riding my bicycle or running
-          around aimlessly with a Fujifilm camera.
-        </p>
+          <p>
+            If you don't find me on the internet, I am
+            probably either out riding my bicycle or running
+            around aimlessly with a Fujifilm camera.
+          </p>
+        </div>
       </header>
 
-      <hr class="my-8 border-dashed border-zinc-300" />
+      <section class="mt-8">
+        <h2 class="mb-4 font-semibold text-zinc-900">
+          Stuff that's on my mind
+        </h2>
+        <div class="[&>#list-element]:hover:opacity-70">
+          {
+            posts.map((post) => {
+              const { description, date, type } =
+                post.frontmatter;
 
-      <section class="someKindaClass mt-8">
-        {
-          posts.map((post) => {
-            const { description, date, type } =
-              post.frontmatter;
-
-            return (
-              <Card
-                date={date}
-                description={description}
-                href={post.url}
-                type={type}
-              />
-            );
-          })
-        }
+              return (
+                <Card
+                  date={date}
+                  description={description}
+                  href={post.url}
+                  type={type}
+                />
+              );
+            })
+          }
+        </div>
       </section>
 
-      <hr class="my-8 border-dashed border-zinc-300" />
+      <footer class="mt-8">
+        <h2 class="mb-4 font-semibold text-zinc-900">
+          Links
+        </h2>
 
-      <ul role="list" class="mt-8 flex items-center gap-2">
-        <li>
-          <a
-            class="underline hover:no-underline"
-            href="https://instagram.com/kristjanposka"
-            >Instagram</a
-          >
-        </li>
-        <li>&middot;</li>
-        <li>
-          <a
-            class="underline hover:no-underline"
-            href="mailto:kristjanposka@gmail.com">E-mail</a
-          >
-        </li>
-        <li>&middot;</li>
-        <li class="group">
-          <a href="https://read.cv/poska" target="_blank"
-            ><span
-              class="underline group-hover:no-underline"
-              >Resume</span
+        <ul role="list">
+          <li class="w-fit">
+            <a
+              class="underline hover:no-underline"
+              href="https://instagram.com/kristjanposka"
+              >Instagram</a
             >
-            <ArrowUpRight
-              class="-ml-0.5 inline h-3 w-3 align-text-top"
-            />
-          </a>
-        </li>
-      </ul>
+          </li>
+
+          <li class="w-fit">
+            <a
+              class="underline hover:no-underline"
+              href="mailto:kristjanposka@gmail.com"
+              >E-mail</a
+            >
+          </li>
+
+          <li class="group w-fit">
+            <a
+              href="https://read.cv/poska"
+              target="_blank"
+              rel="noreferrer noopener"
+              ><span
+                class="underline group-hover:no-underline"
+                >Resume</span
+              >
+              <ArrowUpRight
+                class="-ml-0.5 inline h-3 w-3 align-text-top"
+              />
+            </a>
+          </li>
+        </ul>
+      </footer>
     </main>
   </Wrapper>
 </Layout>
-
-<style is:global>
-  .someKindaClass:hover #list-element {
-    opacity: 0.7;
-  }
-
-  .someKindaClass #list-element:hover {
-    opacity: 1 !important;
-  }
-</style>
