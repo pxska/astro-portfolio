@@ -8,3 +8,11 @@ html {
 body {
   @apply bg-zinc-100 font-medium leading-7 tracking-tight text-zinc-600;
 }
+
+::-moz-selection {
+  @apply bg-theme-orange text-zinc-100;
+}
+
+::selection {
+  @apply bg-theme-orange text-zinc-100;
+}
