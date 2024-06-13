@@ -6,13 +6,13 @@ html {
 }
 
 body {
-  @apply bg-zinc-100 font-medium leading-7 tracking-tight text-zinc-600;
+  @apply bg-white font-medium leading-7 tracking-tight text-neutral-600;
 }
 
 ::-moz-selection {
-  @apply bg-theme-orange text-zinc-100;
+  @apply bg-theme-orange text-white;
 }
 
 ::selection {
-  @apply bg-theme-orange text-zinc-100;
+  @apply bg-theme-orange text-white;
 }
