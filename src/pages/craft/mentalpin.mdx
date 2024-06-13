@@ -14,10 +14,17 @@ methods:
     "Affinity mapping",
     "Low fidelity user journey mapping",
   ]
-cover: "/images/mental-pin/mentalpin-cover.jpeg"
-cover_alt: "A man holding a phone in an airplane and logging his anxious airport episode."
 type: "school"
 ---
+import { Image } from 'astro:assets';
+import unboxing from '@assets/mental-pin/unboxing-example.png';
+import onboarding from '@assets/mental-pin/mental-pin-onboarding.png';
+import annotation from '@assets/mental-pin/mental-pin-annotation.png';
+import aiexperience from '@assets/mental-pin/mental-pin-ai-experience.png';
+import tasksandrewards from '@assets/mental-pin/mental-pin-tasks-and-rewards.png';
+import cover from "@assets/mental-pin/mentalpin-cover.jpeg";
+
+<Image class="mb-8 aspect-video" src={cover} alt="A man holding a phone in an airplane and logging his anxious airport episode." />
 
 The goal of this project was for our team of [IxD.ma](https://ixd.ma/) students, consisting of Zac Heisey, Inka Jerkku & Sofia Kamergorodski, to help two alumni of IxD, the team at [Mental Pin](https://www.mentalpin.com) to **integrate artificial intelligence into their mobile application**, which helps people handle their anxiety and OCD ticks. While at first, we thought that it was another "keeping up with the craze" project, the result turned out different.
 
@@ -35,7 +42,7 @@ As said, since we were quite skeptical of AI at first, we looked to some out-of-
 
 Here is one of the examples we found on the internet of a lovely unboxing experience:
 
-![An unboxing experience for a physical journal.](/images/mental-pin/unboxing-example.png)
+<Image class="inline" src={unboxing} alt="An unboxing experience for a physical journal." />
 
 We also considered **gamifying the application**, because that is what most apps seem to be doing today. When thinking about this, we thought of Duolingo as an example.
 
@@ -52,9 +59,9 @@ We still had to follow up with the ones that were most exciting for Mental Pin's
 
 Here are a few slide examples from the presentation to Mental Pin's team about our main ideas:
 
-![A slide example from the presentation talking about the personalised AI experience.](/images/mental-pin/mental-pin-ai-experience.png)
+<Image class="inline" src={aiexperience} alt="A slide example from the presentation talking about the personalised AI experience." />
 
-![A slide example from the presentation talking about the tasks and rewards system.](/images/mental-pin/mental-pin-tasks-and-rewards.png)
+<Image class="inline" src={tasksandrewards} alt="A slide example from the presentation talking about the tasks and rewards system." />
 
 # Results
 
@@ -68,11 +75,11 @@ We split the application into three rough parts:
 
 Here are some screenshots of the application we designed, e.g from the application in the onboarding phase. We also created a ChatGPT-esque animation, where the questions appear a few words at a time instead of all at once:
 
-![A few screenshots from the application in the onboarding phase.](/images/mental-pin/mental-pin-onboarding.png)
+<Image class="inline" src={onboarding} alt="A few screenshots from the application in the onboarding phase." />
 
 And some screenshots from the episode annotation phase:
 
-![A few screenshots from the application in the episode annotation phase.](/images/mental-pin/mental-pin-annotation.png)
+<Image class="inline" src={annotation} alt="A few screenshots from the application in the episode annotation phase." />
 
 As the above two were mostly topics, which I spent the most time on, I will explain them a bit further. For the onboarding, we received inspiration, as said, from ChatGPT. The questions were going to be **contextual**, so that Penny, the onboarding assistant learns from whatever the user is answering.
 

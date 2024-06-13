@@ -2,11 +2,10 @@
 import Wrapper from "@components/Wrapper.astro";
 import { CornerUpLeft } from "lucide-astro";
 
-const { title, description, cover, cover_alt } =
-  Astro.props;
+const { title, description } = Astro.props;
 ---
 
-<div class="my-8">
+<div class="mb-2 mt-8">
   <Wrapper>
     <a
       class="mb-8 flex items-center gap-2 text-sm leading-6 text-neutral-500 transition-colors hover:text-inherit lg:absolute lg:-left-32"
@@ -19,18 +18,8 @@ const { title, description, cover, cover_alt } =
       {title}
     </h1>
 
-    <div class="mb-4 mt-1 text-neutral-500">
+    <div class="mt-1 text-neutral-500">
       {description}
     </div>
-
-    {
-      cover && (
-        <img
-          class="aspect-video max-w-full bg-center object-cover transition"
-          src={cover}
-          alt={cover_alt}
-        />
-      )
-    }
   </Wrapper>
 </div>

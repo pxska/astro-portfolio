@@ -1,7 +1,14 @@
 ---
+import kristjan from "@assets/kristjan.jpeg";
 import underscore from "@assets/underscore.svg";
+import { getImage } from "astro/assets";
 import { Image } from "astro:assets";
 import { Square, X } from "lucide-astro";
+
+const bgImg = await getImage({
+  src: kristjan,
+  format: "jpg",
+});
 ---
 
 <h1>Microsoft-styled Card</h1>
@@ -33,7 +40,11 @@ import { Square, X } from "lucide-astro";
     </div>
 
     <div
-      class="h-[400px] border-x border-b border-neutral-800 bg-[url('/images/kristjan.jpeg')] bg-cover bg-center">
+      style={{ "--image-url": `url(${bgImg.src})` }}
+      class:list={[
+        "h-[400px] border-x border-b border-neutral-800 bg-cover bg-center",
+        "bg-[image:var(--image-url)]",
+      ]}>
     </div>
 
     <div
