@@ -1,4 +1,6 @@
 ---
+import bicycleVideo from "@assets/bicycle.webm";
+import guitarVideo from "@assets/guitar.webm";
 import heroImage from "@assets/kristjan.jpeg";
 import Card from "@components/Card.astro";
 import Lines from "@components/Lines.astro";
@@ -34,6 +36,39 @@ const TYPES = ["fun", "school", "thoughts"];
       generateRandomHexCode()
     );
   });
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const hoverTextIds = ["bicycle-hover", "guitar-hover"];
+
+    hoverTextIds.forEach((id) => {
+      const hoverText = document.getElementById(id);
+      const basis = id.split("-")[0];
+      const videoContainer = document.getElementById(
+        `${basis}-video-container`
+      );
+
+      hoverText.addEventListener("mouseover", () => {
+        videoContainer.classList.remove("hidden");
+      });
+
+      hoverText.addEventListener("mousemove", (e) => {
+        const videoContainerRect =
+          videoContainer.getBoundingClientRect();
+
+        const videoContainerWidth =
+          videoContainerRect.width;
+        const videoContainerHeight =
+          videoContainerRect.height;
+
+        videoContainer.style.top = `${e.layerY - videoContainerHeight / 2}px`;
+        videoContainer.style.left = `${e.layerX - videoContainerWidth / 2}px`;
+      });
+
+      hoverText.addEventListener("mouseout", () => {
+        videoContainer.classList.toggle("hidden");
+      });
+    });
+  });
 </script>
 
 <Layout title="Kristjan Poska">
@@ -64,12 +99,8 @@ const TYPES = ["fun", "school", "thoughts"];
         <h2 class="mb-4">About</h2>
         <div class="flex flex-col gap-2">
           <p>
-            Hey, I'm Kristjan, ringing in from <a
-              href="https://maps.app.goo.gl/hLcmFBUmjcA2zSe87"
-              target="_blank"
-              class="text-[#016FC8] underline hover:no-underline"
-              >Tallinn, Estonia</a
-            >. I am all about crafting sleek and
+            Hey, I'm Kristjan. I am a product designer from
+            Estonia. I am all about crafting sleek and
             user-friendly digital spaces and creating
             systems out of chaos. My toolbox includes (yet
             is not limited to) TypeScript, React and
@@ -79,93 +110,121 @@ const TYPES = ["fun", "school", "thoughts"];
           </p>
 
           <p>
-            Currently finishing up my <a
-              class="text-[#FC8B24] underline hover:no-underline"
-              href="https://ixd.ma"
-              target="_blank">Interaction Design</a
-            >
-             degree at and breaking things as a Product
-            Designer at <a
-              href="https://guardtime.com"
-              target="_blank"
-              class="text-[#E62529] underline hover:no-underline"
-              >Guardtime</a
-            >.
+            If you don't find me on the internet, I am
+            probably either out <span
+              class="underline hover:cursor-none hover:no-underline"
+              id="bicycle-hover"
+              >riding my single-speed</span
+            >, <span
+              class="underline hover:cursor-none hover:no-underline"
+              id="guitar-hover"
+              >practicing a new Tom Misch song on guitar</span
+            > or running around aimlessly with a Fujifilm
+            camera.
           </p>
 
-          <p>
-            If you don't find me on the internet, I am
-            probably either out riding my bicycle,
-            practicing a new Tom Misch song on guitar or
-            running around aimlessly with a Fujifilm camera.
-          </p>
+          <div
+            id="bicycle-video-container"
+            class="pointer-events-none absolute hidden h-[360px] w-[240px]">
+            <video id="bicycle-video" loop autoplay muted>
+              <source
+                src={bicycleVideo}
+                type="video/webm"
+              />
+               Your browser does not support the video tag.
+            </video>
+          </div>
+
+          <div
+            id="guitar-video-container"
+            class="pointer-events-none absolute hidden h-[240px] w-[320px]">
+            <video id="guitar-video" loop autoplay muted>
+              <source src={guitarVideo} type="video/webm" />
+               Your browser does not support the video tag.
+            </video>
+          </div>
+
+          <section class="mt-8">
+            <h2 class="mb-4">Stuff that's on my mind</h2>
+            <div class="[&>#list-element]:hover:opacity-70">
+              {
+                posts.map((post) => {
+                  const { description, date, type } =
+                    post.frontmatter;
+
+                  return (
+                    <Card
+                      date={date}
+                      description={description}
+                      href={post.url}
+                      type={type}
+                    />
+                  );
+                })
+              }
+            </div>
+          </section>
+
+          <footer class="mt-8">
+            <h2 class="mb-4">Links</h2>
+
+            <ul role="list">
+              <li class="group w-fit">
+                <a
+                  href="https://instagram.com/kristjanposka"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  ><span
+                    class="underline group-hover:no-underline"
+                    >Instagram</span
+                  >
+                  <ArrowUpRight
+                    class="-ml-0.5 inline h-3 w-3 align-text-top"
+                  />
+                </a>
+              </li>
+
+              <li class="group w-fit">
+                <a
+                  href="https://www.linkedin.com/in/kristjan-poska/"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  ><span
+                    class="underline group-hover:no-underline"
+                    >LinkedIn</span
+                  >
+                  <ArrowUpRight
+                    class="-ml-0.5 inline h-3 w-3 align-text-top"
+                  />
+                </a>
+              </li>
+
+              <li class="w-fit">
+                <a
+                  class="underline hover:no-underline"
+                  href="mailto:kristjanposka@gmail.com"
+                  >E-mail</a
+                >
+              </li>
+
+              <li class="group w-fit">
+                <a
+                  href="https://read.cv/poska"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  ><span
+                    class="underline group-hover:no-underline"
+                    >Resume</span
+                  >
+                  <ArrowUpRight
+                    class="-ml-0.5 inline h-3 w-3 align-text-top"
+                  />
+                </a>
+              </li>
+            </ul>
+          </footer>
         </div>
       </header>
-
-      <section class="mt-8">
-        <h2 class="mb-4">Stuff that's on my mind</h2>
-        <div class="[&>#list-element]:hover:opacity-70">
-          {
-            posts.map((post) => {
-              const { description, date, type } =
-                post.frontmatter;
-
-              return (
-                <Card
-                  date={date}
-                  description={description}
-                  href={post.url}
-                  type={type}
-                />
-              );
-            })
-          }
-        </div>
-      </section>
-
-      <footer class="mt-8">
-        <h2 class="mb-4">Links</h2>
-
-        <ul role="list">
-          <li class="group w-fit">
-            <a
-              href="https://instagram.com/kristjanposka"
-              target="_blank"
-              rel="noreferrer noopener"
-              ><span
-                class="underline group-hover:no-underline"
-                >Instagram</span
-              >
-              <ArrowUpRight
-                class="-ml-0.5 inline h-3 w-3 align-text-top"
-              />
-            </a>
-          </li>
-
-          <li class="w-fit">
-            <a
-              class="underline hover:no-underline"
-              href="mailto:kristjanposka@gmail.com"
-              >E-mail</a
-            >
-          </li>
-
-          <li class="group w-fit">
-            <a
-              href="https://read.cv/poska"
-              target="_blank"
-              rel="noreferrer noopener"
-              ><span
-                class="underline group-hover:no-underline"
-                >Resume</span
-              >
-              <ArrowUpRight
-                class="-ml-0.5 inline h-3 w-3 align-text-top"
-              />
-            </a>
-          </li>
-        </ul>
-      </footer>
     </main>
   </Wrapper>
 </Layout>
