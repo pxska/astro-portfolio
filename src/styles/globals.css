@@ -6,12 +6,12 @@ html {
 }
 
 body {
-  @apply bg-white font-medium !leading-7 tracking-tight text-neutral-600;
+  @apply bg-[#fdfdfc] text-[#111111] font-normal tracking-[-0.005rem] text-sm;
 }
 
 h1,
 h2 {
-  @apply font-semibold text-black;
+  @apply font-medium;
 }
 
 ::-moz-selection {

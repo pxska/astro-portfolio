@@ -16,7 +16,7 @@ const { next, nextTitle, previous, previousTitle } =
     {
       previous && (
         <a
-          class="flex items-center gap-1 transition-colors hover:text-black"
+          class="flex items-center gap-1 transition-colors hover:text-[#111111]"
           href={previous?.url}>
           <ArrowLeft class="h-3 w-3" /> {previousTitle}
         </a>
@@ -25,7 +25,7 @@ const { next, nextTitle, previous, previousTitle } =
     {
       next && (
         <a
-          class="flex items-center gap-1 transition-colors hover:text-black"
+          class="flex items-center gap-1 transition-colors hover:text-[#111111]"
           href={next?.url}>
           {nextTitle} <ArrowRight class="h-3 w-3" />
         </a>
