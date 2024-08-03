@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html {
   @apply font-sans antialiased transition-colors;
   text-rendering: optimizeLegibility;
@@ -6,7 +10,7 @@ html {
 }
 
 body {
-  @apply bg-[#fdfdfc] text-[#111111] font-normal tracking-[-0.005rem] text-sm;
+  @apply bg-[#fdfdfc] text-sm font-normal tracking-[-0.005rem] text-[#111111];
 }
 
 h1,
