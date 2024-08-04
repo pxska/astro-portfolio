@@ -10,7 +10,7 @@ html {
 }
 
 body {
-  @apply bg-[#fdfdfc] text-sm font-normal tracking-[-0.005rem] text-[#111111];
+  @apply bg-[#fff] text-sm font-normal tracking-[-0.025rem] text-[#020617];
 }
 
 h1,
