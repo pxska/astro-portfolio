@@ -1,6 +1,4 @@
 ---
-import bicycleVideo from "@assets/bicycle.webm";
-import guitarVideo from "@assets/guitar.webm";
 import heroImage from "@assets/kristjan.jpeg";
 import Card from "@components/Card.astro";
 import Lines from "@components/Lines.astro";
@@ -36,39 +34,6 @@ const TYPES = ["fun", "school", "thoughts"];
       generateRandomHexCode()
     );
   });
-
-  document.addEventListener("DOMContentLoaded", () => {
-    const hoverTextIds = ["bicycle-hover", "guitar-hover"];
-
-    hoverTextIds.forEach((id) => {
-      const hoverText = document.getElementById(id);
-      const basis = id.split("-")[0];
-      const videoContainer = document.getElementById(
-        `${basis}-video-container`
-      );
-
-      hoverText.addEventListener("mouseover", () => {
-        videoContainer.classList.remove("hidden");
-      });
-
-      hoverText.addEventListener("mousemove", (e) => {
-        const videoContainerRect =
-          videoContainer.getBoundingClientRect();
-
-        const videoContainerWidth =
-          videoContainerRect.width;
-        const videoContainerHeight =
-          videoContainerRect.height;
-
-        videoContainer.style.top = `${e.layerY - videoContainerHeight / 2}px`;
-        videoContainer.style.left = `${e.layerX - videoContainerWidth / 2}px`;
-      });
-
-      hoverText.addEventListener("mouseout", () => {
-        videoContainer.classList.toggle("hidden");
-      });
-    });
-  });
 </script>
 
 <Layout title="Kristjan Poska">
@@ -99,54 +64,47 @@ const TYPES = ["fun", "school", "thoughts"];
         <h2 class="mb-4">About</h2>
         <div class="flex flex-col gap-2">
           <p>
-            Hey, I'm Kristjan. I am a product designer from
-            Estonia. I am all about crafting sleek and
-            user-friendly digital spaces and creating
-            systems out of chaos. My toolbox includes (yet
-            is not limited to) TypeScript, React and
-            TailwindCSS on the development side and Figma
-            plus my creative-side of the brain on the design
-            side.
+            Hey, I'm Kristjan. I am a Product Designer from
+            Estonia. I love to craft sleek and user-friendly
+            digital spaces and to create systems out of
+            chaos.
+          </p>
+
+          <p>
+            My background is multicolored. I have formally
+            studied linguistics and interaction design, but
+            also have a vivid background in software
+            engineering, mainly <a
+              href="https://bradfrost.com/blog/post/front-of-the-front-end-and-back-of-the-front-end-web-development/"
+              class="underline hover:no-underline"
+              target="_blank"
+              >front-of-the-front-end engineering</a
+            >. I have also stepped my toes in marketing and
+            have worked as a barista, which is where my love
+            for coffee is derived from.
+          </p>
+
+          <h2 class="mt-8">Now</h2>
+
+          <p>
+            I am currently working as a Product Designer at
+            <a
+              class="underline hover:no-underline"
+              href="https://1ot.com/"
+              target="_blank">1oT</a
+            >, the Tinder of telecoms.
           </p>
 
           <p>
             If you don't find me on the internet, I am
-            probably either out <span
-              class="underline hover:cursor-none hover:no-underline"
-              id="bicycle-hover"
-              >riding my single-speed</span
-            >, <span
-              class="underline hover:cursor-none hover:no-underline"
-              id="guitar-hover"
-              >practicing a new Tom Misch song on guitar</span
-            > or running around aimlessly with a Fujifilm
-            camera.
+            either out riding my bicycle, practicing a new
+            song on guitar, brewing some fancy specialty
+            coffee or shooting pictures with a camera.
           </p>
-
-          <div
-            id="bicycle-video-container"
-            class="pointer-events-none absolute hidden h-[360px] w-[240px]">
-            <video id="bicycle-video" loop autoplay muted>
-              <source
-                src={bicycleVideo}
-                type="video/webm"
-              />
-               Your browser does not support the video tag.
-            </video>
-          </div>
-
-          <div
-            id="guitar-video-container"
-            class="pointer-events-none absolute hidden h-[240px] w-[320px]">
-            <video id="guitar-video" loop autoplay muted>
-              <source src={guitarVideo} type="video/webm" />
-               Your browser does not support the video tag.
-            </video>
-          </div>
 
           <section class="mt-8">
             <h2 class="mb-4">Stuff that's on my mind</h2>
-            <div class="[&>#list-element]:hover:opacity-70">
+            <div class="[&>#list-element]:hover:opacity-50">
               {
                 posts.map((post) => {
                   const { description, date, type } =

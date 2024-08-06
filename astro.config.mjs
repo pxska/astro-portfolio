@@ -10,7 +10,12 @@ export default defineConfig({
       enabled: true,
     },
   }),
-  integrations: [tailwind(), mdx()],
+  integrations: [
+    tailwind({
+      applyBaseStyles: false,
+    }),
+    mdx(),
+  ],
   plugins: ["prettier-plugin-astro"],
   overrides: [
     {
