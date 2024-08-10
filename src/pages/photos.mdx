@@ -1,0 +1,26 @@
+---
+
+---
+import Header from "@components/project/Header.astro";
+import Wrapper from "@components/Wrapper.astro";
+import Layout from "@layouts/Layout.astro";
+import { Image } from 'astro:assets';
+
+import carPhoto01 from '@assets/photos/01-car-photo.jpeg';
+import boats02 from '@assets/photos/02-boats.jpeg';
+import sunset03 from '@assets/photos/03-sunset.jpeg';
+
+<Layout title="Photos">
+  <Header
+    title="Photos"
+    description="A few cool photos I have taken"
+  />
+
+  <Wrapper shouldWrapMdx>
+    As with multiple product designer portfolios you've seen lately, I, too, share a love for photography. I usually do not know what I am doing and just set every setting possible to automatic, but I definitely feel I have taken a few cool images over the years.
+
+    <Image class="rounded-lg" src={carPhoto01} alt="A photo of an old-looking car." />
+    <Image class="rounded-lg" src={boats02} alt="A photo of some sailboats in a harbour." />
+    <Image class="rounded-lg" src={sunset03} alt="A photo of a sunset coloring some roofs." />
+  </Wrapper>
+</Layout>
