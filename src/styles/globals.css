@@ -25,3 +25,7 @@ h2 {
 ::selection {
   @apply bg-theme-orange text-white;
 }
+
+code {
+  font-family: "Geist Mono", monospaced;
+}
