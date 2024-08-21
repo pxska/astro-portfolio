@@ -1,17 +1,17 @@
 ---
-import MDXWrapper from "@components/MDXWrapper.astro";
+import Markdown from "@components/Markdown.astro";
 
 const { shouldWrapMdx } = Astro.props;
 ---
 
-<div class="relative mx-auto max-w-xl">
+<div class="relative mx-auto max-w-prose">
   {
     !shouldWrapMdx ? (
       <slot />
     ) : (
-      <MDXWrapper>
+      <Markdown>
         <slot />
-      </MDXWrapper>
+      </Markdown>
     )
   }
 </div>
