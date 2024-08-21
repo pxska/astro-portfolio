@@ -1,74 +1,44 @@
 ---
 import heroImage from "@assets/kristjan.jpeg";
 import Card from "@components/Card.astro";
-import Lines from "@components/Lines.astro";
-import Wrapper from "@components/Wrapper.astro";
+import Container from "@components/Container.astro";
 import Layout from "@layouts/Layout.astro";
 import { sortPosts } from "@utils/utils";
 import { Image } from "astro:assets";
-import ArrowUpRight from "node_modules/lucide-astro/dist/ArrowUpRight.astro";
-import CornerLeftUp from "node_modules/lucide-astro/dist/CornerLeftUp.astro";
+import { ArrowUpRight } from "lucide-astro";
 
 const posts = sortPosts(
   await Astro.glob("../pages/craft/*.mdx")
 );
-
-const TYPES = ["fun", "school", "thoughts"];
 ---
 
-<script>
-  import { generateRandomHexCode } from "@utils/utils";
-
-  const heroImage = document.getElementById("hero-image");
-
-  document.addEventListener("DOMContentLoaded", () => {
-    document.documentElement.style.setProperty(
-      "--hero-image-hex",
-      generateRandomHexCode()
-    );
-  });
-
-  heroImage.addEventListener("click", () => {
-    document.documentElement.style.setProperty(
-      "--hero-image-hex",
-      generateRandomHexCode()
-    );
-  });
-</script>
-
 <Layout title="Kristjan Poska">
-  <Wrapper shouldWrapMdx={false}>
-    <h1>Kristjan Poska</h1>
+  <Container shouldWrapMdx={false}>
+    <header>
+      <h1>Kristjan Poska</h1>
 
-    <main class="mx-auto mt-8">
-      <div
-        class="group relative select-none hover:cursor-pointer"
-        id="hero-image">
-        <Lines />
-
-        <Image
-          loading="eager"
-          src={heroImage}
-          alt="Kristjan Poska taking a picture of himself in a reflection."
-        />
-      </div>
-
-      <div class="mt-2 flex flex-wrap justify-between">
+      <header class="mx-auto mt-8">
         <div
-          class="flex gap-1 text-xs text-neutral-500"
+          class="group relative select-none"
           id="hero-image">
-          <CornerLeftUp class="h-3 w-3" /> Click on the
-          image to change colors!
+          <Image
+            class="aspect-video object-cover"
+            loading="eager"
+            src={heroImage}
+            alt="Kristjan Poska taking a picture of himself in a reflection."
+          />
         </div>
 
-        <a
-          href="photos"
-          class="text-xs text-neutral-500 underline hover:no-underline">
-          Check out my photos
-        </a>
-      </div>
+        <div class="mt-2 flex flex-wrap justify-between">
+          <a
+            href="photos"
+            class="text-xs text-neutral-500 underline hover:no-underline">
+            Check out my photos
+          </a>
+        </div>
+      </header>
 
-      <header class="mt-8">
+      <main class="mt-8">
         <h2 class="mb-4">About</h2>
         <div class="flex flex-col gap-2">
           <p>
@@ -130,67 +100,67 @@ const TYPES = ["fun", "school", "thoughts"];
               }
             </div>
           </section>
-
-          <footer class="mt-8">
-            <h2 class="mb-4">Links</h2>
-
-            <ul role="list">
-              <li class="group w-fit">
-                <a
-                  href="https://instagram.com/kristjanposka"
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  ><span
-                    class="underline group-hover:no-underline"
-                    >Instagram</span
-                  >
-                  <ArrowUpRight
-                    class="-ml-0.5 inline h-3 w-3 align-text-top"
-                  />
-                </a>
-              </li>
-
-              <li class="group w-fit">
-                <a
-                  href="https://www.linkedin.com/in/kristjan-poska/"
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  ><span
-                    class="underline group-hover:no-underline"
-                    >LinkedIn</span
-                  >
-                  <ArrowUpRight
-                    class="-ml-0.5 inline h-3 w-3 align-text-top"
-                  />
-                </a>
-              </li>
-
-              <li class="w-fit">
-                <a
-                  class="underline hover:no-underline"
-                  href="mailto:kristjanposka@gmail.com"
-                  >E-mail</a
-                >
-              </li>
-
-              <li class="group w-fit">
-                <a
-                  href="https://read.cv/poska"
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  ><span
-                    class="underline group-hover:no-underline"
-                    >Resume</span
-                  >
-                  <ArrowUpRight
-                    class="-ml-0.5 inline h-3 w-3 align-text-top"
-                  />
-                </a>
-              </li>
-            </ul>
-          </footer>
         </div>
-      </header>
-    </main>
-  </Wrapper>
+      </main>
+
+      <footer class="mt-8">
+        <h2 class="mb-4">Links</h2>
+
+        <ul role="list">
+          <li class="group w-fit">
+            <a
+              href="https://instagram.com/kristjanposka"
+              target="_blank"
+              rel="noreferrer noopener"
+              ><span
+                class="underline group-hover:no-underline"
+                >Instagram</span
+              >
+              <ArrowUpRight
+                class="-ml-0.5 inline h-3 w-3 align-text-top"
+              />
+            </a>
+          </li>
+
+          <li class="group w-fit">
+            <a
+              href="https://www.linkedin.com/in/kristjan-poska/"
+              target="_blank"
+              rel="noreferrer noopener"
+              ><span
+                class="underline group-hover:no-underline"
+                >LinkedIn</span
+              >
+              <ArrowUpRight
+                class="-ml-0.5 inline h-3 w-3 align-text-top"
+              />
+            </a>
+          </li>
+
+          <li class="w-fit">
+            <a
+              class="underline hover:no-underline"
+              href="mailto:kristjanposka@gmail.com"
+              >E-mail</a
+            >
+          </li>
+
+          <li class="group w-fit">
+            <a
+              href="https://read.cv/poska"
+              target="_blank"
+              rel="noreferrer noopener"
+              ><span
+                class="underline group-hover:no-underline"
+                >Resume</span
+              >
+              <ArrowUpRight
+                class="-ml-0.5 inline h-3 w-3 align-text-top"
+              />
+            </a>
+          </li>
+        </ul>
+      </footer>
+    </header>
+  </Container>
 </Layout>

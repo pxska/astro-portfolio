@@ -1,5 +1,5 @@
 ---
-import Wrapper from "@components/Wrapper.astro";
+import Container from "@components/Container.astro";
 import Footer from "@components/project/Footer.astro";
 import Header from "@components/project/Header.astro";
 import Layout from "@layouts/Layout.astro";
@@ -24,12 +24,21 @@ const nextTitle = nextProject?.frontmatter?.title;
 <Layout title={frontmatter.title}>
   <Header {...frontmatter} />
 
-  <Wrapper
-    shouldWrapMdx={frontmatter.title !== "Playground"}>
+  <Container shouldWrapMdx>
     <slot />
-  </Wrapper>
+  </Container>
 
-  <div class="mx-auto my-8 h-px max-w-xl bg-neutral-200">
+  <Container>
+    <div class="my-8 flex justify-center">
+      <a
+        class="select-none rounded-full bg-white px-4 py-2 shadow-[0_4px_0px_0px_black] outline outline-1 outline-black transition-all hover:cursor-pointer hover:bg-neutral-100 focus:outline-2 focus:outline-black focus-visible:outline-1 focus-visible:outline-offset-0 active:translate-y-1 active:shadow-none"
+        href="https://x.com/kristjanposka"
+        target="_blank">Get in touch on X/Twitter!</a
+      >
+    </div>
+  </Container>
+
+  <div class="mx-auto my-8 h-px max-w-prose bg-neutral-200">
   </div>
 
   <Footer

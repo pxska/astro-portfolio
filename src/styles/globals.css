@@ -6,7 +6,6 @@ html {
   @apply font-sans antialiased transition-colors;
   text-rendering: optimizeLegibility;
   scrollbar-gutter: stable;
-  text-wrap: pretty;
 }
 
 body {

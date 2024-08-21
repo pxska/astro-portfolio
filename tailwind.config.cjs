@@ -5,11 +5,6 @@ module.exports = {
     extend: {
       colors: {
         "theme-orange": "#FF7F50",
-        "theme-blue": "#1A659E",
-        "theme-beige": "#EFEFD0",
-        "theme-peach": "#F7C59F",
-        "theme-charcoal": "#30414E",
-        "theme-silver": "#A2A2A0",
       },
     },
     screens: {
