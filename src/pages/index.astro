@@ -2,10 +2,11 @@
 import heroImage from "@assets/kristjan.jpeg";
 import Card from "@components/Card.astro";
 import Container from "@components/Container.astro";
+import Content from "@components/content/Content.astro";
+import Link from "@components/footer/Link.astro";
 import Layout from "@layouts/Layout.astro";
 import { sortPosts } from "@utils/utils";
 import { Image } from "astro:assets";
-import { ArrowUpRight } from "lucide-astro";
 
 const posts = sortPosts(
   await Astro.glob("../pages/craft/*.mdx")
@@ -14,20 +15,23 @@ const posts = sortPosts(
 
 <Layout title="Kristjan Poska">
   <Container shouldWrapMdx={false}>
-    <header class="mx-auto mt-8">
-      <nav class="flex justify-between">
+    <header
+      class="mx-auto mt-8 animate-slidein opacity-0 [--slidein-delay:0ms]">
+      <div class="flex justify-between">
         <h1>Kristjan Poska</h1>
 
-        <ul class="flex gap-2">
-          <li>
-            <a
-              href="/photos"
-              class="text-neutral-500 hover:text-inherit"
-              >Photos</a
-            >
-          </li>
-        </ul>
-      </nav>
+        <nav>
+          <ul class="flex gap-2">
+            <li>
+              <a
+                href="/photos"
+                class="text-neutral-500 hover:text-inherit"
+                >Photos</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
 
       <div
         class="group relative mt-8 select-none"
@@ -41,9 +45,10 @@ const posts = sortPosts(
       </div>
     </header>
 
-    <main class="mt-8">
-      <h2 class="mb-4">About</h2>
-      <div class="flex flex-col gap-2">
+    <main class="mt-8 flex flex-col gap-8">
+      <Content
+        title="About"
+        className="animate-slidein opacity-0 [--slidein-delay:200ms]">
         <p>
           Hey, I'm Kristjan. I am a Product Designer from
           Estonia. I love to craft sleek and user-friendly
@@ -63,9 +68,11 @@ const posts = sortPosts(
           have worked as a barista, which is where my love
           for coffee is derived from.
         </p>
+      </Content>
 
-        <h2 class="mt-8">Now</h2>
-
+      <Content
+        title="Now"
+        className="animate-slidein opacity-0 [--slidein-delay:400ms]">
         <p>
           I am currently working as a Product Designer at
           <a
@@ -81,86 +88,52 @@ const posts = sortPosts(
           guitar, brewing some fancy specialty coffee or
           shooting pictures with a camera.
         </p>
+      </Content>
 
-        <section class="mt-8">
-          <h2 class="mb-4">Stuff that's on my mind</h2>
-          <div class="[&>#list-element]:hover:opacity-50">
-            {
-              posts.map((post) => {
-                const { description, date, type } =
-                  post.frontmatter;
-
-                return (
-                  <Card
-                    date={date}
-                    description={description}
-                    href={post.url}
-                    type={type}
-                  />
-                );
-              })
-            }
-          </div>
-        </section>
-      </div>
+      <Content
+        title="Stuff that's on my mind"
+        className="animate-slidein opacity-0 [--slidein-delay:600ms]">
+        <div class="[&>#list-element]:hover:opacity-50">
+          {
+            posts.map((post) => (
+              <Card
+                date={post.frontmatter.date}
+                description={post.frontmatter.description}
+                href={post.url}
+                type={post.frontmatter.type}
+              />
+            ))
+          }
+        </div>
+      </Content>
     </main>
 
-    <footer class="mt-8">
-      <h2 class="mb-4">Links</h2>
-
-      <ul role="list">
-        <li class="group w-fit">
-          <a
+    <footer
+      class="mt-8 animate-slidein opacity-0 [--slidein-delay:800ms]">
+      <Content title="Links">
+        <ul role="list">
+          <Link
             href="https://instagram.com/kristjanposka"
-            target="_blank"
-            rel="noreferrer noopener"
-            ><span
-              class="underline group-hover:no-underline"
-              >Instagram</span
-            >
-            <ArrowUpRight
-              class="-ml-0.5 inline h-3 w-3 align-text-top"
-            />
-          </a>
-        </li>
+            title="Instagram"
+          />
 
-        <li class="group w-fit">
-          <a
+          <Link
             href="https://www.linkedin.com/in/kristjan-poska/"
-            target="_blank"
-            rel="noreferrer noopener"
-            ><span
-              class="underline group-hover:no-underline"
-              >LinkedIn</span
-            >
-            <ArrowUpRight
-              class="-ml-0.5 inline h-3 w-3 align-text-top"
-            />
-          </a>
-        </li>
+            title="LinkedIn"
+          />
 
-        <li class="w-fit">
-          <a
-            class="underline hover:no-underline"
-            href="mailto:kristjanposka@gmail.com">E-mail</a
-          >
-        </li>
+          <Link
+            href="mailto:kristjanposka@gmail.com"
+            title="E-mail"
+            withIcon={false}
+          />
 
-        <li class="group w-fit">
-          <a
+          <Link
             href="https://read.cv/poska"
-            target="_blank"
-            rel="noreferrer noopener"
-            ><span
-              class="underline group-hover:no-underline"
-              >Resume</span
-            >
-            <ArrowUpRight
-              class="-ml-0.5 inline h-3 w-3 align-text-top"
-            />
-          </a>
-        </li>
-      </ul>
+            title="Resume"
+          />
+        </ul>
+      </Content>
     </footer>
   </Container>
 </Layout>

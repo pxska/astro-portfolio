@@ -6,6 +6,22 @@ module.exports = {
       colors: {
         "theme-orange": "#FF7F50",
       },
+      keyframes: {
+        slidein: {
+          from: {
+            opacity: "0",
+            transform: "translateY(8px)",
+          },
+          to: {
+            opacity: "1",
+            transform: "translateY(0)",
+          },
+        },
+      },
+      animation: {
+        slidein:
+          "slidein 0.5s ease var(--slidein-delay, 0) forwards",
+      },
     },
     screens: {
       "2xl": { min: "1535px" },
