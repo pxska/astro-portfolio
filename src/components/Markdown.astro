@@ -1,27 +1,29 @@
-<div class="project"><slot /></div>
+<div class="prose">
+  <slot />
+</div>
 
 <style is:global>
-  .project {
+  .prose {
     @apply flex flex-col gap-2;
   }
 
-  .project h1 {
+  .prose h1 {
     @apply mt-6 font-medium;
   }
 
-  .project strong {
+  .prose strong {
     @apply font-medium text-theme-orange;
   }
 
-  .project a {
+  .prose a {
     @apply underline hover:no-underline;
   }
 
-  .project img.inline {
+  .prose img.inline {
     @apply my-3;
   }
 
-  .project blockquote {
+  .prose blockquote {
     @apply my-3 border-l-8 border-theme-orange bg-neutral-200 px-4 py-3;
   }
 </style>
