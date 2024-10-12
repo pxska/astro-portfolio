@@ -18,17 +18,19 @@ switch (type) {
     break;
 }
 
+const dateTime = new Date(date).toLocaleDateString();
+
 const formattedDate = new Date(date).toLocaleDateString(
   "en-US",
-  { month: "long", year: "numeric" }
+  { month: "short", year: "numeric" }
 );
 ---
 
 <a
   href={href}
   id="list-element"
-  class="group flex items-center gap-2 py-1 transition-opacity first-of-type:pt-0 last-of-type:pb-0 hover:!opacity-100">
-  <div class="gap-2 truncate">
+  class="group flex items-start gap-2 py-1 transition-opacity first-of-type:pt-0 last-of-type:pb-0 hover:!opacity-100">
+  <div class="gap-2">
     <div
       class:list={[
         "mr-2 inline-block h-2 w-2 rounded-full align-middle",
@@ -39,8 +41,13 @@ const formattedDate = new Date(date).toLocaleDateString(
       {description}
     </span>
   </div>
-  <div class="h-px flex-grow bg-neutral-300"></div>
-  <div class="whitespace-nowrap text-neutral-300">
-    {formattedDate}
+  <div class="flex h-5 flex-grow items-center">
+    <div class="h-px min-w-[2rem] flex-grow bg-neutral-300">
+    </div>
   </div>
+  <time
+    datetime={dateTime}
+    class="shrink-0 whitespace-nowrap text-right text-neutral-300">
+    {formattedDate}
+  </time>
 </a>

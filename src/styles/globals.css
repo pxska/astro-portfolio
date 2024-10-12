@@ -25,6 +25,7 @@ h2 {
   @apply bg-theme-orange text-white;
 }
 
-code {
+code,
+time {
   font-family: "Geist Mono", monospaced;
 }
