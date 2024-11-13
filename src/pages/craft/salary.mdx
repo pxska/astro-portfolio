@@ -1,19 +1,29 @@
 ---
 layout: "@layouts/Project.astro"
 title: "Salary Calculator"
-description:
-  "Redesigning the Estonian salary calculator"
+description: "Redesigning the Estonian salary calculator"
 role: ["UI design"]
 date: October 2022
-methods: ["Gestalt principles", "Peer reviews", "Color wheels", "UI kits"]
+methods:
+  [
+    "Gestalt principles",
+    "Peer reviews",
+    "Color wheels",
+    "UI kits",
+  ]
 type: "school"
 ---
+
 import { Image } from "astro:assets";
 import initial from "@assets/salary/salary-calc-initial.png";
 import second from "@assets/salary/salary-calc-second.png";
 import cover from "@assets/salary/salary-calc-mockup.png";
 
-<Image class="mb-8 aspect-video" src={cover} alt="A screenshot of the Estonian salary calculator." />
+<Image
+  class="mb-8 aspect-video"
+  src={cover}
+  alt="A screenshot of the Estonian salary calculator."
+/>
 
 The goal of this project was for me to choose an application and redesign it, while keeping in mind the **basics of visual design**: typography, Gestalt principles, colors, and their use cases, etc. This project was one of the first thorough introductions to visual design that I had – I wrote down lots of notes and feel that I learned a lot.
 
@@ -21,7 +31,10 @@ The goal of this project was for me to choose an application and redesign it, wh
 
 I have to say, at first, I felt very lost when trying to redesign the calculator. The first (filled out) iteration of the calculator looked like this:
 
-<Image  src={initial} alt="Another screenshot of the initial iteration of the salary calculator, which is filled with data." />
+<Image
+  src={initial}
+  alt="Another screenshot of the initial iteration of the salary calculator, which is filled with data."
+/>
 
 I did make a **UI kit**, and tried to choose colors that might fit with the money and confidence theme (blue-ish colors), however, there were some very odd mistakes, e.g. the "pie chart" looked very odd and the text on the right **wasn't explanatory enough**.
 
@@ -33,11 +46,14 @@ So I went to Pinterest and Dribbble for some inspiration, and with that **the se
 
 And here's a screenshot with the data filled in:
 
-<Image class="full-height" src={second} alt="The second iteration of the calculator with filled data" />
+<Image
+  class="full-height"
+  src={second}
+  alt="The second iteration of the calculator with filled data"
+/>
 
 I am happier with how the second iteration turned out. I saw some great examples on the web and learned my first lesson in design:
 
 You sometimes have to [steal like an artist](https://austinkleon.com/steal/).
 
 I got better feedback and our mentors said that this was **a huge step up from the initial version and that they're happy to see progress**. Of course, there were still odd parts, e.g. the salary input being too long (because who would have millions, right?) and the pie chart part appearing at the bottom of the form (which might make it not as visible), but those were just nitpicked.
-

@@ -1,10 +1,8 @@
 ---
 layout: "@layouts/Project.astro"
 title: "Mental Pin"
-description:
-  "Making AI feel like a pocket therapist"
-role:
-  [ "UX design", "Mobile UI design" ]
+description: "Making AI feel like a pocket therapist"
+role: ["UX design", "Mobile UI design"]
 date: April 2023
 methods:
   [
@@ -16,15 +14,20 @@ methods:
   ]
 type: "school"
 ---
-import { Image } from 'astro:assets';
-import unboxing from '@assets/mental-pin/unboxing-example.png';
-import onboarding from '@assets/mental-pin/mental-pin-onboarding.png';
-import annotation from '@assets/mental-pin/mental-pin-annotation.png';
-import aiexperience from '@assets/mental-pin/mental-pin-ai-experience.png';
-import tasksandrewards from '@assets/mental-pin/mental-pin-tasks-and-rewards.png';
+
+import { Image } from "astro:assets";
+import unboxing from "@assets/mental-pin/unboxing-example.png";
+import onboarding from "@assets/mental-pin/mental-pin-onboarding.png";
+import annotation from "@assets/mental-pin/mental-pin-annotation.png";
+import aiexperience from "@assets/mental-pin/mental-pin-ai-experience.png";
+import tasksandrewards from "@assets/mental-pin/mental-pin-tasks-and-rewards.png";
 import cover from "@assets/mental-pin/mentalpin-cover.jpeg";
 
-<Image class="mb-8 aspect-video" src={cover} alt="A man holding a phone in an airplane and logging his anxious airport episode." />
+<Image
+  class="mb-8 aspect-video"
+  src={cover}
+  alt="A man holding a phone in an airplane and logging his anxious airport episode."
+/>
 
 The goal of this project was for our team of [IxD.ma](https://ixd.ma/) students, consisting of Zac Heisey, Inka Jerkku & Sofia Kamergorodski, to help two alumni of IxD, the team at [Mental Pin](https://www.mentalpin.com) to **integrate artificial intelligence into their mobile application**, which helps people handle their anxiety and OCD ticks. While at first, we thought that it was another "keeping up with the craze" project, the result turned out different.
 
@@ -42,7 +45,11 @@ As said, since we were quite skeptical of AI at first, we looked to some out-of-
 
 Here is one of the examples we found on the internet of a lovely unboxing experience:
 
-<Image class="inline" src={unboxing} alt="An unboxing experience for a physical journal." />
+<Image
+  class="inline"
+  src={unboxing}
+  alt="An unboxing experience for a physical journal."
+/>
 
 We also considered **gamifying the application**, because that is what most apps seem to be doing today. When thinking about this, we thought of Duolingo as an example.
 
@@ -59,9 +66,17 @@ We still had to follow up with the ones that were most exciting for Mental Pin's
 
 Here are a few slide examples from the presentation to Mental Pin's team about our main ideas:
 
-<Image class="inline" src={aiexperience} alt="A slide example from the presentation talking about the personalised AI experience." />
+<Image
+  class="inline"
+  src={aiexperience}
+  alt="A slide example from the presentation talking about the personalised AI experience."
+/>
 
-<Image class="inline" src={tasksandrewards} alt="A slide example from the presentation talking about the tasks and rewards system." />
+<Image
+  class="inline"
+  src={tasksandrewards}
+  alt="A slide example from the presentation talking about the tasks and rewards system."
+/>
 
 # Results
 
@@ -75,15 +90,22 @@ We split the application into three rough parts:
 
 Here are some screenshots of the application we designed, e.g from the application in the onboarding phase. We also created a ChatGPT-esque animation, where the questions appear a few words at a time instead of all at once:
 
-<Image class="inline" src={onboarding} alt="A few screenshots from the application in the onboarding phase." />
+<Image
+  class="inline"
+  src={onboarding}
+  alt="A few screenshots from the application in the onboarding phase."
+/>
 
 And some screenshots from the episode annotation phase:
 
-<Image class="inline" src={annotation} alt="A few screenshots from the application in the episode annotation phase." />
+<Image
+  class="inline"
+  src={annotation}
+  alt="A few screenshots from the application in the episode annotation phase."
+/>
 
 As the above two were mostly topics, which I spent the most time on, I will explain them a bit further. For the onboarding, we received inspiration, as said, from ChatGPT. The questions were going to be **contextual**, so that Penny, the onboarding assistant learns from whatever the user is answering.
 
 For the episode annotation, I, sort of out-of-the-blue, came up with a Grammarly-like idea: you can either type or use speech recognition totalk about your episode, and then the application will run **automatic sentiment analysis** so you wouldn't have to go through the trouble of annotating everythingyourself.
 
 [Click here to see the Figma board](https://www.figma.com/file/74tddu7foRTW6gzJ3LZXQp/Mental-Pin-%C3%97-IXD?type=design&node-id=1058%3A3534&mode=design&t=SysNZG2kgIuwolZG-1)
-
