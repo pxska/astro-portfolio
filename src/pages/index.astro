@@ -48,7 +48,7 @@ const posts = sortPosts(
     <main class="mt-8 flex flex-col gap-8">
       <Content
         title="About"
-        className="animate-slidein opacity-0 [--slidein-delay:200ms]">
+        className="animate-slidein opacity-0 [--slidein-delay:100ms]">
         <p>
           Hey, I'm Kristjan and I'm from Estonia. I love
           crafting sleek, user-friendly digital spaces and
@@ -72,7 +72,7 @@ const posts = sortPosts(
 
       <Content
         title="Now"
-        className="animate-slidein opacity-0 [--slidein-delay:400ms]">
+        className="animate-slidein opacity-0 [--slidein-delay:200ms]">
         <p>
           I am currently working as a Software Engineer at
           <a
@@ -96,7 +96,7 @@ const posts = sortPosts(
 
       <Content
         title="Stuff that's on my mind"
-        className="animate-slidein opacity-0 [--slidein-delay:600ms]">
+        className="animate-slidein opacity-0 [--slidein-delay:300ms]">
         <div class="[&>#list-element]:hover:opacity-50">
           {
             posts.map((post) => (
@@ -113,7 +113,7 @@ const posts = sortPosts(
     </main>
 
     <footer
-      class="mt-8 animate-slidein opacity-0 [--slidein-delay:800ms]">
+      class="mt-8 animate-slidein opacity-0 [--slidein-delay:400ms]">
       <Content title="Links">
         <ul role="list">
           <Link
